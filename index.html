@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vitor Ivo Santiago Alves</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #121212;
@@ -60,22 +61,73 @@
             color: #aaaaaa;
         }
 
-        button {
+        .buttoninsta {
             padding: 0.5rem;
             border: none;
             border-radius: 0.25rem;
-            background-color: #1e88e5;
+            background: #f09433; 
+            background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+            background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+            color: #fff;
+            cursor: pointer;
+            font-size: 0.875rem; /* Diminuir o tamanho da fonte */
+            margin: 0.5rem 0;
+            width: 50%;
+            text-align: center;
+            text-decoration: none;
+            font-family: 'Pacifico', sans-serif; /* Fonte personalizada para o botão do Instagram */
+        }
+
+        .buttoninsta:hover {
+            background-color: #1565c0;
+        }
+
+        .buttonlinked {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 0.25rem;
+            background: #0077b5; 
+            background: -moz-linear-gradient(45deg, #0077b5 0%, #005d99 25%, #004c80 50%, #003b66 75%, #002b4d 100%); 
+            background: -webkit-linear-gradient(45deg, #0077b5 0%,#005d99 25%,#004c80 50%,#003b66 75%,#002b4d 100%); 
+            background: linear-gradient(45deg, #0077b5 0%,#005d99 25%,#004c80 50%,#003b66 75%,#002b4d 100%); 
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0077b5', endColorstr='#002b4d',GradientType=1 );
             color: #fff;
             cursor: pointer;
             font-size: 1rem;
             margin: 0.5rem 0;
-            width: 100%;
+            width: 50%;
             text-align: center;
             text-decoration: none;
+            font-family: 'Myriad', sans-serif; /* Fonte para o botão do LinkedIn */
         }
 
-        button:hover {
-            background-color: #1565c0;
+        .buttonlinked:hover {
+            background-color: #0e76a8;
+        }
+
+        .buttonwpp {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 0.25rem;
+            background: #25d366; 
+            background: -moz-linear-gradient(45deg, #25d366 0%, #20c65a 25%, #1cb84d 50%, #18ab41 75%, #139d34 100%); 
+            background: -webkit-linear-gradient(45deg, #25d366 0%,#20c65a 25%,#1cb84d 50%,#18ab41 75%,#139d34 100%); 
+            background: linear-gradient(45deg, #25d366 0%,#20c65a 25%,#1cb84d 50%,#18ab41 75%,#139d34 100%); 
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#25d366', endColorstr='#139d34',GradientType=1 );
+            color: #fff;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 0.5rem 0;
+            width: 50%;
+            text-align: center;
+            text-decoration: none;
+            font-family: 'Helvetica', sans-serif; /* Fonte para o botão do WhatsApp */
+        }
+
+        .buttonwpp:hover {
+            background-color: #25d366;
         }
     </style>
 </head>
@@ -88,9 +140,9 @@
             <div class="description">Acadêmico de Engenharia da Computação pela Universidade de Cuiabá (UNIC), analista de Infraestrutura de TI com experiência em Redes de Computadores, Segurança da Informação, Virtualização e Projetos de InfraTI.</div>
         </div>
 
-        <button onclick="window.location.href='https://www.instagram.com/vitor.ivoalves/'">Instagram</button>
-        <button onclick="window.location.href='https://www.linkedin.com/in/vitorivoalves/'">LinkedIn</button>
-        <button onclick="window.location.href='tel:+5565999996298'">Telefone</button>
+        <button class="buttoninsta" onclick="window.location.href='https://www.instagram.com/vitor.ivoalves/'">Instagram</button>
+        <button class="buttonlinked" onclick="window.location.href='https://www.linkedin.com/in/vitorivoalves/'">LinkedIn</button>
+        <button class="buttonwpp" onclick="window.location.href='tel:+5565999996298'">Telefone</button>
     </div>
 </body>
 </html>
