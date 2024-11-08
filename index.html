@@ -6,7 +6,8 @@
     <title>Vitor Ivo Santiago Alves</title>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Arial:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <style>
         body {
             background-color: #121212;
@@ -18,6 +19,7 @@
             justify-content: start;
             height: 100vh;
             margin: 0;
+            scroll-behavior: smooth; /* Suaviza a rolagem para todo o documento */
         }
 
         .container {
@@ -27,6 +29,11 @@
             flex-direction: column;
             gap: 1rem;
             align-items: center;
+            text-align: center;
+        }
+
+        .section-content {
+            width: 100%;
         }
 
         .profile-image {
@@ -35,21 +42,6 @@
             border-radius: 50%;
             border: 3px solid #ffffff;
             object-fit: cover;
-            margin-top: 1rem;
-        }
-
-        input[type="text"] {
-            padding: 0.5rem;
-            border: 1px solid #444;
-            border-radius: 0.25rem;
-            background-color: #333;
-            color: #fff;
-            margin-top: 1rem;
-            width: 100%;
-        }
-
-        .content {
-            text-align: center;
             margin-top: 1rem;
         }
 
@@ -63,15 +55,10 @@
             color: #aaaaaa;
         }
 
-        .buttoninsta {
+        .buttoninsta, .buttonlinked, .buttonwpp {
             padding: 0.5rem;
             border: none;
             border-radius: 0.25rem;
-            background: #f09433; 
-            background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-            background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
             color: #fff;
             cursor: pointer;
             font-size: 0.875rem;
@@ -81,72 +68,148 @@
             text-decoration: none;
             font-family: 'Pacifico', sans-serif;
         }
+        .buttoninsta { background: linear-gradient(45deg, #f09433, #bc1888); }
+        .buttonlinked { background: linear-gradient(45deg, #0077b5, #002b4d); font-family: 'Arial', sans-serif; font-weight: bold; }
+        .buttonwpp { background: linear-gradient(45deg, #25d366, #139d34); font-family: 'Arial', sans-serif; font-weight: bold; }
 
-        .buttoninsta:hover {
-            background-color: #1565c0;
+        /* Menu e Animações */
+        .menu-container {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
         }
 
-        .buttonlinked {
-            padding: 0.5rem;
-            border: none;
-            border-radius: 0.25rem;
-            background: #0077b5; 
-            background: -moz-linear-gradient(45deg, #0077b5 0%, #005d99 25%, #004c80 50%, #003b66 75%, #002b4d 100%); 
-            background: -webkit-linear-gradient(45deg, #0077b5 0%,#005d99 25%,#004c80 50%,#003b66 75%,#002b4d 100%); 
-            background: linear-gradient(45deg, #0077b5 0%,#005d99 25%,#004c80 50%,#003b66 75%,#002b4d 100%); 
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0077b5', endColorstr='#002b4d',GradientType=1 );
+        .menu-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: #444;
+            border-radius: 50%;
             color: #fff;
             cursor: pointer;
-            font-size: 1rem;
-            margin: 0.5rem 0;
-            width: 50%;
-            text-align: center;
-            text-decoration: none;
-            font-family: 'Myriad Pro', sans-serif;
-            font-weight: bold;
+            transition: transform 0.3s ease;
         }
 
-        .buttonlinked:hover {
-            background-color: #0e76a8;
+        .menu-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
         }
 
-        .buttonwpp {
-            padding: 0.5rem;
-            border: none;
-            border-radius: 0.25rem;
-            background: #25d366; 
-            background: -moz-linear-gradient(45deg, #25d366 0%, #20c65a 25%, #1cb84d 50%, #18ab41 75%, #139d34 100%); 
-            background: -webkit-linear-gradient(45deg, #25d366 0%,#20c65a 25%,#1cb84d 50%,#18ab41 75%,#139d34 100%); 
-            background: linear-gradient(45deg, #25d366 0%,#20c65a 25%,#1cb84d 50%,#18ab41 75%,#139d34 100%); 
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#25d366', endColorstr='#139d34',GradientType=1 );
+        .menu-items.show {
+            opacity: 1;
+            max-height: 200px; /* Limite máximo de altura para garantir a animação de expansão */
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #555;
+            border-radius: 50%;
             color: #fff;
             cursor: pointer;
-            font-size: 1rem;
-            margin: 0.5rem 0;
-            width: 50%;
-            text-align: center;
             text-decoration: none;
-            font-family: 'Arial', sans-serif;
-            font-weight: bold;
-        }
-
-        .buttonwpp:hover {
-            background-color: #25d366;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="perfil.jpg" alt="Imagem de Perfil" class="profile-image">
-
-        <div class="content">
-            <div class="title">VITOR ALVES - ENG. DA COMPUTAÇÃO</div>
-            <div class="description">Acadêmico de Engenharia da Computação pela Universidade de Cuiabá (UNIC), analista de Infraestrutura de TI com experiência em Redes de Computadores, Segurança da Informação, Virtualização e Projetos de InfraTI.</div>
+    <div class="menu-container">
+        <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
+            <span class="material-icons">menu</span>
         </div>
-
-        <button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button>
-        <button class="buttonlinked" onclick="window.open('https://www.linkedin.com/in/vitorivoalves/', '_blank')">LinkedIn</button>
-        <button class="buttonwpp" onclick="window.open('tel:+5565999996298', '_blank')">Telefone</button>        
+        <div class="menu-items" id="menuItems">
+            <div class="menu-item" onclick="showSection('section1')" title="Seção 1">
+                <span class="material-icons">home</span>
+            </div>
+            <div class="menu-item" onclick="showSection('section2')" title="Seção 2">
+                <span class="material-icons">info</span>
+            </div>
+            <div class="menu-item" onclick="showSection('section3')" title="Seção 3">
+                <span class="material-icons">work</span>
+            </div>
+            <div class="menu-item" onclick="showSection('section4')" title="Seção 4">
+                <span class="material-icons">contact_page</span>
+            </div>
+        </div>
     </div>
+
+    <div class="container">
+        <div id="content" class="section-content">
+            <div id="section1">
+                <img src="perfil.jpg" alt="Imagem de Perfil" class="profile-image">
+                <div class="title">VITOR ALVES - ENG. DA COMPUTAÇÃO</div>
+                <div class="description">Acadêmico de Engenharia da Computação pela Universidade de Cuiabá (UNIC), analista de Infraestrutura de TI com experiência em Redes de Computadores, Segurança da Informação, Virtualização e Projetos de InfraTI.</div>
+                <button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button>
+                <button class="buttonlinked" onclick="window.open('https://www.linkedin.com/in/vitorivoalves/', '_blank')">LinkedIn</button>
+                <button class="buttonwpp" onclick="window.open('tel:+5565999996298', '_blank')">Telefone</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Alterna a exibição e animação do menu
+        function toggleMenu() {
+            const menuItems = document.getElementById('menuItems');
+            menuItems.classList.toggle('show');
+        }
+
+        // Função para exibir a seção selecionada
+        function showSection(section) {
+            const content = document.getElementById('content');
+            let sectionContent = '';
+
+            if (section === 'section1') {
+                sectionContent = `
+                    <div id="section1">
+                        <img src="perfil.jpg" alt="Imagem de Perfil" class="profile-image">
+                        <div class="title">VITOR ALVES - ENG. DA COMPUTAÇÃO</div>
+                        <div class="description">Acadêmico de Engenharia da Computação pela Universidade de Cuiabá (UNIC), analista de Infraestrutura de TI com experiência em Redes de Computadores, Segurança da Informação, Virtualização e Projetos de InfraTI.</div>
+                        <button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button>
+                        <button class="buttonlinked" onclick="window.open('https://www.linkedin.com/in/vitorivoalves/', '_blank')">LinkedIn</button>
+                        <button class="buttonwpp" onclick="window.open('tel:+5565999996298', '_blank')">Telefone</button>
+                    </div>
+                `;
+            } else if (section === 'section2') {
+                sectionContent = `
+                    <div id="section2">
+                        <h2>Seção 2 - Sobre</h2>
+                        <p>Detalhes sobre a sua formação e experiência profissional podem ser adicionados aqui.</p>
+                    </div>
+                `;
+            } else if (section === 'section3') {
+                sectionContent = `
+                    <div id="section3">
+                        <h2>Seção 3 - Projetos</h2>
+                        <p>Conte sobre seus projetos recentes e realizações nesta área.</p>
+                    </div>
+                `;
+            } else if (section === 'section4') {
+                sectionContent = `
+                    <div id="section4">
+                        <h2>Seção 4 - Contato</h2>
+                        <p>Informações de contato e links adicionais podem ser incluídos nesta última seção.</p>
+                    </div>
+                `;
+            }
+
+            content.innerHTML = sectionContent;
+            content.scrollIntoView({ behavior: 'smooth' }); // Transição de rolagem suave
+            toggleMenu(); // Fecha o menu após a seleção
+        }
+    </script>
 </body>
 </html>
