@@ -19,7 +19,7 @@
             justify-content: start;
             height: 100vh;
             margin: 0;
-            scroll-behavior: smooth; /* Suaviza a rolagem para todo o documento */
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -72,7 +72,6 @@
         .buttonlinked { background: linear-gradient(45deg, #0077b5, #002b4d); font-family: 'Arial', sans-serif; font-weight: bold; }
         .buttonwpp { background: linear-gradient(45deg, #25d366, #139d34); font-family: 'Arial', sans-serif; font-weight: bold; }
 
-        /* Menu e Animações */
         .menu-container {
             position: fixed;
             top: 10px;
@@ -109,25 +108,27 @@
 
         .menu-items.show {
             opacity: 1;
-            max-height: 200px; /* Limite máximo de altura para garantir a animação de expansão */
+            max-height: 200px;
         }
 
         .menu-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: #555;
-            border-radius: 50%;
+            justify-content: flex-start; /* Alinha o título ao lado do ícone */
+            width: 100%;
+            padding: 8px;
             color: #fff;
             cursor: pointer;
             text-decoration: none;
         }
 
-        /* Novo estilo para diminuir o tamanho dos ícones */
+        .menu-item span.material-icons {
+            margin-right: 8px; /* Espaço entre o ícone e o título */
+        }
+
         .menu-item span {
-            font-size: 20px; /* Tamanho reduzido dos ícones */
+            font-size: 20px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -137,32 +138,27 @@
             <span class="material-icons">menu</span>
         </div>
         <div class="menu-items" id="menuItems">
-            <div class="menu-item" onclick="showSection('section1')" title="Seção 1">
+            <div class="menu-item" id="menuItem1" onclick="showSection('section1')" title="Seção 1">
                 <span class="material-icons">home</span>
+                <span id="menuTitle1">Home</span>
             </div>
-            <div class="menu-item" onclick="showSection('section2')" title="Seção 2">
+            <div class="menu-item" id="menuItem2" onclick="showSection('section2')" title="Seção 2">
                 <span class="material-icons">info</span>
+                <span id="menuTitle2">Sobre</span>
             </div>
-            <div class="menu-item" onclick="showSection('section3')" title="Seção 3">
+            <div class="menu-item" id="menuItem3" onclick="showSection('section3')" title="Seção 3">
                 <span class="material-icons">work</span>
+                <span id="menuTitle3">Projetos</span>
             </div>
-            <div class="menu-item" onclick="showSection('section4')" title="Seção 4">
+            <div class="menu-item" id="menuItem4" onclick="showSection('section4')" title="Seção 4">
                 <span class="material-icons">contact_page</span>
+                <span id="menuTitle4">Contato</span>
             </div>
         </div>
     </div>
 
     <div class="container">
-        <div id="content" class="section-content">
-            <div id="section1">
-                <img src="perfil.jpg" alt="Imagem de Perfil" class="profile-image">
-                <div class="title">VITOR ALVES - ENG. DA COMPUTAÇÃO</div>
-                <div class="description">Acadêmico de Engenharia da Computação pela Universidade de Cuiabá (UNIC), analista de Infraestrutura de TI com experiência em Redes de Computadores, Segurança da Informação, Virtualização e Projetos de InfraTI.</div>
-                <button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button>
-                <button class="buttonlinked" onclick="window.open('https://www.linkedin.com/in/vitorivoalves/', '_blank')">LinkedIn</button>
-                <button class="buttonwpp" onclick="window.open('tel:+5565999996298', '_blank')">Telefone</button>
-            </div>
-        </div>
+        <div id="content" class="section-content"></div>
     </div>
 
     <script>
@@ -172,10 +168,11 @@
             menuItems.classList.toggle('show');
         }
 
-        // Função para exibir a seção selecionada
+        // Função para exibir a seção selecionada e atualizar o título do menu
         function showSection(section) {
             const content = document.getElementById('content');
             let sectionContent = '';
+            let menuTitle = '';
 
             if (section === 'section1') {
                 sectionContent = `
@@ -188,34 +185,60 @@
                         <button class="buttonwpp" onclick="window.open('tel:+5565999996298', '_blank')">Telefone</button>
                     </div>
                 `;
+                menuTitle = "Home";
             } else if (section === 'section2') {
                 sectionContent = `
                     <div id="section2">
                         <h2>Página em Construção</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
                     </div>
                 `;
+                menuTitle = "Sobre";
             } else if (section === 'section3') {
                 sectionContent = `
                     <div id="section3">
                         <h2>Ainda em Construção</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <iframe width: 90%; max-width: 2340px; height: 90%; max-height: 1080px; src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=30BUFl6AyMTJNiHw" title="YouTube video player" frameborder="0" allow="accelerometer;display: flex; justify-content: center; align-items: center; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                    </div>
                 `;
+                menuTitle = "Projetos";
             } else if (section === 'section4') {
                 sectionContent = `
                     <div id="section4">
                         <h2>Cara, você é curioso né</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
                     </div>
                 `;
+                menuTitle = "Contato";
             }
 
             content.innerHTML = sectionContent;
-            content.scrollIntoView({ behavior: 'smooth' }); // Transição de rolagem suave
+            content.scrollIntoView({ behavior: 'smooth' });
+
+            // Atualiza o título do menu com o título da seção
+            document.getElementById('menuTitle1').textContent = (section === 'section1') ? "Home" : "Home";
+            document.getElementById('menuTitle2').textContent = (section === 'section2') ? "Sobre" : "Sobre";
+            document.getElementById('menuTitle3').textContent = (section === 'section3') ? "Projetos" : "Projetos";
+            document.getElementById('menuTitle4').textContent = (section === 'section4') ? "Contato" : "Contato";
+
+            // Salva a seção no localStorage para manter o estado
+            localStorage.setItem('currentSection', section);
             toggleMenu(); // Fecha o menu após a seleção
         }
+
+        // Verifica se há uma seção salva no localStorage e carrega
+        window.onload = function() {
+            const savedSection = localStorage.getItem('currentSection');
+            if (savedSection) {
+                showSection(savedSection); // Exibe a seção salva ao carregar a página
+            } else {
+                showSection('section1'); // Exibe a seção 1 por padrão
+            }
+
+            // Garante que o menu começa fechado
+            const menuItems = document.getElementById('menuItems');
+            menuItems.classList.remove('show'); // Assegura que o menu esteja fechado
+        };
     </script>
 </body>
 </html>
