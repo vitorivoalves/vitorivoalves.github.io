@@ -114,7 +114,7 @@
         .menu-item {
             display: flex;
             align-items: center;
-            justify-content: flex-start; /* Alinha o título ao lado do ícone */
+            justify-content: flex-start;
             width: 100%;
             padding: 8px;
             color: #fff;
@@ -123,7 +123,7 @@
         }
 
         .menu-item span.material-icons {
-            margin-right: 8px; /* Espaço entre o ícone e o título */
+            margin-right: 8px;
         }
 
         .menu-item span {
@@ -162,13 +162,11 @@
     </div>
 
     <script>
-        // Alterna a exibição e animação do menu
         function toggleMenu() {
             const menuItems = document.getElementById('menuItems');
             menuItems.classList.toggle('show');
         }
 
-        // Função para exibir a seção selecionada e atualizar o título do menu
         function showSection(section) {
             const content = document.getElementById('content');
             let sectionContent = '';
@@ -215,29 +213,25 @@
             content.innerHTML = sectionContent;
             content.scrollIntoView({ behavior: 'smooth' });
 
-            // Atualiza o título do menu com o título da seção
             document.getElementById('menuTitle1').textContent = (section === 'section1') ? "Home" : "Home";
             document.getElementById('menuTitle2').textContent = (section === 'section2') ? "Sobre" : "Sobre";
             document.getElementById('menuTitle3').textContent = (section === 'section3') ? "Projetos" : "Projetos";
             document.getElementById('menuTitle4').textContent = (section === 'section4') ? "Contato" : "Contato";
 
-            // Salva a seção no localStorage para manter o estado
             localStorage.setItem('currentSection', section);
-            toggleMenu(); // Fecha o menu após a seleção
+            toggleMenu();
         }
 
-        // Verifica se há uma seção salva no localStorage e carrega
         window.onload = function() {
             const savedSection = localStorage.getItem('currentSection');
             if (savedSection) {
-                showSection(savedSection); // Exibe a seção salva ao carregar a página
+                showSection(savedSection);
             } else {
-                showSection('section1'); // Exibe a seção 1 por padrão
+                showSection('section1');
             }
 
-            // Garante que o menu começa fechado
             const menuItems = document.getElementById('menuItems');
-            menuItems.classList.remove('show'); // Assegura que o menu esteja fechado
+            menuItems.classList.remove('show');
         };
     </script>
 </body>
