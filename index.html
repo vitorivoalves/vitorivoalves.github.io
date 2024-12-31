@@ -68,68 +68,116 @@
             text-decoration: none;
             font-family: 'Pacifico', sans-serif;
         }
-        .buttoninsta { background: linear-gradient(45deg, #f09433, #bc1888); }
+        .buttoninsta { background: linear-gradient(45deg, #f09433, #bc1888); font-family: 'Arial', sans-serif; font-weight: bold;}
         .buttonlinked { background: linear-gradient(45deg, #0077b5, #002b4d); font-family: 'Arial', sans-serif; font-weight: bold; }
         .buttonwpp { background: linear-gradient(45deg, #25d366, #139d34); font-family: 'Arial', sans-serif; font-weight: bold; }
 
         .menu-container {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            z-index: 10;
-        }
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
 
-        .menu-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 35px;
-            height: 35px;
-            background-color: #444;
-            border-radius: 50%;
-            color: #fff;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+.menu-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: #444;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
 
-        .menu-items {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            background-color: #333;
-            padding: 10px;
-            border-radius: 8px;
-            margin-top: 10px;
-            opacity: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, opacity 0.3s ease;
-        }
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
 
-        .menu-items.show {
-            opacity: 1;
-            max-height: 200px;
-        }
+.menu-items.show {
+    opacity: 1;
+    max-height: 200px;
+}
 
-        .menu-item {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            width: 100%;
-            padding: 8px;
-            color: #fff;
-            cursor: pointer;
-            text-decoration: none;
-        }
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 75%;
+    padding: 8px;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
 
-        .menu-item span.material-icons {
-            margin-right: 8px;
-        }
+.menu-item span.material-icons {
+    margin-right: 8px;
+    font-size: 16px; 
+}
 
-        .menu-item span {
-            font-size: 20px;
-            font-weight: bold;
-        }
+.menu-item span {
+    font-size: 18px; 
+    font-weight: bold;
+}
+
+
+        .timeline {
+        border-left: 2px solid #ffffff;
+        margin: 20px 0;
+        padding: 10px 20px;
+    }
+
+    .timeline-item {
+        margin-bottom: 20px;
+        position: relative;
+        padding-left: 20px;
+    }
+
+    .timeline-item:before {
+        content: '';
+        position: absolute;
+        left: -9px;
+        top: 0;
+        width: 15px;
+        height: 15px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        border: 2px solid #121212;
+    }
+
+    .timeline-item h3 {
+        margin: 0 0 5px;
+        font-size: 1.2rem;
+        color: #ffffff;
+    }
+
+    .timeline-item p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #aaaaaa;
+    }
+
+    .link-certificado {
+        color: #4CAF50;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .link-certificado:hover {
+        text-decoration: underline;
+    }
     </style>
 </head>
 <body>
@@ -138,20 +186,20 @@
             <span class="material-icons">menu</span>
         </div>
         <div class="menu-items" id="menuItems">
-            <div class="menu-item" id="menuItem1" onclick="showSection('section1')" title="Seção 1">
+            <div class="menu-item" id="menuItem1" onclick="showSection('section1')" title="Home">
                 <span class="material-icons">home</span>
                 <span id="menuTitle1">Home</span>
             </div>
-            <div class="menu-item" id="menuItem2" onclick="showSection('section2')" title="Seção 2">
-                <span class="material-icons">info</span>
-                <span id="menuTitle2">Sobre</span>
+            <div class="menu-item" id="menuItem2" onclick="showSection('section2')" title="Educação">
+                <span class="material-icons">library_books</span>
+                <span id="menuTitle2">Estudos</span>
             </div>
-            <div class="menu-item" id="menuItem3" onclick="showSection('section3')" title="Seção 3">
-                <span class="material-icons">work</span>
-                <span id="menuTitle3">Projetos</span>
+            <div class="menu-item" id="menuItem3" onclick="showSection('section3')" title="Experiência Profissional">
+                <span class="material-icons">business_center</span>
+                <span id="menuTitle3">Experiência</span>
             </div>
-            <div class="menu-item" id="menuItem4" onclick="showSection('section4')" title="Seção 4">
-                <span class="material-icons">contact_page</span>
+            <div class="menu-item" id="menuItem4" onclick="showSection('section4')" title="Contatos">
+                <span class="material-icons">contacts</span>
                 <span id="menuTitle4">Contato</span>
             </div>
         </div>
@@ -178,20 +226,31 @@
                         <img src="perfil.jpg" alt="Imagem de Perfil" class="profile-image">
                         <div class="title">VITOR ALVES - ENG. DA COMPUTAÇÃO</div>
                         <div class="description">Acadêmico de Engenharia da Computação pela Universidade de Cuiabá (UNIC), analista de Infraestrutura de TI com experiência em Redes de Computadores, Segurança da Informação, Virtualização e Projetos de InfraTI.</div>
-                        <button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button>
-                        <button class="buttonlinked" onclick="window.open('https://www.linkedin.com/in/vitorivoalves/', '_blank')">LinkedIn</button>
-                        <button class="buttonwpp" onclick="window.open('tel:+5565999996298', '_blank')">Telefone</button>
                     </div>
                 `;
                 menuTitle = "Home";
             } else if (section === 'section2') {
-                sectionContent = `
-                    <div id="section2">
-                        <h2>Página em Construção</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                    </div>
-                `;
-                menuTitle = "Sobre";
+    sectionContent = `
+        <div id="section2">
+            <h2>Cursos e Vida Acadêmica</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                <h3>2018 - 2025</h3>    
+		<h3>Graduação em Engenharia da Computação</h3>
+                    <p>Iniciei minha graduação na Universidade de Cuiabá (UNIC).</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2024 </h3>
+			<h3>Curso Gestão de Projetos</h3>
+                    <p>
+                        Concluí uma certificação avançada em Redes de Computadores. 
+                        <a href="certificados/Certificado_de_Concluso_da_Trilha.pdf" target="_blank" class="link-certificado">Confira o Certificado</a>
+                    </p>
+        </div>
+    `;
+    menuTitle = "Educação";
+
+
             } else if (section === 'section3') {
                 sectionContent = `
                     <div id="section3">
@@ -199,24 +258,27 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
                     </div>
                 `;
-                menuTitle = "Projetos";
+                menuTitle = "Experiência Profissional";
             } else if (section === 'section4') {
                 sectionContent = `
                     <div id="section4">
                         <h2>Cara, você é curioso né</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+ <button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button>
+                        <button class="buttonlinked" onclick="window.open('https://www.linkedin.com/in/vitorivoalves/', '_blank')">LinkedIn</button>
+                        <button class="buttonwpp" onclick="window.open('tel:+5565999996298', '_blank')">Telefone</button>
                     </div>
                 `;
-                menuTitle = "Contato";
+                menuTitle = "Contatos";
             }
 
             content.innerHTML = sectionContent;
             content.scrollIntoView({ behavior: 'smooth' });
 
             document.getElementById('menuTitle1').textContent = (section === 'section1') ? "Home" : "Home";
-            document.getElementById('menuTitle2').textContent = (section === 'section2') ? "Sobre" : "Sobre";
-            document.getElementById('menuTitle3').textContent = (section === 'section3') ? "Projetos" : "Projetos";
-            document.getElementById('menuTitle4').textContent = (section === 'section4') ? "Contato" : "Contato";
+            document.getElementById('menuTitle2').textContent = (section === 'section2') ? "Educação" : "Educação";
+            document.getElementById('menuTitle3').textContent = (section === 'section3') ? "Experiência Profissional" : "Experiência Profissional";
+            document.getElementById('menuTitle4').textContent = (section === 'section4') ? "Contatos" : "Contatos";
 
             localStorage.setItem('currentSection', section);
             toggleMenu();
