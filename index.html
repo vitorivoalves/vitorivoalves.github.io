@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -270,7 +271,13 @@
         }
     </style>
 </head>
-<body>
+<body><div id="cookieConsent" style="position: fixed; bottom: 0; left: 0; right: 0; background-color: #222; color: #fff; padding: 15px; text-align: center; font-size: 0.9rem; z-index: 1000; display: flex; justify-content: center; align-items: center; gap: 10px;">
+    Este site utiliza cookies para melhorar sua experiência. 
+    <button id="acceptCookies" style="background-color: #4CAF50; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">
+        Aceitar
+    </button>
+</div>
+
     <div class="menu-container">
         <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
             <span class="material-icons">menu</span>
@@ -429,5 +436,21 @@
             }
         }
     </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cookieConsent = document.getElementById('cookieConsent');
+        const acceptBtn = document.getElementById('acceptCookies');
+
+        // Verifica se o usuário já aceitou os cookies
+        if(localStorage.getItem('cookiesAccepted') === 'true') {
+            cookieConsent.style.display = 'none';
+        }
+
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            cookieConsent.style.display = 'none';
+        });
+    });
+</script>
 </body>
 </html>
