@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RB1VHX9E10"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RB1VHX9E10');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vitor Ivo Santiago Alves</title>
@@ -79,116 +70,204 @@
             text-decoration: none;
             font-family: 'Pacifico', sans-serif;
         }
+
         .buttoninsta { background: linear-gradient(45deg, #f09433, #bc1888); font-family: 'Arial', sans-serif; font-weight: bold;}
         .buttonlinked { background: linear-gradient(45deg, #0077b5, #002b4d); font-family: 'Arial', sans-serif; font-weight: bold; }
         .buttonwpp { background: linear-gradient(45deg, #25d366, #139d34); font-family: 'Arial', sans-serif; font-weight: bold; }
 
         .menu-container {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 10;
-}
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
+        }
 
-.menu-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px;
-    height: 35px;
-    background-color: #444;
-    border-radius: 50%;
-    color: #fff;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
+        .menu-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background-color: #444;
+            border-radius: 50%;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
 
-.menu-items {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    background-color: #333;
-    padding: 10px;
-    border-radius: 8px;
-    margin-top: 10px;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
-}
+        .menu-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+        }
 
-.menu-items.show {
-    opacity: 1;
-    max-height: 200px;
-}
+        .menu-items.show {
+            opacity: 1;
+            max-height: 200px;
+        }
 
-.menu-item {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 75%;
-    padding: 8px;
-    color: #fff;
-    cursor: pointer;
-    text-decoration: none;
-}
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 75%;
+            padding: 8px;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+        }
 
-.menu-item span.material-icons {
-    margin-right: 8px;
-    font-size: 16px; 
-}
+        .menu-item span.material-icons {
+            margin-right: 8px;
+            font-size: 16px;
+        }
 
-.menu-item span {
-    font-size: 18px; 
-    font-weight: bold;
-}
-
+        .menu-item span {
+            font-size: 18px;
+            font-weight: bold;
+        }
 
         .timeline {
-        border-left: 2px solid #ffffff;
-        margin: 20px 0;
-        padding: 10px 20px;
-    }
+            border-left: 2px solid #ffffff;
+            margin: 20px 0;
+            padding: 10px 20px;
+        }
 
-    .timeline-item {
-        margin-bottom: 20px;
-        position: relative;
-        padding-left: 20px;
-    }
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
 
-    .timeline-item:before {
-        content: '';
-        position: absolute;
-        left: -9px;
-        top: 0;
-        width: 15px;
-        height: 15px;
-        background-color: #ffffff;
-        border-radius: 50%;
-        border: 2px solid #121212;
-    }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            border: 2px solid #121212;
+        }
 
-    .timeline-item h3 {
-        margin: 0 0 5px;
-        font-size: 1.2rem;
-        color: #ffffff;
-    }
+        .timeline-item h3 {
+            margin: 0 0 5px;
+            font-size: 1.2rem;
+            color: #ffffff;
+        }
 
-    .timeline-item p {
-        margin: 0;
-        font-size: 0.9rem;
-        color: #aaaaaa;
-    }
+        .timeline-item p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #aaaaaa;
+        }
 
-    .link-certificado {
-        color: #4CAF50;
-        text-decoration: none;
-        font-weight: bold;
-    }
+        .link-certificado {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-    .link-certificado:hover {
-        text-decoration: underline;
-    }
+        .link-certificado:hover {
+            text-decoration: underline;
+        }
+
+        .accordion {
+            width: 100%;
+            margin: 10px 0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid #444;
+        }
+
+        .accordion-header {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background-color: #555;
+        }
+
+        .accordion-content {
+            background-color: #222;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 15px;
+        }
+
+        .accordion-content ul {
+    list-style-type: none;  /* Remove os bullets */
+    padding-left: 0;        /* Remove o recuo padrão */
+    color: #aaa;
+}
+
+.accordion-content ul li {
+    border-bottom: 1px solid #555; /* Linha sutil */
+    padding: 8px 0;               /* Espaçamento vertical */
+}
+
+.accordion-content ul li:last-child {
+    border-bottom: none;          /* Remove a linha do último item */
+}
+
+
+        .accordion-content p {
+            margin: 10px 0;
+            color: #aaa;
+        }
+
+        @media (max-width: 600px) {
+            .accordion-header {
+                padding: 12px;
+                font-size: 1rem;
+            }
+
+            .accordion-content h4 {
+                font-size: 1rem;
+            }
+
+            .accordion-content h5 {
+                font-size: 0.9rem;
+            }
+
+            .accordion-content p {
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+
+            .buttoninsta, .buttonlinked, .buttonwpp {
+                width: 80%;
+                font-size: 1rem;
+            }
+
+            .menu-item span {
+                font-size: 16px;
+            }
+
+            .menu-icon {
+                width: 40px;
+                height: 40px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -237,52 +316,80 @@
                         <img src="perfil.jpg" alt="Imagem de Perfil" class="profile-image">
                         <h3>VITOR ALVES - ENG. DA COMPUTAÇÃO</h3>
                     	<p>Formando em Engenharia da Computação pela Universidade de Cuiabá (UNIC), com experiência em infraestrutura de TI, incluindo administração de redes Cisco (switches de acesso, pontos de acesso e controladoras wireless), soluções de segurança com firewall Next Generation e endpoints Sophos , virtualização com VMware (vCenter e ESXi), suporte técnico de help desk e participação em projetos de cabeamento estruturado. Atuação focada em ambientes corporativos, com ênfase em segurança, disponibilidade e eficiência operacional.</p>
-			</div>
+			        </div>
                 `;
                 menuTitle = "Home";
             } else if (section === 'section2') {
-    sectionContent = `
-        <div id="section2">
-            <h2>Educação</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                <h3>2018 - 2025</h3>    
-		<h3>Graduação em Engenharia da Computação</h3>
-                    <p>Iniciei minha graduação na Universidade de Cuiabá (UNIC).</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>2024 </h3>
-			<h3>Curso Gestão de Projetos</h3>
-                    <p>
-                        Concluí um curso de Gestão de Projetos. 
-                    </p>
-                    <p>
-                        <a href="certificados/Certificado_de_Concluso_da_Trilha.pdf" target="_blank" class="link-certificado">Confira o Certificado</a>
-                        </p>
-        </div>
-    `;
-    menuTitle = "Educação";
-
-
+                sectionContent = `
+                    <div id="section2">
+                        <h2>Educação</h2>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <div class="accordion-header" onclick="toggleAccordion(this)">Formação Acadêmica</div>
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Engenharia da Computação – Universidade de Cuiabá (UNIC) <br> <small>2018 – 2025 (Em andamento)</small></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header" onclick="toggleAccordion(this)">Certificações</div>
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Gestão de Projetos – 2024 <br> <a href="certificados/Certificado_de_Concluso_da_Trilha.pdf" target="_blank" class="link-certificado">Ver Certificado</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header" onclick="toggleAccordion(this)">Cursos Livres e Notáveis</div>
+                                <div class="accordion-content">
+                                    <ul>
+                                        <li>Curso de Redes Cisco – 2023 – 20h</li>
+                                        <li>Curso de Segurança da Informação – 2022 – 15h</li>
+                                        <li>Curso de Virtualização VMware – 2021 – 18h</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                menuTitle = "Educação";
             } else if (section === 'section3') {
                 sectionContent = `
                     <div id="section3">
-                        <h2>Ainda em Construção</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                        <h2>Experiência Profissional</h2>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <div class="accordion-header" onclick="toggleAccordion(this)">Empresa X</div>
+                                <div class="accordion-content">
+                                    <h4>Analista de Infraestrutura de TI</h4>
+                                    <h5>Período: Jan/2022 - Atual</h5>
+                                    <p>Atuação em ambientes de redes Cisco, incluindo switches de acesso, pontos de acesso e controladoras. Responsável pela administração de firewalls e endpoints Sophos Next Generation, além de suporte técnico help desk e participação em projetos de cabeamento estruturado. Também trabalho com virtualização VMware (vCenter e ESXi).</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header" onclick="toggleAccordion(this)">Empresa Y</div>
+                                <div class="accordion-content">
+                                    <h4>Assistente de Suporte Técnico</h4>
+                                    <h5>Período: Mar/2020 - Dez/2021</h5>
+                                    <p>Realização de suporte técnico nível 1 e 2, manutenção de infraestrutura física e acompanhamento de projetos de cabeamento estruturado. Atuação em rotinas de backup e suporte ao ambiente VMware básico.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 `;
                 menuTitle = "Experiência Profissional";
             } else if (section === 'section4') {
                 sectionContent = `
                     <div id="section4">
-                        <h2>Nada para ver aqui :(</h2>
-                        <p>Neste caso, fique com algumas músicas para relaxar</p>
-                        <p>
-                    	<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3OxGCk1MRx6Cp3Pak23oEG?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-			</p>
- <button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button>
+                        <h2>Contato</h2>
+                        <button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button>
                         <button class="buttonlinked" onclick="window.open('https://www.linkedin.com/in/vitorivoalves/', '_blank')">LinkedIn</button>
                         <button class="buttonwpp" onclick="window.open('tel:+5565999996298', '_blank')">Telefone</button>
+                        <p style="margin-top: 20px;">Músicas para relaxar enquanto navega:</p>
+                        <p>
+                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3OxGCk1MRx6Cp3Pak23oEG?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        </p>
                     </div>
                 `;
                 menuTitle = "Contatos";
@@ -290,12 +397,10 @@
 
             content.innerHTML = sectionContent;
             content.scrollIntoView({ behavior: 'smooth' });
-
-            document.getElementById('menuTitle1').textContent = (section === 'section1') ? "Home" : "Home";
-            document.getElementById('menuTitle2').textContent = (section === 'section2') ? "Educação" : "Educação";
-            document.getElementById('menuTitle3').textContent = (section === 'section3') ? "Experiência Profissional" : "Experiência Profissional";
-            document.getElementById('menuTitle4').textContent = (section === 'section4') ? "Contatos" : "Contatos";
-
+            document.getElementById('menuTitle1').textContent = "Home";
+            document.getElementById('menuTitle2').textContent = "Educação";
+            document.getElementById('menuTitle3').textContent = "Experiência Profissional";
+            document.getElementById('menuTitle4').textContent = "Contatos";
             localStorage.setItem('currentSection', section);
             toggleMenu();
         }
@@ -311,6 +416,18 @@
             const menuItems = document.getElementById('menuItems');
             menuItems.classList.remove('show');
         };
+
+        function toggleAccordion(element) {
+            const content = element.nextElementSibling;
+
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                const allContents = document.querySelectorAll('.accordion-content');
+                allContents.forEach(item => item.style.maxHeight = null);
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
     </script>
 </body>
 </html>
