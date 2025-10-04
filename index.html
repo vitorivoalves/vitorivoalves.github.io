@@ -13,27 +13,44 @@
             background-color: #121212;
             color: #ffffff;
             font-family: "Funnel Sans", sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .main-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: start;
             min-height: 100vh;
-            margin: 0;
-            scroll-behavior: smooth;
+            width: 100%;
         }
 
         .container {
             width: 90%;
-            max-width: 600px;
+            max-width: 800px;
             display: flex;
             flex-direction: column;
             gap: 1rem;
             align-items: center;
             text-align: center;
+            padding-top: 60px;
         }
 
         .section-content {
             width: 100%;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+        }
+
+        .section-content.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #section1 p {
+            text-align: justify;
         }
 
         .profile-image {
@@ -42,38 +59,24 @@
             border-radius: 50%;
             border: 3px solid #ffffff;
             object-fit: cover;
-            margin-top: 1rem;
-        }
-
-        .title {
-            margin: 0 0 5px;
-            font-size: 1.2rem;
-            color: #ffffff;
-        }
-
-        .description {
-            margin: 0;
-            font-size: 0.9rem;
-            color: #aaaaaa;
         }
 
         .buttoninsta, .buttonlinked, .buttonwpp {
-            padding: 0.5rem;
+            padding: 0.75rem;
             border: none;
             border-radius: 0.25rem;
             color: #fff;
             cursor: pointer;
-            font-size: 0.875rem;
+            font-size: 1rem;
             margin: 0.5rem 0;
-            width: 50%;
+            width: 60%;
             text-align: center;
             text-decoration: none;
-            font-family: 'Pacifico', sans-serif;
         }
 
-        .buttoninsta { background: linear-gradient(45deg, #f09433, #bc1888); font-family: 'Arial', sans-serif; font-weight: bold;}
+        .buttoninsta { background: linear-gradient(45deg, #f09433, #e1306c, #c13584, #833ab4, #5851db); font-family: 'Arial', sans-serif; font-weight: bold; }
         .buttonlinked { background: linear-gradient(45deg, #0077b5, #002b4d); font-family: 'Arial', sans-serif; font-weight: bold; }
-        .buttonwpp { background: linear-gradient(45deg, #25d366, #139d34); font-family: 'Arial', sans-serif; font-weight: bold; }
+        .buttonwpp { background: linear-gradient(45deg, #25d366, #128c7e); font-family: 'Arial', sans-serif; font-weight: bold; }
 
         .menu-container {
             position: fixed;
@@ -81,7 +84,7 @@
             left: 10px;
             z-index: 10;
         }
-
+        
         .menu-icon {
             display: flex;
             align-items: center;
@@ -107,35 +110,40 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease, opacity 0.3s ease;
+            width: 200px;
         }
 
         .menu-items.show {
             opacity: 1;
-            max-height: 200px;
+            max-height: 220px;
         }
 
         .menu-item {
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            width: 75%;
+            width: 100%;
+            box-sizing: border-box;
             padding: 8px;
             color: #fff;
             cursor: pointer;
             text-decoration: none;
+            border-radius: 4px;
+        }
+        .menu-item:hover {
+            background-color: #555;
         }
 
-        .menu-item span.material-icons {
+        .menu-item .material-icons {
             margin-right: 8px;
             font-size: 16px;
         }
-
-        .menu-item span {
+        .menu-item span:not(.material-icons) {
+            font-family: "Funnel Sans", sans-serif;
             font-size: 18px;
             font-weight: bold;
         }
         
-        /* Estilos do Acordeão */
         .accordion {
             width: 100%;
             margin: 10px 0;
@@ -145,6 +153,9 @@
 
         .accordion-item {
             border-bottom: 1px solid #444;
+        }
+        .accordion-item:last-of-type {
+            border-bottom: none;
         }
 
         .accordion-header {
@@ -165,48 +176,48 @@
             background-color: #222;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.5s ease-out;
+            text-align: left;
             padding: 0 15px;
-            text-align: left; /* Alinhamento do conteúdo do acordeão */
         }
         
+        /* == ESTILO DA LISTA RESTAURADO E CORRIGIDO == */
         .accordion-content ul {
-            list-style-position: inside;
-            padding-left: 0;
+            list-style-type: none; /* Remove os pontos */
+            padding: 10px 0;
+            margin: 0;
             color: #aaa;
+        }
+        
+        .accordion-content ul li {
+            border-bottom: 1px solid #444; /* Adiciona a linha divisória */
+            padding: 12px 0; /* Adiciona espaçamento vertical generoso */
         }
 
-        .accordion-content ul li {
-            padding: 8px 0;
+        .accordion-content ul li:last-child {
+            border-bottom: none; /* Remove a linha do último item */
         }
-        
-        .accordion-content p {
-            margin: 10px 0;
-            color: #aaa;
-        }
-        
+
+
         .link-certificado {
             color: #4CAF50;
             text-decoration: none;
             font-weight: bold;
         }
-
         .link-certificado:hover {
             text-decoration: underline;
         }
-
+        
         .location {
-            margin: 5px 0 10px 0;
             font-size: 0.85rem;
             color: #bbbbbb;
             font-style: italic;
-        }
-
-        /* Estilos para a nova seção de competências */
-        .skills-container {
-            padding: 15px 0;
+            margin-bottom: 10px;
         }
         
+        .skills-container {
+            padding: 15px;
+        }
         h4.skills-category {
             color: #ffffff;
             border-bottom: 1px solid #555;
@@ -215,14 +226,13 @@
             margin-bottom: 10px;
             text-align: left;
         }
-
         .skills-list {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
             justify-content: flex-start;
+            padding-bottom: 15px;
         }
-
         .skill-item {
             background-color: #333;
             color: #ddd;
@@ -230,18 +240,58 @@
             border-radius: 5px;
             font-size: 0.85rem;
         }
-
-        @media (max-width: 600px) {
-            .accordion-header {
-                padding: 12px;
-                font-size: 1rem;
-            }
-
-            .buttoninsta, .buttonlinked, .buttonwpp {
-                width: 80%;
-                font-size: 1rem;
-            }
+        
+        .carousel-container {
+            width: 100%;
+            position: relative;
+            padding: 15px 0;
         }
+
+        .carousel-viewport {
+            overflow: hidden;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 25px 45px;
+        }
+        
+        .carousel-slide h4 { 
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .carousel-btn.prev { left: 5px; }
+        .carousel-btn.next { right: 5px; }
+
+        .carousel-dots {
+            display: none;
+        }
+
     </style>
 </head>
 <body>
@@ -257,28 +307,18 @@
             <span class="material-icons">menu</span>
         </div>
         <div class="menu-items" id="menuItems">
-            <div class="menu-item" id="menuItem1" onclick="showSection('section1')" title="Home">
-                <span class="material-icons">home</span>
-                <span id="menuTitle1">Home</span>
-            </div>
-            <div class="menu-item" id="menuItem2" onclick="showSection('section2')" title="Educação">
-                <span class="material-icons">menu_book</span>
-                <span id="menuTitle2">Educação</span>
-            </div>
-            <div class="menu-item" id="menuItem3" onclick="showSection('section3')" title="Experiência Profissional">
-                <span class="material-icons">business_center</span>
-                <span id="menuTitle3">Experiência</span>
-            </div>
-            <div class="menu-item" id="menuItem4" onclick="showSection('section4')" title="Contatos">
-                <span class="material-icons">contacts</span>
-                <span id="menuTitle4">Contato</span>
-            </div>
+            <div class="menu-item" onclick="showSection('section1')" title="Home"><span class="material-icons">home</span><span>Home</span></div>
+            <div class="menu-item" onclick="showSection('section2')" title="Educação"><span class="material-icons">menu_book</span><span>Educação</span></div>
+            <div class="menu-item" onclick="showSection('section3')" title="Experiência"><span class="material-icons">business_center</span><span>Experiência</span></div>
+            <div class="menu-item" onclick="showSection('section4')" title="Contato"><span class="material-icons">contacts</span><span>Contato</span></div>
         </div>
     </div>
 
-    <div class="container">
-        <div id="content" class="section-content"></div>
-    </div>
+    <main class="main-wrapper">
+        <div class="container">
+            <div id="content" class="section-content"></div>
+        </div>
+    </main>
 
     <script>
         function toggleMenu() {
@@ -291,217 +331,107 @@
             let sectionContent = '';
             
             if (section === 'section1') {
-                sectionContent = `
-                    <div id="section1">
-                        <img src="perfil.jpg" alt="Imagem de Perfil" class="profile-image">
-                        <h3>VITOR ALVES - ENG. DA COMPUTAÇÃO</h3>
-                        <p>Estudante de Engenharia da Computação com mais de 5 anos de experiência no setor de TI. Sólidos conhecimentos em infraestrutura, incluindo administração de redes (VoIP, DNS, VPN), segurança da informação com firewalls (Sophos) e governança de TI (COBIT). Experiência prática em suporte técnico (Help Desk), gestão de servidores Windows, virtualização com VMware e administração de Active Directory. Busco aplicar minhas habilidades analíticas e de resolução de problemas para otimizar operações e garantir a segurança e a eficiência dos sistemas.</p>
-                    </div>
-                `;
+                sectionContent = `<div id="section1"><img src="perfil.jpg" alt="Imagem de Perfil" class="profile-image"><h3>VITOR ALVES - ENG. DA COMPUTAÇÃO</h3><p>Estudante de Engenharia da Computação com mais de 5 anos de experiência no setor de TI. Sólidos conhecimentos em infraestrutura, incluindo administração de redes (VoIP, DNS, VPN), segurança da informação com firewalls (Sophos) e governança de TI (COBIT). Experiência prática em suporte técnico (Help Desk), gestão de servidores Windows, virtualização com VMware e administração de Active Directory. Busco aplicar minhas habilidades analíticas e de resolução de problemas para otimizar operações e garantir a segurança e a eficiência dos sistemas.</p></div>`;
             } else if (section === 'section2') {
-                sectionContent = `
-                    <div id="section2">
-                        <h2>Educação e Competências</h2>
-                        <div class="accordion">
-                            <div class="accordion-item">
-                                <div class="accordion-header" onclick="toggleAccordion(this)">Formação Acadêmica</div>
-                                <div class="accordion-content">
-                                    <ul>
-                                        <li>Engenharia da Computação – Universidade de Cuiabá (UNIC) <br> <small>Março de 2018 – Dezembro de 2025 (Em andamento)</small></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <div class="accordion-header" onclick="toggleAccordion(this)">Certificados</div>
-                                <div class="accordion-content">
-                                     <ul>
-                                        <li>Gestão de Projetos – 2024 <br> <a href="https://drive.google.com/drive/folders/1vidg6QPu4Tyt52F_auglcNksgXDq9a_G?usp=sharing" target="_blank" class="link-certificado">Ver Certificados</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                             <div class="accordion-item">
-                                <div class="accordion-header" onclick="toggleAccordion(this)">Principais Competências</div>
-                                <div class="accordion-content">
-                                    <div class="skills-container">
-                                        <h4 class="skills-category">Redes e Segurança</h4>
-                                        <div class="skills-list">
-                                            <span class="skill-item">Administração de Redes</span>
-                                            <span class="skill-item">Segurança da Informação</span>
-                                            <span class="skill-item">Firewalls (Sophos)</span>
-                                            <span class="skill-item">VPN</span>
-                                            <span class="skill-item">Voz sobre IP (VoIP)</span>
-                                            <span class="skill-item">DNS</span>
-                                            <span class="skill-item">Cabeamento Estruturado</span>
-                                            <span class="skill-item">Segurança Cibernética</span>
-                                        </div>
-                                        
-                                        <h4 class="skills-category">Sistemas Operacionais e Servidores</h4>
-                                        <div class="skills-list">
-                                            <span class="skill-item">Microsoft Windows</span>
-                                            <span class="skill-item">Windows Server</span>
-                                            <span class="skill-item">Linux</span>
-                                            <span class="skill-item">Active Directory</span>
-                                            <span class="skill-item">Administração de Servidores</span>
-                                            <span class="skill-item">Virtualização (VMware)</span>
-                                        </div>
-
-                                        <h4 class="skills-category">Software e Ferramentas</h4>
-                                        <div class="skills-list">
-                                            <span class="skill-item">Microsoft Office 365</span>
-                                            <span class="skill-item">Microsoft Excel</span>
-                                            <span class="skill-item">TOTVS</span>
-                                            <span class="skill-item">TeamViewer</span>
-                                            <span class="skill-item">Software</span>
-                                            <span class="skill-item">Instalação de Software</span>
-                                        </div>
-                                        
-                                        <h4 class="skills-category">Governança e Processos de TI</h4>
-                                        <div class="skills-list">
-                                            <span class="skill-item">Governança de TI (COBIT)</span>
-                                            <span class="skill-item">Gestão de Incidentes</span>
-                                            <span class="skill-item">Gestão de Infraestrutura de TI</span>
-                                            <span class="skill-item">Operações de TI</span>
-                                            <span class="skill-item">Política de Segurança</span>
-                                            <span class="skill-item">Documentação</span>
-                                            <span class="skill-item">Políticas e Procedimentos</span>
-                                        </div>
-
-                                        <h4 class="skills-category">Suporte e Hardware</h4>
-                                        <div class="skills-list">
-                                            <span class="skill-item">Suporte Técnico</span>
-                                            <span class="skill-item">Suporte para Help Desk</span>
-                                            <span class="skill-item">Central de Serviços</span>
-                                            <span class="skill-item">Manutenção de Computadores</span>
-                                            <span class="skill-item">Hardware de Computador</span>
-                                            <span class="skill-item">Suporte de Hardware de TI</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
+                sectionContent = `<div id="section2"><h2>Educação e Competências</h2><div class="accordion"><div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Formação Acadêmica</div><div class="accordion-content"><ul><li>Engenharia da Computação – Universidade de Cuiabá (UNIC) <br> <small>Março de 2018 – Dezembro de 2025 (Em andamento)</small></li></ul></div></div><div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Certificados</div><div class="accordion-content"><ul><li>Gestão de Projetos – 2024 <br> <a href="https://drive.google.com/drive/folders/1vidg6QPu4Tyt52F_auglcNksgXDq9a_G?usp=sharing" target="_blank" class="link-certificado">Ver Certificados</a></li></ul></div></div><div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Principais Competências</div><div class="accordion-content"><div class="skills-container"><h4 class="skills-category">Redes e Segurança</h4><div class="skills-list"><span class="skill-item">Administração de Redes</span><span class="skill-item">Segurança da Informação</span><span class="skill-item">Firewalls (Sophos)</span><span class="skill-item">VPN</span><span class="skill-item">Voz sobre IP (VoIP)</span><span class="skill-item">DNS</span><span class="skill-item">Cabeamento Estruturado</span><span class="skill-item">Segurança Cibernética</span></div><h4 class="skills-category">Sistemas Operacionais e Servidores</h4><div class="skills-list"><span class="skill-item">Microsoft Windows</span><span class="skill-item">Windows Server</span><span class="skill-item">Linux</span><span class="skill-item">Active Directory</span><span class="skill-item">Administração de Servidores</span><span class="skill-item">Virtualização (VMware)</span></div><h4 class="skills-category">Software e Ferramentas</h4><div class="skills-list"><span class="skill-item">Microsoft Office 365</span><span class="skill-item">Microsoft Excel</span><span class="skill-item">TOTVS</span><span class="skill-item">TeamViewer</span><span class="skill-item">Software</span><span class="skill-item">Instalação de Software</span></div><h4 class="skills-category">Governança e Processos de TI</h4><div class="skills-list"><span class="skill-item">Governança de TI (COBIT)</span><span class="skill-item">Gestão de Incidentes</span><span class="skill-item">Gestão de Infraestrutura de TI</span><span class="skill-item">Operações de TI</span><span class="skill-item">Política de Segurança</span><span class="skill-item">Documentação</span><span class="skill-item">Políticas e Procedimentos</span></div><h4 class="skills-category">Suporte e Hardware</h4><div class="skills-list"><span class="skill-item">Suporte Técnico</span><span class="skill-item">Suporte para Help Desk</span><span class="skill-item">Central de Serviços</span><span class="skill-item">Manutenção de Computadores</span><span class="skill-item">Hardware de Computador</span><span class="skill-item">Suporte de Hardware de TI</span></div></div></div></div></div></div>`;
             } else if (section === 'section3') {
-                sectionContent = `
-                    <div id="section3">
-                        <h2>Experiência Profissional</h2>
-                        <div class="accordion">
-                            <div class="accordion-item">
-                                <div class="accordion-header" onclick="toggleAccordion(this)">Senar-MT</div>
-                                <div class="accordion-content">
-                                    <h4>Assistente de TI</h4>
-                                    <h5>Período: setembro de 2021 - Presente</h5>
-                                    <p class="location">Cuiabá, Mato Grosso, Brasil</p>
-                                    <ul>
-                                        <li>Manutenção de equipamentos de TI, como ativos de redes, telefonia IP e circuito fechado de TV.</li>
-                                        <li>Administração de sistemas de automação de backups dos dados institucionais.</li>
-                                        <li>Colaboração com a segurança da informação da instituição.</li>
-                                        <li>Prestação de suporte operacional (Help Desk) aos usuários.</li>
-                                        <li>Gestão de acessos à rede e aplicativos da Instituição.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <div class="accordion-header" onclick="toggleAccordion(this)">Senar-MT (Estágio)</div>
-                                <div class="accordion-content">
-                                    <h4>Estagiário de Suporte de Informática</h4>
-                                    <h5>Período: outubro de 2020 - setembro de 2021</h5>
-                                    <p class="location">Cuiabá, Mato Grosso, Brasil</p>
-                                     <ul>
-                                        <li>Auxílio aos usuários na utilização do pacote Office e em problemas de navegação.</li>
-                                        <li>Montagem de estações de trabalho e apoio no processo de cabeamento.</li>
-                                        <li>Realização de instalação de programas e solução de problemas de impressão.</li>
-                                        <li>Primeira avaliação e triagem dos chamados abertos para a área de TI.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <div class="accordion-header" onclick="toggleAccordion(this)">Tecnomapas</div>
-                                <div class="accordion-content">
-                                    <h4>Estagiário de Apoio Técnico</h4>
-                                    <h5>Período: março de 2020 - julho de 2020</h5>
-                                    <p class="location">Cuiabá, Mato Grosso, Brasil</p>
-                                    <ul>
-                                        <li>Acompanhamento de testes de software e programas.</li>
-                                        <li>Suporte supervisionado aos usuários e à área de TI.</li>
-                                        <li>Apoio em operações de sistemas e testes de software.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <div class="accordion-header" onclick="toggleAccordion(this)">Carvalima Transportes</div>
-                                <div class="accordion-content">
-                                    <h4>Aprendiz de Auxiliar Administrativo</h4>
-                                    <h5>Período: janeiro de 2017 - dezembro de 2017</h5>
-                                    <p class="location">Cuiabá, Mato Grosso, Brasil</p>
-                                    <ul>
-                                        <li>Atualização e organização de dados em planilhas.</li>
-                                        <li>Gerência e observação de cotações e negociações de cargas.</li>
-                                        <li>Intermediação com empresas parceiras e resolução de problemas com mercadorias.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
+                sectionContent = `<div id="section3"><h2>Experiência Profissional</h2><div class="accordion"><div class="accordion-item"><div class="accordion-header" id="senar-accordion-header" onclick="toggleAccordion(this)">Senar-MT</div><div class="accordion-content"><div class="carousel-container"><div class="carousel-viewport"><div class="carousel-wrapper"><div class="carousel-slide"><h4>Assistente de TI</h4><h5>Período: setembro de 2021 - Presente</h5><p class="location">Cuiabá, Mato Grosso, Brasil</p><ul><li>Manutenção de equipamentos de TI, como ativos de redes, telefonia IP e circuito fechado de TV.</li><li>Administração de sistemas de automação de backups.</li><li>Colaboração com a segurança da informação da instituição.</li><li>Prestação de suporte operacional (Help Desk) aos usuários.</li></ul></div><div class="carousel-slide"><h4>Estagiário de Suporte</h4><h5>Período: outubro de 2020 - setembro de 2021</h5><p class="location">Cuiabá, Mato Grosso, Brasil</p><ul><li>Auxílio aos usuários na utilização do pacote Office e internet.</li><li>Montagem de estações de trabalho e apoio em cabeamento.</li><li>Instalação de programas e solução de problemas de impressão.</li><li>Triagem dos chamados abertos para a área de TI.</li></ul></div></div></div><button class="carousel-btn prev"><</button><button class="carousel-btn next">></button><div class="carousel-dots"></div></div></div></div><div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Tecnomapas</div><div class="accordion-content"><h4>Estagiário de Apoio Técnico</h4><h5>Período: março de 2020 - julho de 2020</h5><p class="location">Cuiabá, Mato Grosso, Brasil</p><ul><li>Acompanhamento de testes de software e programas.</li><li>Suporte supervisionado aos usuários e à área de TI.</li></ul></div></div><div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Carvalima Transportes</div><div class="accordion-content"><h4>Aprendiz de Auxiliar Administrativo</h4><h5>Período: janeiro de 2017 - dezembro de 2017</h5><p class="location">Cuiabá, Mato Grosso, Brasil</p><ul><li>Atualização e organização de dados em planilhas.</li><li>Gerência e observação de cotações e negociações de cargas.</li></ul></div></div></div></div>`;
             } else if (section === 'section4') {
-                sectionContent = `
-                    <div id="section4">
-                        <h2>Contato</h2>
-                        <button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button>
-                        <button class="buttonlinked" onclick="window.open('https://www.linkedin.com/in/vitorivoalves/', '_blank')">LinkedIn</button>
-                        <button class="buttonwpp" onclick="window.open('tel:+5565999996298', '_blank')">Telefone</button>
-                    </div>
-                `;
+                sectionContent = `<div id="section4"><h2>Contato</h2><button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button><button class="buttonlinked" onclick="window.open('https://www.linkedin.com/in/vitorivoalves/', '_blank')">LinkedIn</button><button class="buttonwpp" onclick="window.open('tel:+5565999996298', '_blank')">Telefone</button><p style="margin-top: 20px;">Músicas para relaxar enquanto navega:</p><p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3OxGCk1MRx6Cp3Pak23oEG?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p></div>`;
+            }
+            
+            const isAlreadyVisible = content.classList.contains('is-visible');
+
+            if (isAlreadyVisible) {
+                content.classList.remove('is-visible');
             }
 
-            content.innerHTML = sectionContent;
-            content.scrollIntoView({ behavior: 'smooth' });
-             // A linha que abria o menu foi removida daqui para corrigir o bug.
+            setTimeout(() => {
+                content.innerHTML = sectionContent;
+                content.classList.add('is-visible');
+            }, isAlreadyVisible ? 400 : 50);
+        
+            const menuItems = document.getElementById('menuItems');
+            if (menuItems && menuItems.classList.contains('show')) {
+                toggleMenu();
+            }
+        }
+        
+        function initializeCarousel() {
+            const wrapper = document.querySelector('.carousel-wrapper');
+            if (!wrapper || wrapper.classList.contains('initialized')) return; 
+            wrapper.classList.add('initialized'); 
+            const slides = Array.from(wrapper.children);
+            const nextBtn = document.querySelector('.carousel-btn.next');
+            const prevBtn = document.querySelector('.carousel-btn.prev');
+            let currentSlide = 0;
+            if (slides.length <= 1) {
+                nextBtn.style.display = 'none';
+                prevBtn.style.display = 'none';
+            }
+            const showSlide = (slideIndex) => {
+                wrapper.style.transform = `translateX(-${slideIndex * 100}%)`;
+                currentSlide = slideIndex;
+            };
+            nextBtn.addEventListener('click', () => {
+                const nextIndex = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+                showSlide(nextIndex);
+            });
+            prevBtn.addEventListener('click', () => {
+                const prevIndex = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+                showSlide(prevIndex);
+            });
+            showSlide(0);
+        }
+        
+        function toggleAccordion(element) {
+            const content = element.nextElementSibling;
+            const isAlreadyOpen = content.style.maxHeight;
+            document.querySelectorAll('.accordion-content').forEach(item => {
+                if (item !== content) {
+                    item.style.maxHeight = null;
+                }
+            });
+            if (isAlreadyOpen) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                if (element.id === 'senar-accordion-header') {
+                    setTimeout(() => {
+                        initializeCarousel();
+                    }, 300);
+                }
+            }
         }
         
         window.onload = function() {
+            const savedSection = localStorage.getItem('currentSection') || 'section1';
+            showSection(savedSection);
             const menuItems = document.getElementById('menuItems');
-            const savedSection = localStorage.getItem('currentSection');
-            
-            if (savedSection) {
-                showSection(savedSection);
-            } else {
-                showSection('section1');
-            }
-            
-            // Garante que o menu esteja fechado ao carregar a página
             menuItems.classList.remove('show');
         };
-
-        function toggleAccordion(element) {
-            const content = element.nextElementSibling;
-            const allContents = document.querySelectorAll('.accordion-content');
-            
-            const isAlreadyOpen = content.style.maxHeight;
-
-            // Fecha todos os acordeões
-            allContents.forEach(item => {
-                item.style.maxHeight = null;
-            });
-
-            // Se não estava aberto, abre o clicado
-            if (!isAlreadyOpen) {
-                content.style.maxHeight = content.scrollHeight + "px";
-            }
-        }
 
         document.addEventListener('DOMContentLoaded', () => {
             const cookieConsent = document.getElementById('cookieConsent');
             const acceptBtn = document.getElementById('acceptCookies');
-
             if(localStorage.getItem('cookiesAccepted') === 'true') {
                 cookieConsent.style.display = 'none';
             }
-
             acceptBtn.addEventListener('click', () => {
                 localStorage.setItem('cookiesAccepted', 'true');
                 cookieConsent.style.display = 'none';
+            });
+            document.addEventListener('click', function(event) {
+                const menuItems = document.getElementById('menuItems');
+                const menuIcon = document.getElementById('menuIcon');
+                if (menuItems && menuIcon) {
+                    const isMenuOpen = menuItems.classList.contains('show');
+                    const isClickInsideMenu = menuItems.contains(event.target);
+                    const isClickOnIcon = menuIcon.contains(event.target);
+                    if (isMenuOpen && !isClickInsideMenu && !isClickOnIcon) {
+                        toggleMenu();
+                    }
+                }
             });
         });
     </script>
