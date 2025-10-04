@@ -17,7 +17,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: start;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
             scroll-behavior: smooth;
         }
@@ -134,53 +134,8 @@
             font-size: 18px;
             font-weight: bold;
         }
-
-        .timeline {
-            border-left: 2px solid #ffffff;
-            margin: 20px 0;
-            padding: 10px 20px;
-        }
-
-        .timeline-item {
-            margin-bottom: 20px;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .timeline-item:before {
-            content: '';
-            position: absolute;
-            left: -9px;
-            top: 0;
-            width: 15px;
-            height: 15px;
-            background-color: #ffffff;
-            border-radius: 50%;
-            border: 2px solid #121212;
-        }
-
-        .timeline-item h3 {
-            margin: 0 0 5px;
-            font-size: 1.2rem;
-            color: #ffffff;
-        }
-
-        .timeline-item p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: #aaaaaa;
-        }
-
-        .link-certificado {
-            color: #4CAF50;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .link-certificado:hover {
-            text-decoration: underline;
-        }
-
+        
+        /* Estilos do Acordeão */
         .accordion {
             width: 100%;
             margin: 10px 0;
@@ -212,27 +167,68 @@
             overflow: hidden;
             transition: max-height 0.3s ease;
             padding: 0 15px;
+            text-align: left; /* Alinhamento do conteúdo do acordeão */
+        }
+        
+        .accordion-content ul {
+            list-style-position: inside;
+            padding-left: 0;
+            color: #aaa;
         }
 
-        .accordion-content ul {
-    list-style-type: none;  /* Remove os bullets */
-    padding-left: 0;        /* Remove o recuo padrão */
-    color: #aaa;
-}
-
-.accordion-content ul li {
-    border-bottom: 1px solid #555; /* Linha sutil */
-    padding: 8px 0;               /* Espaçamento vertical */
-}
-
-.accordion-content ul li:last-child {
-    border-bottom: none;          /* Remove a linha do último item */
-}
-
-
+        .accordion-content ul li {
+            padding: 8px 0;
+        }
+        
         .accordion-content p {
             margin: 10px 0;
             color: #aaa;
+        }
+        
+        .link-certificado {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .link-certificado:hover {
+            text-decoration: underline;
+        }
+
+        .location {
+            margin: 5px 0 10px 0;
+            font-size: 0.85rem;
+            color: #bbbbbb;
+            font-style: italic;
+        }
+
+        /* Estilos para a nova seção de competências */
+        .skills-container {
+            padding: 15px 0;
+        }
+        
+        h4.skills-category {
+            color: #ffffff;
+            border-bottom: 1px solid #555;
+            padding-bottom: 5px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: flex-start;
+        }
+
+        .skill-item {
+            background-color: #333;
+            color: #ddd;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.85rem;
         }
 
         @media (max-width: 600px) {
@@ -241,47 +237,20 @@
                 font-size: 1rem;
             }
 
-            .accordion-content h4 {
-                font-size: 1rem;
-            }
-
-            .accordion-content h5 {
-                font-size: 0.9rem;
-            }
-
-            .accordion-content p {
-                font-size: 0.9rem;
-                line-height: 1.4;
-            }
-
             .buttoninsta, .buttonlinked, .buttonwpp {
                 width: 80%;
                 font-size: 1rem;
             }
-
-            .menu-item span {
-                font-size: 16px;
-            }
-
-            .menu-icon {
-                width: 40px;
-                height: 40px;
-            }
         }
-.location {
-    margin: 5px 0 10px 0;
-    font-size: 0.85rem;
-    color: #bbbbbb;
-    font-style: italic;
-}
     </style>
 </head>
-<body><div id="cookieConsent" style="position: fixed; bottom: 0; left: 0; right: 0; background-color: #222; color: #fff; padding: 15px; text-align: center; font-size: 0.9rem; z-index: 1000; display: flex; justify-content: center; align-items: center; gap: 10px;">
-    Este site utiliza cookies para melhorar sua experiência. 
-    <button id="acceptCookies" style="background-color: #4CAF50; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">
-        Aceitar
-    </button>
-</div>
+<body>
+    <div id="cookieConsent" style="position: fixed; bottom: 0; left: 0; right: 0; background-color: #222; color: #fff; padding: 15px; text-align: center; font-size: 0.9rem; z-index: 1000; display: flex; justify-content: center; align-items: center; gap: 10px;">
+        Este site utiliza cookies para melhorar sua experiência.
+        <button id="acceptCookies" style="background-color: #4CAF50; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">
+            Aceitar
+        </button>
+    </div>
 
     <div class="menu-container">
         <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
@@ -294,7 +263,7 @@
             </div>
             <div class="menu-item" id="menuItem2" onclick="showSection('section2')" title="Educação">
                 <span class="material-icons">menu_book</span>
-                <span id="menuTitle2">Estudos</span>
+                <span id="menuTitle2">Educação</span>
             </div>
             <div class="menu-item" id="menuItem3" onclick="showSection('section3')" title="Experiência Profissional">
                 <span class="material-icons">business_center</span>
@@ -320,97 +289,161 @@
         function showSection(section) {
             const content = document.getElementById('content');
             let sectionContent = '';
-            let menuTitle = '';
-
+            
             if (section === 'section1') {
                 sectionContent = `
                     <div id="section1">
                         <img src="perfil.jpg" alt="Imagem de Perfil" class="profile-image">
                         <h3>VITOR ALVES - ENG. DA COMPUTAÇÃO</h3>
-                    	<p>Formando em Engenharia da Computação pela Universidade de Cuiabá (UNIC), com experiência em infraestrutura de TI, incluindo administração de redes Cisco (switches de acesso, pontos de acesso e controladoras wireless), soluções de segurança com firewall Next Generation e endpoints Sophos , virtualização com VMware (vCenter e ESXi), suporte técnico de help desk e participação em projetos de cabeamento estruturado. Atuação focada em ambientes corporativos, com ênfase em segurança, disponibilidade e eficiência operacional.</p>
-			        </div>
+                        <p>Estudante de Engenharia da Computação com mais de 5 anos de experiência no setor de TI. Sólidos conhecimentos em infraestrutura, incluindo administração de redes (VoIP, DNS, VPN), segurança da informação com firewalls (Sophos) e governança de TI (COBIT). Experiência prática em suporte técnico (Help Desk), gestão de servidores Windows, virtualização com VMware e administração de Active Directory. Busco aplicar minhas habilidades analíticas e de resolução de problemas para otimizar operações e garantir a segurança e a eficiência dos sistemas.</p>
+                    </div>
                 `;
-                menuTitle = "Home";
             } else if (section === 'section2') {
                 sectionContent = `
                     <div id="section2">
-                        <h2>Educação</h2>
+                        <h2>Educação e Competências</h2>
                         <div class="accordion">
                             <div class="accordion-item">
                                 <div class="accordion-header" onclick="toggleAccordion(this)">Formação Acadêmica</div>
                                 <div class="accordion-content">
                                     <ul>
-                                        <li>Engenharia da Computação – Universidade de Cuiabá (UNIC) <br> <small>2018 – 2025 (Em andamento)</small></li>
+                                        <li>Engenharia da Computação – Universidade de Cuiabá (UNIC) <br> <small>Março de 2018 – Dezembro de 2025 (Em andamento)</small></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <div class="accordion-header" onclick="toggleAccordion(this)">Certificados</div>
                                 <div class="accordion-content">
+                                     <ul>
+                                        <li>Gestão de Projetos – 2024 <br> <a href="https://drive.google.com/drive/folders/1vidg6QPu4Tyt52F_auglcNksgXDq9a_G?usp=sharing" target="_blank" class="link-certificado">Ver Certificados</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                             <div class="accordion-item">
+                                <div class="accordion-header" onclick="toggleAccordion(this)">Principais Competências</div>
+                                <div class="accordion-content">
+                                    <div class="skills-container">
+                                        <h4 class="skills-category">Redes e Segurança</h4>
+                                        <div class="skills-list">
+                                            <span class="skill-item">Administração de Redes</span>
+                                            <span class="skill-item">Segurança da Informação</span>
+                                            <span class="skill-item">Firewalls (Sophos)</span>
+                                            <span class="skill-item">VPN</span>
+                                            <span class="skill-item">Voz sobre IP (VoIP)</span>
+                                            <span class="skill-item">DNS</span>
+                                            <span class="skill-item">Cabeamento Estruturado</span>
+                                            <span class="skill-item">Segurança Cibernética</span>
+                                        </div>
+                                        
+                                        <h4 class="skills-category">Sistemas Operacionais e Servidores</h4>
+                                        <div class="skills-list">
+                                            <span class="skill-item">Microsoft Windows</span>
+                                            <span class="skill-item">Windows Server</span>
+                                            <span class="skill-item">Linux</span>
+                                            <span class="skill-item">Active Directory</span>
+                                            <span class="skill-item">Administração de Servidores</span>
+                                            <span class="skill-item">Virtualização (VMware)</span>
+                                        </div>
+
+                                        <h4 class="skills-category">Software e Ferramentas</h4>
+                                        <div class="skills-list">
+                                            <span class="skill-item">Microsoft Office 365</span>
+                                            <span class="skill-item">Microsoft Excel</span>
+                                            <span class="skill-item">TOTVS</span>
+                                            <span class="skill-item">TeamViewer</span>
+                                            <span class="skill-item">Software</span>
+                                            <span class="skill-item">Instalação de Software</span>
+                                        </div>
+                                        
+                                        <h4 class="skills-category">Governança e Processos de TI</h4>
+                                        <div class="skills-list">
+                                            <span class="skill-item">Governança de TI (COBIT)</span>
+                                            <span class="skill-item">Gestão de Incidentes</span>
+                                            <span class="skill-item">Gestão de Infraestrutura de TI</span>
+                                            <span class="skill-item">Operações de TI</span>
+                                            <span class="skill-item">Política de Segurança</span>
+                                            <span class="skill-item">Documentação</span>
+                                            <span class="skill-item">Políticas e Procedimentos</span>
+                                        </div>
+
+                                        <h4 class="skills-category">Suporte e Hardware</h4>
+                                        <div class="skills-list">
+                                            <span class="skill-item">Suporte Técnico</span>
+                                            <span class="skill-item">Suporte para Help Desk</span>
+                                            <span class="skill-item">Central de Serviços</span>
+                                            <span class="skill-item">Manutenção de Computadores</span>
+                                            <span class="skill-item">Hardware de Computador</span>
+                                            <span class="skill-item">Suporte de Hardware de TI</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (section === 'section3') {
+                sectionContent = `
+                    <div id="section3">
+                        <h2>Experiência Profissional</h2>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <div class="accordion-header" onclick="toggleAccordion(this)">Senar-MT</div>
+                                <div class="accordion-content">
+                                    <h4>Assistente de TI</h4>
+                                    <h5>Período: setembro de 2021 - Presente</h5>
+                                    <p class="location">Cuiabá, Mato Grosso, Brasil</p>
                                     <ul>
-                                        <li>Gestão de Projetos – 2024 <br> <a href="https://drive.google.com/drive/folders/1vidg6QPu4Tyt52F_auglcNksgXDq9a_G?usp=sharing" target="_blank" class="link-certificado">Ver Certificado</a></li>
+                                        <li>Manutenção de equipamentos de TI, como ativos de redes, telefonia IP e circuito fechado de TV.</li>
+                                        <li>Administração de sistemas de automação de backups dos dados institucionais.</li>
+                                        <li>Colaboração com a segurança da informação da instituição.</li>
+                                        <li>Prestação de suporte operacional (Help Desk) aos usuários.</li>
+                                        <li>Gestão de acessos à rede e aplicativos da Instituição.</li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <div class="accordion-header" onclick="toggleAccordion(this)">Cursos Livres e Notáveis</div>
+                                <div class="accordion-header" onclick="toggleAccordion(this)">Senar-MT (Estágio)</div>
                                 <div class="accordion-content">
+                                    <h4>Estagiário de Suporte de Informática</h4>
+                                    <h5>Período: outubro de 2020 - setembro de 2021</h5>
+                                    <p class="location">Cuiabá, Mato Grosso, Brasil</p>
+                                     <ul>
+                                        <li>Auxílio aos usuários na utilização do pacote Office e em problemas de navegação.</li>
+                                        <li>Montagem de estações de trabalho e apoio no processo de cabeamento.</li>
+                                        <li>Realização de instalação de programas e solução de problemas de impressão.</li>
+                                        <li>Primeira avaliação e triagem dos chamados abertos para a área de TI.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header" onclick="toggleAccordion(this)">Tecnomapas</div>
+                                <div class="accordion-content">
+                                    <h4>Estagiário de Apoio Técnico</h4>
+                                    <h5>Período: março de 2020 - julho de 2020</h5>
+                                    <p class="location">Cuiabá, Mato Grosso, Brasil</p>
                                     <ul>
-                                        <li>Curso de Redes Cisco – 2023 – 20h</li>
-                                        <li>Curso de Segurança da Informação – 2022 – 15h</li>
-                                        <li>Curso de Virtualização VMware – 2021 – 18h</li>
+                                        <li>Acompanhamento de testes de software e programas.</li>
+                                        <li>Suporte supervisionado aos usuários e à área de TI.</li>
+                                        <li>Apoio em operações de sistemas e testes de software.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header" onclick="toggleAccordion(this)">Carvalima Transportes</div>
+                                <div class="accordion-content">
+                                    <h4>Aprendiz de Auxiliar Administrativo</h4>
+                                    <h5>Período: janeiro de 2017 - dezembro de 2017</h5>
+                                    <p class="location">Cuiabá, Mato Grosso, Brasil</p>
+                                    <ul>
+                                        <li>Atualização e organização de dados em planilhas.</li>
+                                        <li>Gerência e observação de cotações e negociações de cargas.</li>
+                                        <li>Intermediação com empresas parceiras e resolução de problemas com mercadorias.</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 `;
-                menuTitle = "Educação";
-            } else if (section === 'section3') {
-                sectionContent = `
-    <div id="section3">
-        <h2>Experiência Profissional</h2>
-        <div class="accordion">
-            <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAccordion(this)">Senar-MT</div>
-                <div class="accordion-content">
-                    <h4>Assistente de TI</h4>
-                    <h5>Período: setembro de 2021 - Presente</h5>
-                    <p class="location">Cuiabá, Mato Grosso, Brasil</p>
-                    <p>Manutenção de equipamentos de TI (redes, telefonia IP, CFTV), administração de sistemas de backup, implementação de segurança da informação, suporte técnico aos usuários e gestão de acessos à rede e aplicativos institucionais.</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAccordion(this)">Senar-MT (Estágio)</div>
-                <div class="accordion-content">
-                    <h4>Estagiário de Suporte de Informática</h4>
-                    <h5>Período: outubro de 2020 - setembro de 2021</h5>
-                    <p class="location">Cuiabá, Mato Grosso, Brasil</p>
-                    <p>Suporte aos usuários (pacote Office, internet), montagem de estações de trabalho, apoio em projetos de cabeamento, instalação de software, resolução de problemas de impressão e triagem de chamados de TI.</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAccordion(this)">Tecnomapas</div>
-                <div class="accordion-content">
-                    <h4>Estagiário de Apoio Técnico</h4>
-                    <h5>Período: março de 2020 - julho de 2020</h5>
-                    <p class="location">Cuiabá, Mato Grosso, Brasil</p>
-                    <p>Acompanhamento de testes de software, suporte técnico supervisionado aos usuários e operação de sistemas.</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAccordion(this)">Carvalima Transportes</div>
-                <div class="accordion-content">
-                    <h4>Aprendiz de Auxiliar Administrativo</h4>
-                    <h5>Período: janeiro de 2017 - dezembro de 2017</h5>
-                    <p class="location">Cuiabá, Mato Grosso, Brasil</p>
-                    <p>Organização de planilhas, gestão de cotações, intermediação com empresas parceiras, resolução de problemas logísticos e apoio em negociações de cargas.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-`;
-                menuTitle = "Experiência Profissional";
             } else if (section === 'section4') {
                 sectionContent = `
                     <div id="section4">
@@ -418,64 +451,59 @@
                         <button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button>
                         <button class="buttonlinked" onclick="window.open('https://www.linkedin.com/in/vitorivoalves/', '_blank')">LinkedIn</button>
                         <button class="buttonwpp" onclick="window.open('tel:+5565999996298', '_blank')">Telefone</button>
-                        <p style="margin-top: 20px;">Músicas para relaxar enquanto navega:</p>
-                        <p>
-                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3OxGCk1MRx6Cp3Pak23oEG?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                        </p>
                     </div>
                 `;
-                menuTitle = "Contatos";
             }
 
             content.innerHTML = sectionContent;
             content.scrollIntoView({ behavior: 'smooth' });
-            document.getElementById('menuTitle1').textContent = "Home";
-            document.getElementById('menuTitle2').textContent = "Educação";
-            document.getElementById('menuTitle3').textContent = "Experiência Profissional";
-            document.getElementById('menuTitle4').textContent = "Contatos";
-            localStorage.setItem('currentSection', section);
-            toggleMenu();
+             // A linha que abria o menu foi removida daqui para corrigir o bug.
         }
-
+        
         window.onload = function() {
+            const menuItems = document.getElementById('menuItems');
             const savedSection = localStorage.getItem('currentSection');
+            
             if (savedSection) {
                 showSection(savedSection);
             } else {
                 showSection('section1');
             }
-
-            const menuItems = document.getElementById('menuItems');
+            
+            // Garante que o menu esteja fechado ao carregar a página
             menuItems.classList.remove('show');
         };
 
         function toggleAccordion(element) {
             const content = element.nextElementSibling;
+            const allContents = document.querySelectorAll('.accordion-content');
+            
+            const isAlreadyOpen = content.style.maxHeight;
 
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-            } else {
-                const allContents = document.querySelectorAll('.accordion-content');
-                allContents.forEach(item => item.style.maxHeight = null);
+            // Fecha todos os acordeões
+            allContents.forEach(item => {
+                item.style.maxHeight = null;
+            });
+
+            // Se não estava aberto, abre o clicado
+            if (!isAlreadyOpen) {
                 content.style.maxHeight = content.scrollHeight + "px";
             }
         }
-    </script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const cookieConsent = document.getElementById('cookieConsent');
-        const acceptBtn = document.getElementById('acceptCookies');
 
-        // Verifica se o usuário já aceitou os cookies
-        if(localStorage.getItem('cookiesAccepted') === 'true') {
-            cookieConsent.style.display = 'none';
-        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const cookieConsent = document.getElementById('cookieConsent');
+            const acceptBtn = document.getElementById('acceptCookies');
 
-        acceptBtn.addEventListener('click', () => {
-            localStorage.setItem('cookiesAccepted', 'true');
-            cookieConsent.style.display = 'none';
+            if(localStorage.getItem('cookiesAccepted') === 'true') {
+                cookieConsent.style.display = 'none';
+            }
+
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem('cookiesAccepted', 'true');
+                cookieConsent.style.display = 'none';
+            });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
