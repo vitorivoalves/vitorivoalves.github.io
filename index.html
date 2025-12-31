@@ -12,10 +12,8 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
 
-        // Verifica se já aceitou antes (localStorage). Se sim 'granted', se não 'denied'.
         const savedConsent = localStorage.getItem('cookiesAccepted') === 'true' ? 'granted' : 'denied';
 
-        // Define o padrão antes do GA4 carregar
         gtag('consent', 'default', {
             'ad_storage': savedConsent,
             'ad_user_data': savedConsent,
@@ -347,7 +345,6 @@
                 display: none !important; 
             }
 
-            /* --- CENTRALIZAÇÃO DO CONTEÚDO NO PDF --- */
             #print-container {
                 display: flex !important;
                 flex-direction: column;
@@ -508,6 +505,14 @@
     <div id="print-container"></div>
 
     <script>
+        // Mapeamento dos títulos das abas
+        const pageTitles = {
+            'section1': 'Home | Vitor Alves',
+            'section2': 'Educação e Competências | Vitor Alves',
+            'section3': 'Experiência Profissional | Vitor Alves',
+            'section4': 'Contato | Vitor Alves'
+        };
+
         const pageData = {
             section1: `
                 <div id="section1">
@@ -670,6 +675,13 @@
             const sectionContent = pageData[section]; 
             const isAlreadyVisible = content.classList.contains('is-visible');
 
+            // --- ATUALIZAÇÃO DO TÍTULO DA PÁGINA ---
+            if (pageTitles[section]) {
+                document.title = pageTitles[section];
+            } else {
+                document.title = 'Vitor Ivo Santiago Alves';
+            }
+
             if (isAlreadyVisible) {
                 content.classList.remove('is-visible');
             }
@@ -779,7 +791,6 @@
                 localStorage.setItem('cookiesAccepted', 'true');
                 cookieConsent.style.display = 'none';
                 
-                // --- ATUALIZAÇÃO DO CONSENTIMENTO AO CLICAR EM ACEITAR ---
                 gtag('consent', 'update', {
                     'ad_storage': 'granted',
                     'ad_user_data': 'granted',
