@@ -20,7 +20,6 @@
             'wait_for_update': 500
         });
     </script>
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RB1VHX9E10"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -30,6 +29,7 @@
     </script>
     
     <style>
+        /* --- ESTILOS GERAIS --- */
         body {
             background-color: #121212;
             color: #ffffff;
@@ -83,6 +83,7 @@
             object-fit: cover;
         }
 
+        /* --- BOTÕES DE CONTATO --- */
         .buttoninsta, .buttonlinked, .buttonwpp {
             padding: 0.75rem;
             border: none;
@@ -101,6 +102,7 @@
         .buttonlinked { background: linear-gradient(45deg, #0077b5, #002b4d); font-family: 'Arial', sans-serif; font-weight: bold; }
         .buttonwpp { background: linear-gradient(45deg, #25d366, #128c7e); font-family: 'Arial', sans-serif; font-weight: bold; }
 
+        /* --- MENU --- */
         .menu-container {
             position: fixed;
             top: 10px;
@@ -133,12 +135,12 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease, opacity 0.3s ease;
-            width: 200px;
+            width: 220px;
         }
 
         .menu-items.show {
             opacity: 1;
-            max-height: 300px;
+            max-height: 400px;
         }
 
         .menu-item {
@@ -165,10 +167,38 @@
 
         .menu-item span:not(.material-icons) {
             font-family: "Funnel Sans", sans-serif;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
         }
 
+        /* --- CONTROLE DE IDIOMA --- */
+        .lang-switch {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #555;
+            padding-bottom: 10px;
+        }
+        
+        .lang-btn {
+            background: none;
+            border: 1px solid #777;
+            color: #aaa;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .lang-btn.active {
+            background-color: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+
+        /* --- ACCORDION --- */
         .accordion {
             width: 100%;
             margin: 10px 0;
@@ -223,6 +253,7 @@
             border-bottom: none;
         }
 
+        /* --- LINKS E SKILLS --- */
         .link-certificado {
             text-decoration: none;
             font-weight: bold;
@@ -269,6 +300,7 @@
             font-size: 0.85rem;
         }
 
+        /* --- CAROUSEL --- */
         .carousel-container {
             width: 100%;
             position: relative;
@@ -316,9 +348,7 @@
         .carousel-btn.prev { left: 5px; }
         .carousel-btn.next { right: 5px; }
 
-        .carousel-dots {
-            display: none;
-        }
+        .carousel-dots { display: none; }
 
         /* --- PRINT AREA --- */
         #print-container {
@@ -327,9 +357,8 @@
 
         /* --- CONFIGURAÇÃO DE IMPRESSÃO (PDF) --- */
         @media print {
-            /* DEFINE MARGEM FÍSICA NA PÁGINA */
             @page {
-                margin: 2cm; /* Margem de 2cm em toda a volta */
+                margin: 2cm;
                 size: auto;
             }
 
@@ -342,24 +371,18 @@
                 padding: 0;
             }
 
-            .menu-container, 
-            #cookieConsent, 
-            .carousel-btn, 
-            iframe,
-            .main-wrapper { 
+            .menu-container, #cookieConsent, .carousel-btn, iframe, .main-wrapper { 
                 display: none !important; 
             }
 
-            /* --- CENTRALIZAÇÃO E ESPAÇAMENTO DO CONTEÚDO NO PDF --- */
             #print-container {
                 display: flex !important;
                 flex-direction: column;
                 align-items: center;
                 width: 100%;
-                /* Removemos o max-width fixo para usar a área da margem */
                 max-width: none; 
                 margin: 0 auto;
-                padding: 10px; /* Pequeno respiro interno extra */
+                padding: 10px;
             }
 
             #section1, #section2, #section3 {
@@ -368,17 +391,10 @@
                 margin-bottom: 25px;
             }
 
-            #section1 p {
-                text-align: justify;
-            }
+            #section1 p { text-align: justify; }
 
-            h2, h3, h4, strong {
-                color: #000 !important;
-            }
-            
-            p, span, li, .location {
-                color: #333 !important;
-            }
+            h2, h3, h4, strong { color: #000 !important; }
+            p, span, li, .location { color: #333 !important; }
 
             .profile-image {
                 border-color: #333 !important;
@@ -409,41 +425,13 @@
                 text-align: center !important;
             }
 
-            .accordion-content ul {
-                display: inline-block;
-                width: 100%;
-                padding: 0;
-            }
+            .accordion-content ul { display: inline-block; width: 100%; padding: 0; }
+            .accordion-content ul li { border-bottom: 1px solid #eee; text-align: left; padding: 8px 10px; }
 
-            .accordion-content ul li {
-                border-bottom: 1px solid #eee;
-                text-align: left;
-                padding: 8px 10px;
-            }
-
-            .carousel-viewport {
-                overflow: visible !important;
-            }
-            
-            .carousel-wrapper {
-                transform: none !important;
-                display: flex !important;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .carousel-slide {
-                width: 100% !important;
-                padding: 15px 0 !important;
-                page-break-inside: avoid;
-                border-bottom: 1px solid #ccc;
-                margin-bottom: 10px;
-                text-align: center;
-            }
-
-            .carousel-slide ul {
-                 text-align: left;
-            }
+            .carousel-viewport { overflow: visible !important; }
+            .carousel-wrapper { transform: none !important; display: flex !important; flex-direction: column; align-items: center; }
+            .carousel-slide { width: 100% !important; padding: 15px 0 !important; page-break-inside: avoid; border-bottom: 1px solid #ccc; margin-bottom: 10px; text-align: center; }
+            .carousel-slide ul { text-align: left; }
 
             .skill-item {
                 background-color: #fff !important;
@@ -452,41 +440,20 @@
                 display: inline-block;
                 margin: 2px;
             }
-            
-            .skills-list {
-                justify-content: center !important;
-            }
+            .skills-list { justify-content: center !important; }
+            h4.skills-category { text-align: center !important; border-bottom: 1px solid #ccc; color: #000 !important; }
 
-            h4.skills-category {
-                text-align: center !important;
-                border-bottom: 1px solid #ccc;
-                color: #000 !important;
-            }
-
-            .buttoninsta, .buttonlinked, .buttonwpp {
-                display: none;
-            }
-
-            .print-contact-info {
-                text-align: center;
-                margin-bottom: 30px;
-                border-bottom: 2px solid #000;
-                padding-bottom: 15px;
-                width: 100%;
-            }
-
-            a {
-                color: #000 !important;
-                text-decoration: underline;
-            }
+            .buttoninsta, .buttonlinked, .buttonwpp { display: none; }
+            .print-contact-info { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #000; padding-bottom: 15px; width: 100%; }
+            a { color: #000 !important; text-decoration: underline; }
         }
     </style>
 </head>
 <body>
     <div id="cookieConsent" style="position: fixed; bottom: 0; left: 0; right: 0; background-color: #222; color: #fff; padding: 15px; text-align: center; font-size: 0.9rem; z-index: 1000; display: flex; justify-content: center; align-items: center; gap: 10px;">
-        Este site utiliza cookies para melhorar sua experiência.
+        Este site utiliza cookies / This site uses cookies.
         <button id="acceptCookies" style="background-color: #4CAF50; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">
-            Aceitar
+            OK
         </button>
     </div>
 
@@ -495,11 +462,15 @@
             <span class="material-icons">menu</span>
         </div>
         <div class="menu-items" id="menuItems">
-            <div class="menu-item" onclick="showSection('section1')" title="Home"><span class="material-icons">home</span><span>Home</span></div>
-            <div class="menu-item" onclick="showSection('section2')" title="Educação"><span class="material-icons">menu_book</span><span>Educação</span></div>
-            <div class="menu-item" onclick="showSection('section3')" title="Experiência"><span class="material-icons">business_center</span><span>Experiência</span></div>
-            <div class="menu-item" onclick="showSection('section4')" title="Contato"><span class="material-icons">contacts</span><span>Contato</span></div>
-            <div class="menu-item" onclick="generatePDF()" title="Salvar em PDF" style="background-color: #4CAF50;"><span class="material-icons">print</span><span>Salvar em PDF</span></div>
+            <div class="lang-switch">
+                <button class="lang-btn active" id="btn-pt" onclick="setLanguage('pt')">PT</button>
+                <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
+            </div>
+            <div class="menu-item" onclick="showSection('section1')" id="menu-home"><span class="material-icons">home</span><span>Home</span></div>
+            <div class="menu-item" onclick="showSection('section2')" id="menu-edu"><span class="material-icons">menu_book</span><span>Educação</span></div>
+            <div class="menu-item" onclick="showSection('section3')" id="menu-exp"><span class="material-icons">business_center</span><span>Experiência</span></div>
+            <div class="menu-item" onclick="showSection('section4')" id="menu-contact"><span class="material-icons">contacts</span><span>Contato</span></div>
+            <div class="menu-item" onclick="generatePDF()" style="background-color: #4CAF50;" id="menu-pdf"><span class="material-icons">print</span><span>Salvar em PDF</span></div>
         </div>
     </div>
 
@@ -512,165 +483,367 @@
     <div id="print-container"></div>
 
     <script>
-        // Mapeamento dos títulos das abas
-        const pageTitles = {
-            'section1': 'Home | Vitor Alves',
-            'section2': 'Educação e Competências | Vitor Alves',
-            'section3': 'Experiência Profissional | Vitor Alves',
-            'section4': 'Contato | Vitor Alves'
-        };
+        // --- ESTADO DO IDIOMA ---
+        let currentLang = localStorage.getItem('siteLang') || 'pt';
 
-        const pageData = {
-            section1: `
-                <div id="section1">
-                    <img src="perfil.jpg" alt="Vitor Alves" class="profile-image">
-                    <h3>VITOR ALVES | INFRAESTRUTURA DE TI & GOVERNANÇA</h3>
-                    <p>Bacharel em Engenharia da Computação com 5 anos de experiência em ambientes corporativos de alta disponibilidade.
-                    <br><br>
-                    Atuo como especialista em infraestrutura, com foco na administração de ambientes virtualizados (VMware vCenter/ESXi), segurança de perímetro (Sophos Firewall) e redes corporativas (Cisco).
-                    <br><br>
-                    Combino a capacidade técnica de resolução de problemas (Troubleshooting) com uma visão estratégica de Governança de TI, atuando diretamente na elaboração de Termos de Referência e gestão de contratos técnicos no Sistema S.</p>
-                </div>`,
-            section2: `
-                <div id="section2">
-                    <h2>Educação e Competências</h2>
-                    <div class="accordion">
-                        <div class="accordion-item">
-                            <div class="accordion-header" onclick="toggleAccordion(this)">Formação Acadêmica</div>
-                            <div class="accordion-content">
-                                <ul>
-                                    <li>
-                                        <strong>Bacharelado em Engenharia da Computação</strong><br>
-                                        Universidade de Cuiabá (UNIC) <br>
-                                        <small>Concluído (Dez 2025)</small>
-                                        <br>
-                                        <a href="https://drive.google.com/drive/folders/1hUxhMo7rSoGQco74ftTJXhYr2gKCHrzs?usp=sharing" target="_blank" style="color: #4CAF50; font-size: 0.9em; text-decoration: none; font-weight: bold; margin-top: 5px; display: inline-block;">Ver Diploma</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-header" onclick="toggleAccordion(this)">Cursos e Certificados</div>
-                            <div class="accordion-content">
-                                <ul>
-                                    <li><strong>Infraestrutura e Segurança:</strong><br>
-                                    • Cisco: Introdução à Cibersegurança<br>
-                                    • Sophos: Curso Prático de Sophos Firewall (XGS)<br>
-                                    • Microsoft: Implantação e Administração Windows Server<br>
-                                    • Microsoft: Configuração e Gerenciamento de Hyper-V</li>
-                                    <li><strong>Gestão e Governança:</strong><br>
-                                    • Trilha de Carreira: Gestão de Projetos (60h) e Modelos de Gestão (60h)<br>
-                                    • COBIT 2019: Princípios e Estrutura<br>
-                                    • Lei Geral de Proteção de Dados (LGPD)<br>
-                                    <li><strong>Idiomas:</strong><br>
-                                    • English I (Inglês I voltado para Agronegócio)</li>
-                                    
-                                    <li style="text-align: center; border-bottom: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding-top: 20px;">
-                                        <a href="https://drive.google.com/drive/folders/1vidg6QPu4Tyt52F_auglcNksgXDq9a_G?usp=sharing" target="_blank" class="link-certificado" style="display: inline-block; padding: 10px 20px; border: 1px solid #4CAF50; color: #4CAF50; border-radius: 5px;">
-                                            Visualizar Certificados
-                                        </a>
-                                        <a href="https://www.credly.com/users/vitor.ivoalves" target="_blank" class="link-certificado" style="display: inline-block; padding: 10px 20px; border: 1px solid #F96302; color: #F96302; border-radius: 5px;">
-                                            Perfil Credly
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-header" onclick="toggleAccordion(this)">Principais Competências</div>
-                            <div class="accordion-content">
-                                <div class="skills-container">
-                                    <h4 class="skills-category">Redes e Segurança</h4>
-                                    <div class="skills-list"><span class="skill-item">Administração de Redes</span><span class="skill-item">Segurança da Informação</span><span class="skill-item">Firewalls (Sophos)</span><span class="skill-item">VPN</span><span class="skill-item">Voz sobre IP (VoIP)</span><span class="skill-item">DNS</span><span class="skill-item">Cabeamento Estruturado</span><span class="skill-item">Segurança Cibernética</span></div>
-                                    <h4 class="skills-category">Sistemas Operacionais e Servidores</h4>
-                                    <div class="skills-list"><span class="skill-item">Microsoft Windows</span><span class="skill-item">Windows Server</span><span class="skill-item">Linux</span><span class="skill-item">Active Directory</span><span class="skill-item">Administração de Servidores</span><span class="skill-item">Virtualização (VMware)</span></div>
-                                    <h4 class="skills-category">Software e Ferramentas</h4>
-                                    <div class="skills-list"><span class="skill-item">Microsoft Office 365</span><span class="skill-item">Microsoft Excel</span><span class="skill-item">TOTVS</span><span class="skill-item">TeamViewer</span><span class="skill-item">Software</span><span class="skill-item">Instalação de Software</span></div>
-                                    <h4 class="skills-category">Governança e Processos de TI</h4>
-                                    <div class="skills-list"><span class="skill-item">Governança de TI (COBIT)</span><span class="skill-item">Gestão de Incidentes</span><span class="skill-item">Gestão de Infraestrutura de TI</span><span class="skill-item">Operações de TI</span><span class="skill-item">Política de Segurança</span><span class="skill-item">Documentação</span><span class="skill-item">Políticas e Procedimentos</span></div>
-                                    <h4 class="skills-category">Suporte e Hardware</h4>
-                                    <div class="skills-list"><span class="skill-item">Suporte Técnico</span><span class="skill-item">Suporte para Help Desk</span><span class="skill-item">Central de Serviços</span><span class="skill-item">Manutenção de Computadores</span><span class="skill-item">Hardware de Computador</span><span class="skill-item">Suporte de Hardware de TI</span></div>
+        // --- DADOS DO SITE (PT e EN) ---
+        const siteData = {
+            pt: {
+                pageTitle: 'Vitor Ivo Santiago Alves',
+                menu: {
+                    home: 'Home',
+                    edu: 'Educação',
+                    exp: 'Experiência',
+                    contact: 'Contato',
+                    pdf: 'Salvar em PDF'
+                },
+                sections: {
+                    section1: `
+                        <div id="section1">
+                            <img src="perfil.jpg" alt="Vitor Alves" class="profile-image">
+                            <h3>VITOR ALVES | INFRAESTRUTURA DE TI & GOVERNANÇA</h3>
+                            <p>Bacharel em Engenharia da Computação com 5 anos de experiência em ambientes corporativos de alta disponibilidade.
+                            <br><br>
+                            Atuo como especialista em infraestrutura, com foco na administração de ambientes virtualizados (VMware vCenter/ESXi), segurança de perímetro (Sophos Firewall) e redes corporativas (Cisco).
+                            <br><br>
+                            Combino a capacidade técnica de resolução de problemas (Troubleshooting) com uma visão estratégica de Governança de TI, atuando diretamente na elaboração de Termos de Referência e gestão de contratos técnicos no Sistema S.</p>
+                        </div>`,
+                    section2: `
+                        <div id="section2">
+                            <h2>Educação e Competências</h2>
+                            <div class="accordion">
+                                <div class="accordion-item">
+                                    <div class="accordion-header" onclick="toggleAccordion(this)">Formação Acadêmica</div>
+                                    <div class="accordion-content">
+                                        <ul>
+                                            <li>
+                                                <strong>Bacharelado em Engenharia da Computação</strong><br>
+                                                Universidade de Cuiabá (UNIC) <br>
+                                                <small>Concluído (Dez 2025)</small>
+                                                <br>
+                                                <a href="https://drive.google.com/drive/folders/1hUxhMo7rSoGQco74ftTJXhYr2gKCHrzs?usp=sharing" target="_blank" style="color: #4CAF50; font-size: 0.9em; text-decoration: none; font-weight: bold; margin-top: 5px; display: inline-block;">Ver Diploma</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>`,
-            section3: `
-                <div id="section3">
-                    <h2>Experiência Profissional</h2>
-                    <div class="accordion">
-                        <div class="accordion-item">
-                            <div class="accordion-header" id="senar-accordion-header" onclick="toggleAccordion(this)">Senar-MT</div>
-                            <div class="accordion-content">
-                                <div class="carousel-container">
-                                    <div class="carousel-viewport">
-                                        <div class="carousel-wrapper">
-                                            <div class="carousel-slide">
-                                                <h4>Assistente de TI</h4>
-                                                <h5>Período: setembro de 2021 - Presente</h5>
-                                                <p class="location">Cuiabá, Mato Grosso, Brasil</p>
-                                                <ul>
-                                                    <li><strong>Gestão de Infraestrutura:</strong> Administração de Datacenter Virtualizado (VMware vCenter e ESXi) e Sustentação de Servidores Windows Server.</li>
-                                                    <li><strong>Segurança e Redes:</strong> Gerenciamento de Firewall Sophos XGS, Switches Cisco e Controladoras Wireless (WLC), garantindo conectividade e segurança de borda.</li>
-                                                    <li><strong>Governança de TI:</strong> Elaboração técnica de Termos de Referência (TR) para licitações e gestão de contratos de TI no Sistema S.</li>
-                                                    <li><strong>Projetos:</strong> Acompanhamento técnico de expansões de rede e cabeamento estruturado.</li>
-                                                </ul>
-                                            </div>
-                                            <div class="carousel-slide">
-                                                <h4>Estagiário de Suporte</h4>
-                                                <h5>Período: outubro de 2020 - setembro de 2021</h5>
-                                                <p class="location">Cuiabá, Mato Grosso, Brasil</p>
-                                                <ul>
-                                                    <li>Auxílio aos usuários na utilização do pacote Office e internet.</li>
-                                                    <li>Montagem de estações de trabalho e apoio em cabeamento.</li>
-                                                    <li>Instalação de programas e solução de problemas de impressão.</li>
-                                                    <li>Triagem dos chamados abertos para a área de TI.</li>
-                                                </ul>
-                                            </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-header" onclick="toggleAccordion(this)">Cursos e Certificados</div>
+                                    <div class="accordion-content">
+                                        <ul>
+                                            <li><strong>Infraestrutura e Segurança:</strong><br>
+                                            • Cisco: Introdução à Cibersegurança<br>
+                                            • Sophos: Curso Prático de Sophos Firewall (XGS)<br>
+                                            • Microsoft: Implantação e Administração Windows Server<br>
+                                            • Microsoft: Configuração e Gerenciamento de Hyper-V</li>
+                                            <li><strong>Gestão e Governança:</strong><br>
+                                            • Trilha de Carreira: Gestão de Projetos (60h) e Modelos de Gestão (60h)<br>
+                                            • COBIT 2019: Princípios e Estrutura<br>
+                                            • Lei Geral de Proteção de Dados (LGPD)<br>
+                                            <li><strong>Idiomas:</strong><br>
+                                            • English I (Inglês I voltado para Agronegócio)</li>
+                                            
+                                            <li style="text-align: center; border-bottom: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding-top: 20px;">
+                                                <a href="https://drive.google.com/drive/folders/1vidg6QPu4Tyt52F_auglcNksgXDq9a_G?usp=sharing" target="_blank" class="link-certificado" style="display: inline-block; padding: 10px 20px; border: 1px solid #4CAF50; color: #4CAF50; border-radius: 5px;">
+                                                    Visualizar Certificados
+                                                </a>
+                                                <a href="https://www.credly.com/users/vitor.ivoalves" target="_blank" class="link-certificado" style="display: inline-block; padding: 10px 20px; border: 1px solid #F96302; color: #F96302; border-radius: 5px;">
+                                                    Perfil Credly
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-header" onclick="toggleAccordion(this)">Principais Competências</div>
+                                    <div class="accordion-content">
+                                        <div class="skills-container">
+                                            <h4 class="skills-category">Redes e Segurança</h4>
+                                            <div class="skills-list"><span class="skill-item">Administração de Redes</span><span class="skill-item">Segurança da Informação</span><span class="skill-item">Firewalls (Sophos)</span><span class="skill-item">VPN</span><span class="skill-item">Voz sobre IP (VoIP)</span><span class="skill-item">DNS</span><span class="skill-item">Cabeamento Estruturado</span><span class="skill-item">Segurança Cibernética</span></div>
+                                            <h4 class="skills-category">Sistemas Operacionais e Servidores</h4>
+                                            <div class="skills-list"><span class="skill-item">Microsoft Windows</span><span class="skill-item">Windows Server</span><span class="skill-item">Linux</span><span class="skill-item">Active Directory</span><span class="skill-item">Administração de Servidores</span><span class="skill-item">Virtualização (VMware)</span></div>
+                                            <h4 class="skills-category">Software e Ferramentas</h4>
+                                            <div class="skills-list"><span class="skill-item">Microsoft Office 365</span><span class="skill-item">Microsoft Excel</span><span class="skill-item">TOTVS</span><span class="skill-item">TeamViewer</span><span class="skill-item">Software</span><span class="skill-item">Instalação de Software</span></div>
+                                            <h4 class="skills-category">Governança e Processos de TI</h4>
+                                            <div class="skills-list"><span class="skill-item">Governança de TI (COBIT)</span><span class="skill-item">Gestão de Incidentes</span><span class="skill-item">Gestão de Infraestrutura de TI</span><span class="skill-item">Operações de TI</span><span class="skill-item">Política de Segurança</span><span class="skill-item">Documentação</span><span class="skill-item">Políticas e Procedimentos</span></div>
+                                            <h4 class="skills-category">Suporte e Hardware</h4>
+                                            <div class="skills-list"><span class="skill-item">Suporte Técnico</span><span class="skill-item">Suporte para Help Desk</span><span class="skill-item">Central de Serviços</span><span class="skill-item">Manutenção de Computadores</span><span class="skill-item">Hardware de Computador</span><span class="skill-item">Suporte de Hardware de TI</span></div>
                                         </div>
                                     </div>
-                                    <button class="carousel-btn prev"><</button>
-                                    <button class="carousel-btn next">></button>
-                                    <div class="carousel-dots"></div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-header" onclick="toggleAccordion(this)">Tecnomapas</div>
-                            <div class="accordion-content">
-                                <h4>Estagiário de Apoio Técnico</h4>
-                                <h5>Período: março de 2020 - julho de 2020</h5>
-                                <p class="location">Cuiabá, Mato Grosso, Brasil</p>
-                                <ul>
-                                    <li>Acompanhamento de testes de software e programas.</li>
-                                    <li>Suporte supervisionado aos usuários e à área de TI.</li>
-                                </ul>
+                        </div>`,
+                    section3: `
+                        <div id="section3">
+                            <h2>Experiência Profissional</h2>
+                            <div class="accordion">
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="senar-accordion-header" onclick="toggleAccordion(this)">Senar-MT</div>
+                                    <div class="accordion-content">
+                                        <div class="carousel-container">
+                                            <div class="carousel-viewport">
+                                                <div class="carousel-wrapper">
+                                                    <div class="carousel-slide">
+                                                        <h4>Assistente de TI</h4>
+                                                        <h5>Período: setembro de 2021 - Presente</h5>
+                                                        <p class="location">Cuiabá, Mato Grosso, Brasil</p>
+                                                        <ul>
+                                                            <li><strong>Gestão de Infraestrutura:</strong> Administração de Datacenter Virtualizado (VMware vCenter e ESXi) e Sustentação de Servidores Windows Server.</li>
+                                                            <li><strong>Segurança e Redes:</strong> Gerenciamento de Firewall Sophos XGS, Switches Cisco e Controladoras Wireless (WLC), garantindo conectividade e segurança de borda.</li>
+                                                            <li><strong>Governança de TI:</strong> Elaboração técnica de Termos de Referência (TR) para licitações e gestão de contratos de TI no Sistema S.</li>
+                                                            <li><strong>Projetos:</strong> Acompanhamento técnico de expansões de rede e cabeamento estruturado.</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="carousel-slide">
+                                                        <h4>Estagiário de Suporte</h4>
+                                                        <h5>Período: outubro de 2020 - setembro de 2021</h5>
+                                                        <p class="location">Cuiabá, Mato Grosso, Brasil</p>
+                                                        <ul>
+                                                            <li>Auxílio aos usuários na utilização do pacote Office e internet.</li>
+                                                            <li>Montagem de estações de trabalho e apoio em cabeamento.</li>
+                                                            <li>Instalação de programas e solução de problemas de impressão.</li>
+                                                            <li>Triagem dos chamados abertos para a área de TI.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="carousel-btn prev"><</button>
+                                            <button class="carousel-btn next">></button>
+                                            <div class="carousel-dots"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-header" onclick="toggleAccordion(this)">Tecnomapas</div>
+                                    <div class="accordion-content">
+                                        <h4>Estagiário de Apoio Técnico</h4>
+                                        <h5>Período: março de 2020 - julho de 2020</h5>
+                                        <p class="location">Cuiabá, Mato Grosso, Brasil</p>
+                                        <ul>
+                                            <li>Acompanhamento de testes de software e programas.</li>
+                                            <li>Suporte supervisionado aos usuários e à área de TI.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-header" onclick="toggleAccordion(this)">Carvalima Transportes</div>
+                                    <div class="accordion-content">
+                                        <h4>Aprendiz de Auxiliar Administrativo</h4>
+                                        <h5>Período: janeiro de 2017 - dezembro de 2017</h5>
+                                        <p class="location">Cuiabá, Mato Grosso, Brasil</p>
+                                        <ul>
+                                            <li>Atualização e organização de dados em planilhas.</li>
+                                            <li>Gerência e observação de cotações e negociações de cargas.</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-header" onclick="toggleAccordion(this)">Carvalima Transportes</div>
-                            <div class="accordion-content">
-                                <h4>Aprendiz de Auxiliar Administrativo</h4>
-                                <h5>Período: janeiro de 2017 - dezembro de 2017</h5>
-                                <p class="location">Cuiabá, Mato Grosso, Brasil</p>
-                                <ul>
-                                    <li>Atualização e organização de dados em planilhas.</li>
-                                    <li>Gerência e observação de cotações e negociações de cargas.</li>
-                                </ul>
+                        </div>`,
+                    section4: `
+                        <div id="section4">
+                            <h2>Contato</h2>
+                            <button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button>
+                            <button class="buttonlinked" onclick="window.open('https://www.linkedin.com/in/vitorivoalves/', '_blank')">LinkedIn</button>
+                            <button class="buttonwpp" onclick="window.open('tel:+5565999996298', '_blank')">Telefone</button>
+                            <p style="margin-top: 20px;">Músicas para relaxar enquanto navega:</p>
+                            <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3OxGCk1MRx6Cp3Pak23oEG?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
+                        </div>`
+                }
+            },
+            en: {
+                pageTitle: 'Vitor Ivo Santiago Alves',
+                menu: {
+                    home: 'Home',
+                    edu: 'Education',
+                    exp: 'Experience',
+                    contact: 'Contact',
+                    pdf: 'Save as PDF'
+                },
+                sections: {
+                    section1: `
+                        <div id="section1">
+                            <img src="perfil.jpg" alt="Vitor Alves" class="profile-image">
+                            <h3>VITOR ALVES | IT INFRASTRUCTURE & GOVERNANCE</h3>
+                            <p>Bachelor in Computer Engineering with 5 years of experience in high-availability corporate environments.
+                            <br><br>
+                            I work as an infrastructure specialist, focusing on the administration of virtualized environments (VMware vCenter/ESXi), perimeter security (Sophos Firewall), and corporate networks (Cisco).
+                            <br><br>
+                            I combine technical troubleshooting skills with a strategic view of IT Governance, working directly on drafting Reference Terms (ToR) and managing technical contracts within the S System entities.</p>
+                        </div>`,
+                    section2: `
+                        <div id="section2">
+                            <h2>Education & Skills</h2>
+                            <div class="accordion">
+                                <div class="accordion-item">
+                                    <div class="accordion-header" onclick="toggleAccordion(this)">Academic Background</div>
+                                    <div class="accordion-content">
+                                        <ul>
+                                            <li>
+                                                <strong>Bachelor of Computer Engineering</strong><br>
+                                                University of Cuiabá (UNIC) <br>
+                                                <small>Completed (Dec 2025)</small>
+                                                <br>
+                                                <a href="https://drive.google.com/drive/folders/1hUxhMo7rSoGQco74ftTJXhYr2gKCHrzs?usp=sharing" target="_blank" style="color: #4CAF50; font-size: 0.9em; text-decoration: none; font-weight: bold; margin-top: 5px; display: inline-block;">View Diploma</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-header" onclick="toggleAccordion(this)">Courses & Certificates</div>
+                                    <div class="accordion-content">
+                                        <ul>
+                                            <li><strong>Infrastructure & Security:</strong><br>
+                                            • Cisco: Introduction to Cybersecurity<br>
+                                            • Sophos: Sophos Firewall (XGS) Practical Course<br>
+                                            • Microsoft: Windows Server Deployment & Administration<br>
+                                            • Microsoft: Hyper-V Configuration & Management</li>
+                                            <li><strong>Management & Governance:</strong><br>
+                                            • Career Path: Project Management (60h) and Management Models (60h)<br>
+                                            • COBIT 2019: Principles and Structure<br>
+                                            • LGPD (General Data Protection Law)<br>
+                                            <li><strong>Languages:</strong><br>
+                                            • English I (Agribusiness focused English)</li>
+                                            
+                                            <li style="text-align: center; border-bottom: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding-top: 20px;">
+                                                <a href="https://drive.google.com/drive/folders/1vidg6QPu4Tyt52F_auglcNksgXDq9a_G?usp=sharing" target="_blank" class="link-certificado" style="display: inline-block; padding: 10px 20px; border: 1px solid #4CAF50; color: #4CAF50; border-radius: 5px;">
+                                                    View Certificates
+                                                </a>
+                                                <a href="https://www.credly.com/users/vitor.ivoalves" target="_blank" class="link-certificado" style="display: inline-block; padding: 10px 20px; border: 1px solid #F96302; color: #F96302; border-radius: 5px;">
+                                                    Credly Profile
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-header" onclick="toggleAccordion(this)">Key Competencies</div>
+                                    <div class="accordion-content">
+                                        <div class="skills-container">
+                                            <h4 class="skills-category">Networks & Security</h4>
+                                            <div class="skills-list"><span class="skill-item">Network Administration</span><span class="skill-item">Information Security</span><span class="skill-item">Firewalls (Sophos)</span><span class="skill-item">VPN</span><span class="skill-item">VoIP</span><span class="skill-item">DNS</span><span class="skill-item">Structured Cabling</span><span class="skill-item">Cybersecurity</span></div>
+                                            <h4 class="skills-category">Operating Systems & Servers</h4>
+                                            <div class="skills-list"><span class="skill-item">Microsoft Windows</span><span class="skill-item">Windows Server</span><span class="skill-item">Linux</span><span class="skill-item">Active Directory</span><span class="skill-item">Server Administration</span><span class="skill-item">Virtualization (VMware)</span></div>
+                                            <h4 class="skills-category">Software & Tools</h4>
+                                            <div class="skills-list"><span class="skill-item">Microsoft Office 365</span><span class="skill-item">Microsoft Excel</span><span class="skill-item">TOTVS</span><span class="skill-item">TeamViewer</span><span class="skill-item">Software Installation</span></div>
+                                            <h4 class="skills-category">Governance & IT Processes</h4>
+                                            <div class="skills-list"><span class="skill-item">IT Governance (COBIT)</span><span class="skill-item">Incident Management</span><span class="skill-item">IT Infrastructure Management</span><span class="skill-item">IT Operations</span><span class="skill-item">Security Policy</span><span class="skill-item">Documentation</span></div>
+                                            <h4 class="skills-category">Support & Hardware</h4>
+                                            <div class="skills-list"><span class="skill-item">Technical Support</span><span class="skill-item">Help Desk Support</span><span class="skill-item">Service Desk</span><span class="skill-item">PC Maintenance</span><span class="skill-item">Computer Hardware</span></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>`,
-            section4: `
-                <div id="section4">
-                    <h2>Contato</h2>
-                    <button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button>
-                    <button class="buttonlinked" onclick="window.open('https://www.linkedin.com/in/vitorivoalves/', '_blank')">LinkedIn</button>
-                    <button class="buttonwpp" onclick="window.open('tel:+5565999996298', '_blank')">Telefone</button>
-                    <p style="margin-top: 20px;">Músicas para relaxar enquanto navega:</p>
-                    <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3OxGCk1MRx6Cp3Pak23oEG?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
-                </div>`
+                        </div>`,
+                    section3: `
+                        <div id="section3">
+                            <h2>Professional Experience</h2>
+                            <div class="accordion">
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="senar-accordion-header" onclick="toggleAccordion(this)">Senar-MT</div>
+                                    <div class="accordion-content">
+                                        <div class="carousel-container">
+                                            <div class="carousel-viewport">
+                                                <div class="carousel-wrapper">
+                                                    <div class="carousel-slide">
+                                                        <h4>IT Assistant</h4>
+                                                        <h5>Period: September 2021 - Present</h5>
+                                                        <p class="location">Cuiabá, Mato Grosso, Brazil</p>
+                                                        <ul>
+                                                            <li><strong>Infrastructure Management:</strong> Administration of Virtualized Datacenter (VMware vCenter and ESXi) and Windows Server support.</li>
+                                                            <li><strong>Security & Networks:</strong> Management of Sophos Firewall XGS, Cisco Switches, and Wireless Controllers (WLC), ensuring connectivity and edge security.</li>
+                                                            <li><strong>IT Governance:</strong> Technical elaboration of Reference Terms (ToR) for public tenders and IT contract management within the S System.</li>
+                                                            <li><strong>Projects:</strong> Technical monitoring of network expansions and structured cabling.</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="carousel-slide">
+                                                        <h4>IT Support Intern</h4>
+                                                        <h5>Period: October 2020 - September 2021</h5>
+                                                        <p class="location">Cuiabá, Mato Grosso, Brazil</p>
+                                                        <ul>
+                                                            <li>Assisted users with Office package and internet usage.</li>
+                                                            <li>Workstation assembly and cabling support.</li>
+                                                            <li>Software installation and printing troubleshooting.</li>
+                                                            <li>Screening of tickets opened for the IT department.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="carousel-btn prev"><</button>
+                                            <button class="carousel-btn next">></button>
+                                            <div class="carousel-dots"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-header" onclick="toggleAccordion(this)">Tecnomapas</div>
+                                    <div class="accordion-content">
+                                        <h4>Technical Support Intern</h4>
+                                        <h5>Period: March 2020 - July 2020</h5>
+                                        <p class="location">Cuiabá, Mato Grosso, Brazil</p>
+                                        <ul>
+                                            <li>Monitoring of software and program tests.</li>
+                                            <li>Supervised support for users and the IT department.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-header" onclick="toggleAccordion(this)">Carvalima Transportes</div>
+                                    <div class="accordion-content">
+                                        <h4>Administrative Assistant Apprentice</h4>
+                                        <h5>Period: January 2017 - December 2017</h5>
+                                        <p class="location">Cuiabá, Mato Grosso, Brazil</p>
+                                        <ul>
+                                            <li>Updating and organizing data in spreadsheets.</li>
+                                            <li>Management and observation of freight quotes and negotiations.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`,
+                    section4: `
+                        <div id="section4">
+                            <h2>Contact</h2>
+                            <button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button>
+                            <button class="buttonlinked" onclick="window.open('https://www.linkedin.com/in/vitorivoalves/', '_blank')">LinkedIn</button>
+                            <button class="buttonwpp" onclick="window.open('tel:+5565999996298', '_blank')">Phone / WhatsApp</button>
+                            <p style="margin-top: 20px;">Music to relax while browsing:</p>
+                            <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3OxGCk1MRx6Cp3Pak23oEG?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
+                        </div>`
+                }
+            }
         };
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('siteLang', lang);
+            
+            // Atualiza botões de idioma
+            document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+            // Atualiza Menu
+            const menu = siteData[lang].menu;
+            document.querySelector('#menu-home span:nth-child(2)').textContent = menu.home;
+            document.querySelector('#menu-edu span:nth-child(2)').textContent = menu.edu;
+            document.querySelector('#menu-exp span:nth-child(2)').textContent = menu.exp;
+            document.querySelector('#menu-contact span:nth-child(2)').textContent = menu.contact;
+            document.querySelector('#menu-pdf span:nth-child(2)').textContent = menu.pdf;
+
+            // Recarrega a seção atual com o novo idioma
+            const currentSection = localStorage.getItem('currentSection') || 'section1';
+            
+            // Força a recarga do conteúdo
+            const content = document.getElementById('content');
+            content.classList.remove('is-visible');
+            setTimeout(() => {
+                content.innerHTML = siteData[lang].sections[currentSection];
+                content.classList.add('is-visible');
+                // Re-inicializa componentes se necessário
+                if(currentSection === 'section3') {
+                     // Caso a pessoa mude de idioma com o accordion do Senar aberto, não precisa reabrir auto, 
+                     // mas se ela abrir depois, vai carregar o texto certo.
+                }
+            }, 300);
+        }
 
         function toggleMenu() {
             const menuItems = document.getElementById('menuItems');
@@ -679,15 +852,14 @@
 
         function showSection(section) {
             const content = document.getElementById('content');
-            const sectionContent = pageData[section]; 
+            const sectionContent = siteData[currentLang].sections[section];
             const isAlreadyVisible = content.classList.contains('is-visible');
 
-            // --- ATUALIZAÇÃO DO TÍTULO DA PÁGINA ---
-            if (pageTitles[section]) {
-                document.title = pageTitles[section];
-            } else {
-                document.title = 'Vitor Ivo Santiago Alves';
-            }
+            // Salva seção atual
+            localStorage.setItem('currentSection', section);
+
+            // Atualiza Título
+            document.title = siteData[currentLang].pageTitle;
 
             if (isAlreadyVisible) {
                 content.classList.remove('is-visible');
@@ -712,14 +884,18 @@
                 toggleMenu();
             }
 
-            // ATUALIZAÇÃO DO EMAIL FEITA AQUI
             const contactHeader = `
                 <div class="print-contact-info">
                     <p><strong>Email:</strong> vitorivo2000@gmail.com | <strong>LinkedIn:</strong> linkedin.com/in/vitorivoalves | <strong>Tel:</strong> (65) 99999-6298</p>
                 </div>
             `;
 
-            printContainer.innerHTML = contactHeader + pageData.section1 + pageData.section2 + pageData.section3;
+            // Pega o conteúdo de todas as seções no idioma atual
+            const s1 = siteData[currentLang].sections.section1;
+            const s2 = siteData[currentLang].sections.section2;
+            const s3 = siteData[currentLang].sections.section3;
+
+            printContainer.innerHTML = contactHeader + s1 + s2 + s3;
             window.print();
             setTimeout(() => {
                 printContainer.innerHTML = '';
@@ -780,9 +956,14 @@
             }
         }
 
+        // --- INICIALIZAÇÃO ---
         window.onload = function() {
+            // Aplica o idioma salvo
+            setLanguage(currentLang);
+            
             const savedSection = localStorage.getItem('currentSection') || 'section1';
             showSection(savedSection);
+            
             const menuItems = document.getElementById('menuItems');
             menuItems.classList.remove('show');
         };
