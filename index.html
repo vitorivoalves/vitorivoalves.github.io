@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RB1VHX9E10"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RB1VHX9E10');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vitor Ivo Santiago Alves</title>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        // Verifica se já aceitou antes (localStorage). Se sim 'granted', se não 'denied'.
+        const savedConsent = localStorage.getItem('cookiesAccepted') === 'true' ? 'granted' : 'denied';
+
+        // Define o padrão antes do GA4 carregar
+        gtag('consent', 'default', {
+            'ad_storage': savedConsent,
+            'ad_user_data': savedConsent,
+            'ad_personalization': savedConsent,
+            'analytics_storage': savedConsent,
+            'wait_for_update': 500
+        });
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RB1VHX9E10"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-RB1VHX9E10');
+    </script>
     
     <style>
         body {
@@ -760,6 +778,14 @@
             acceptBtn.addEventListener('click', () => {
                 localStorage.setItem('cookiesAccepted', 'true');
                 cookieConsent.style.display = 'none';
+                
+                // --- ATUALIZAÇÃO DO CONSENTIMENTO AO CLICAR EM ACEITAR ---
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted',
+                    'analytics_storage': 'granted'
+                });
             });
 
             document.addEventListener('click', function(event) {
