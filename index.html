@@ -11,9 +11,7 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-
         const savedConsent = localStorage.getItem('cookiesAccepted') === 'true' ? 'granted' : 'denied';
-
         gtag('consent', 'default', {
             'ad_storage': savedConsent,
             'ad_user_data': savedConsent,
@@ -28,7 +26,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-RB1VHX9E10');
     </script>
     
@@ -330,11 +327,19 @@
 
         /* --- CONFIGURAÇÃO DE IMPRESSÃO (PDF) --- */
         @media print {
+            /* DEFINE MARGEM FÍSICA NA PÁGINA */
+            @page {
+                margin: 2cm; /* Margem de 2cm em toda a volta */
+                size: auto;
+            }
+
             body {
                 background-color: #fff !important;
                 color: #000 !important;
                 font-family: "Arial", sans-serif !important;
                 -webkit-print-color-adjust: exact;
+                margin: 0;
+                padding: 0;
             }
 
             .menu-container, 
@@ -345,14 +350,16 @@
                 display: none !important; 
             }
 
+            /* --- CENTRALIZAÇÃO E ESPAÇAMENTO DO CONTEÚDO NO PDF --- */
             #print-container {
                 display: flex !important;
                 flex-direction: column;
                 align-items: center;
                 width: 100%;
-                max-width: 800px;
+                /* Removemos o max-width fixo para usar a área da margem */
+                max-width: none; 
                 margin: 0 auto;
-                padding: 0;
+                padding: 10px; /* Pequeno respiro interno extra */
             }
 
             #section1, #section2, #section3 {
@@ -705,9 +712,10 @@
                 toggleMenu();
             }
 
+            // ATUALIZAÇÃO DO EMAIL FEITA AQUI
             const contactHeader = `
                 <div class="print-contact-info">
-                    <p><strong>Email:</strong> (Seu Email Aqui) | <strong>LinkedIn:</strong> linkedin.com/in/vitorivoalves | <strong>Tel:</strong> (65) 99999-6298</p>
+                    <p><strong>Email:</strong> vitorivo2000@gmail.com | <strong>LinkedIn:</strong> linkedin.com/in/vitorivoalves | <strong>Tel:</strong> (65) 99999-6298</p>
                 </div>
             `;
 
