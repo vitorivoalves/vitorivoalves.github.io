@@ -20,6 +20,7 @@
             'wait_for_update': 500
         });
     </script>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RB1VHX9E10"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -816,11 +817,9 @@
             currentLang = lang;
             localStorage.setItem('siteLang', lang);
             
-            // Atualiza botões de idioma
             document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
 
-            // Atualiza Menu
             const menu = siteData[lang].menu;
             document.querySelector('#menu-home span:nth-child(2)').textContent = menu.home;
             document.querySelector('#menu-edu span:nth-child(2)').textContent = menu.edu;
@@ -828,21 +827,19 @@
             document.querySelector('#menu-contact span:nth-child(2)').textContent = menu.contact;
             document.querySelector('#menu-pdf span:nth-child(2)').textContent = menu.pdf;
 
-            // Recarrega a seção atual com o novo idioma
             const currentSection = localStorage.getItem('currentSection') || 'section1';
             
-            // Força a recarga do conteúdo
             const content = document.getElementById('content');
             content.classList.remove('is-visible');
             setTimeout(() => {
                 content.innerHTML = siteData[lang].sections[currentSection];
                 content.classList.add('is-visible');
-                // Re-inicializa componentes se necessário
-                if(currentSection === 'section3') {
-                     // Caso a pessoa mude de idioma com o accordion do Senar aberto, não precisa reabrir auto, 
-                     // mas se ela abrir depois, vai carregar o texto certo.
-                }
             }, 300);
+
+            // --- TRACKING IDIOMA ---
+            gtag('event', 'switch_language', {
+                'language_selected': lang
+            });
         }
 
         function toggleMenu() {
@@ -855,11 +852,22 @@
             const sectionContent = siteData[currentLang].sections[section];
             const isAlreadyVisible = content.classList.contains('is-visible');
 
-            // Salva seção atual
             localStorage.setItem('currentSection', section);
+            
+            // Define o título e depois envia para o Analytics
+            if (siteData[currentLang].pageTitle) {
+                document.title = siteData[currentLang].pageTitle;
+            } else {
+                document.title = 'Vitor Ivo Santiago Alves';
+            }
 
-            // Atualiza Título
-            document.title = siteData[currentLang].pageTitle;
+            // --- TRACKING VIRTUAL PAGE VIEW ---
+            // O Analytics vai achar que o usuário trocou de página
+            gtag('event', 'page_view', {
+                page_title: document.title + ' | ' + section,
+                page_location: location.href.split('#')[0] + '#' + section, 
+                page_path: '/' + section
+            });
 
             if (isAlreadyVisible) {
                 content.classList.remove('is-visible');
@@ -884,22 +892,28 @@
                 toggleMenu();
             }
 
+            // --- TRACKING PDF ---
+            gtag('event', 'generate_pdf', {
+                'event_category': 'Engagement',
+                'event_label': 'PDF Download'
+            });
+
             const contactHeader = `
                 <div class="print-contact-info">
                     <p><strong>Email:</strong> vitorivo2000@gmail.com | <strong>LinkedIn:</strong> linkedin.com/in/vitorivoalves | <strong>Tel:</strong> (65) 99999-6298</p>
                 </div>
             `;
 
-            // Pega o conteúdo de todas as seções no idioma atual
             const s1 = siteData[currentLang].sections.section1;
             const s2 = siteData[currentLang].sections.section2;
             const s3 = siteData[currentLang].sections.section3;
 
             printContainer.innerHTML = contactHeader + s1 + s2 + s3;
-            window.print();
+
+            // Correção Mobile: Espera 500ms para renderizar antes de imprimir
             setTimeout(() => {
-                printContainer.innerHTML = '';
-            }, 1000);
+                window.print();
+            }, 500);
         }
 
         function initializeCarousel() {
@@ -956,14 +970,10 @@
             }
         }
 
-        // --- INICIALIZAÇÃO ---
         window.onload = function() {
-            // Aplica o idioma salvo
             setLanguage(currentLang);
-            
             const savedSection = localStorage.getItem('currentSection') || 'section1';
             showSection(savedSection);
-            
             const menuItems = document.getElementById('menuItems');
             menuItems.classList.remove('show');
         };
