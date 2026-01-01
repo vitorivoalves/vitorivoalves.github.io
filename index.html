@@ -490,7 +490,13 @@
         // --- DADOS DO SITE (PT e EN) ---
         const siteData = {
             pt: {
-                pageTitle: 'Vitor Ivo Santiago Alves',
+                // TÍTULOS ESPECÍFICOS POR SEÇÃO (ADICIONADO)
+                titles: {
+                    section1: 'Home | Vitor Alves',
+                    section2: 'Educação | Vitor Alves',
+                    section3: 'Experiência | Vitor Alves',
+                    section4: 'Contato | Vitor Alves'
+                },
                 menu: {
                     home: 'Home',
                     edu: 'Educação',
@@ -651,7 +657,13 @@
                 }
             },
             en: {
-                pageTitle: 'Vitor Ivo Santiago Alves',
+                // TÍTULOS ESPECÍFICOS POR SEÇÃO (ADICIONADO)
+                titles: {
+                    section1: 'Home | Vitor Alves',
+                    section2: 'Education | Vitor Alves',
+                    section3: 'Experience | Vitor Alves',
+                    section4: 'Contact | Vitor Alves'
+                },
                 menu: {
                     home: 'Home',
                     edu: 'Education',
@@ -854,17 +866,15 @@
 
             localStorage.setItem('currentSection', section);
             
-            // Define o título e depois envia para o Analytics
-            if (siteData[currentLang].pageTitle) {
-                document.title = siteData[currentLang].pageTitle;
-            } else {
-                document.title = 'Vitor Ivo Santiago Alves';
-            }
+            // --- CORREÇÃO DO TÍTULO DA ABA ---
+            // Agora pega o título específico da seção dentro do idioma selecionado
+            const newTitle = siteData[currentLang].titles[section];
+            document.title = newTitle;
 
             // --- TRACKING VIRTUAL PAGE VIEW ---
-            // O Analytics vai achar que o usuário trocou de página
+            // Envia o título correto para o Analytics
             gtag('event', 'page_view', {
-                page_title: document.title + ' | ' + section,
+                page_title: newTitle,
                 page_location: location.href.split('#')[0] + '#' + section, 
                 page_path: '/' + section
             });
