@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -20,7 +19,6 @@
             'wait_for_update': 500
         });
     </script>
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RB1VHX9E10"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -28,9 +26,7 @@
         gtag('js', new Date());
         gtag('config', 'G-RB1VHX9E10');
     </script>
-    
     <style>
-        /* --- ESTILOS GERAIS --- */
         body {
             background-color: #121212;
             color: #ffffff;
@@ -38,7 +34,6 @@
             margin: 0;
             line-height: 1.6;
         }
-
         .main-wrapper {
             display: flex;
             flex-direction: column;
@@ -47,7 +42,6 @@
             min-height: 100vh;
             width: 100%;
         }
-
         .container {
             width: 90%;
             max-width: 800px;
@@ -59,23 +53,19 @@
             padding-top: 60px;
             padding-bottom: 40px;
         }
-
         .section-content {
             width: 100%;
             opacity: 0;
             transform: translateY(15px);
             transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
         }
-
         .section-content.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
-
         #section1 p {
             text-align: justify;
         }
-
         .profile-image {
             width: 200px;
             height: 200px;
@@ -83,9 +73,7 @@
             border: 3px solid #ffffff;
             object-fit: cover;
         }
-
-        /* --- BOTÕES DE CONTATO --- */
-        .buttoninsta, .buttonlinked, .buttonwpp {
+        .buttoninsta, .buttonlinked {
             padding: 0.75rem;
             border: none;
             border-radius: 0.25rem;
@@ -98,19 +86,14 @@
             text-decoration: none;
             display: inline-block;
         }
-
         .buttoninsta { background: linear-gradient(45deg, #f09433, #e1306c, #c13584, #833ab4, #5851db); font-family: 'Arial', sans-serif; font-weight: bold; }
         .buttonlinked { background: linear-gradient(45deg, #0077b5, #002b4d); font-family: 'Arial', sans-serif; font-weight: bold; }
-        .buttonwpp { background: linear-gradient(45deg, #25d366, #128c7e); font-family: 'Arial', sans-serif; font-weight: bold; }
-
-        /* --- MENU --- */
         .menu-container {
             position: fixed;
             top: 10px;
             left: 10px;
             z-index: 100;
         }
-
         .menu-icon {
             display: flex;
             align-items: center;
@@ -123,7 +106,6 @@
             cursor: pointer;
             transition: transform 0.3s ease;
         }
-
         .menu-items {
             display: flex;
             flex-direction: column;
@@ -138,12 +120,10 @@
             transition: max-height 0.3s ease, opacity 0.3s ease;
             width: 220px;
         }
-
         .menu-items.show {
             opacity: 1;
             max-height: 400px;
         }
-
         .menu-item {
             display: flex;
             align-items: center;
@@ -156,23 +136,18 @@
             text-decoration: none;
             border-radius: 4px;
         }
-
         .menu-item:hover {
             background-color: #555;
         }
-
         .menu-item .material-icons {
             margin-right: 8px;
             font-size: 16px;
         }
-
         .menu-item span:not(.material-icons) {
             font-family: "Funnel Sans", sans-serif;
             font-size: 16px;
             font-weight: bold;
         }
-
-        /* --- CONTROLE DE IDIOMA --- */
         .lang-switch {
             display: flex;
             justify-content: center;
@@ -181,7 +156,6 @@
             border-bottom: 1px solid #555;
             padding-bottom: 10px;
         }
-        
         .lang-btn {
             background: none;
             border: 1px solid #777;
@@ -192,29 +166,23 @@
             font-size: 12px;
             font-weight: bold;
         }
-
         .lang-btn.active {
             background-color: #4CAF50;
             color: white;
             border-color: #4CAF50;
         }
-
-        /* --- ACCORDION --- */
         .accordion {
             width: 100%;
             margin: 10px 0;
             border-radius: 5px;
             overflow: hidden;
         }
-
         .accordion-item {
             border-bottom: 1px solid #444;
         }
-
         .accordion-item:last-of-type {
             border-bottom: none;
         }
-
         .accordion-header {
             background-color: #333;
             color: #fff;
@@ -224,11 +192,9 @@
             font-weight: bold;
             transition: background-color 0.3s ease;
         }
-
         .accordion-header:hover {
             background-color: #555;
         }
-
         .accordion-content {
             background-color: #222;
             max-height: 0;
@@ -237,45 +203,36 @@
             text-align: left;
             padding: 0 15px;
         }
-
         .accordion-content ul {
             list-style-type: none;
             padding: 10px 0;
             margin: 0;
             color: #aaa;
         }
-
         .accordion-content ul li {
             border-bottom: 1px solid #444;
             padding: 12px 0;
         }
-
         .accordion-content ul li:last-child {
             border-bottom: none;
         }
-
-        /* --- LINKS E SKILLS --- */
         .link-certificado {
             text-decoration: none;
             font-weight: bold;
             transition: background-color 0.3s ease;
         }
-
         .link-certificado:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-
         .location {
             font-size: 0.85rem;
             color: #bbbbbb;
             font-style: italic;
             margin-bottom: 10px;
         }
-
         .skills-container {
             padding: 15px;
         }
-
         h4.skills-category {
             color: #ffffff;
             border-bottom: 1px solid #555;
@@ -284,7 +241,6 @@
             margin-bottom: 10px;
             text-align: left;
         }
-
         .skills-list {
             display: flex;
             flex-wrap: wrap;
@@ -292,7 +248,6 @@
             justify-content: flex-start;
             padding-bottom: 15px;
         }
-
         .skill-item {
             background-color: #333;
             color: #ddd;
@@ -300,34 +255,27 @@
             border-radius: 5px;
             font-size: 0.85rem;
         }
-
-        /* --- CAROUSEL --- */
         .carousel-container {
             width: 100%;
             position: relative;
             padding: 15px 0;
         }
-
         .carousel-viewport {
             overflow: hidden;
         }
-
         .carousel-wrapper {
             display: flex;
             transition: transform 0.5s ease-in-out;
         }
-
         .carousel-slide {
             min-width: 100%;
             box-sizing: border-box;
             padding: 25px 45px;
         }
-
         .carousel-slide h4 {
             margin-top: 0;
             margin-bottom: 5px;
         }
-
         .carousel-btn {
             position: absolute;
             top: 50%;
@@ -345,24 +293,17 @@
             justify-content: center;
             font-size: 18px;
         }
-
         .carousel-btn.prev { left: 5px; }
         .carousel-btn.next { right: 5px; }
-
         .carousel-dots { display: none; }
-
-        /* --- PRINT AREA --- */
         #print-container {
             display: none;
         }
-
-        /* --- CONFIGURAÇÃO DE IMPRESSÃO (PDF) --- */
         @media print {
             @page {
                 margin: 2cm;
                 size: auto;
             }
-
             body {
                 background-color: #fff !important;
                 color: #000 !important;
@@ -371,32 +312,26 @@
                 margin: 0;
                 padding: 0;
             }
-
-            .menu-container, #cookieConsent, .carousel-btn, iframe, .main-wrapper { 
-                display: none !important; 
-            }
-
+            .menu-container, #cookieConsent, .carousel-btn, iframe, .main-wrapper {
+                 display: none !important;
+             }
             #print-container {
                 display: flex !important;
                 flex-direction: column;
                 align-items: center;
                 width: 100%;
-                max-width: none; 
+                max-width: none;
                 margin: 0 auto;
                 padding: 10px;
             }
-
             #section1, #section2, #section3 {
                 width: 100%;
                 text-align: center;
                 margin-bottom: 25px;
             }
-
             #section1 p { text-align: justify; }
-
             h2, h3, h4, strong { color: #000 !important; }
             p, span, li, .location { color: #333 !important; }
-
             .profile-image {
                 border-color: #333 !important;
                 width: 150px;
@@ -404,7 +339,6 @@
                 display: block;
                 margin: 0 auto 20px auto;
             }
-
             .accordion-header {
                 background-color: #f0f0f0 !important;
                 color: #000 !important;
@@ -416,7 +350,6 @@
                 margin-top: 15px;
                 font-size: 1.1em;
             }
-
             .accordion-content {
                 max-height: none !important;
                 background-color: #fff !important;
@@ -425,15 +358,12 @@
                 border: none !important;
                 text-align: center !important;
             }
-
             .accordion-content ul { display: inline-block; width: 100%; padding: 0; }
             .accordion-content ul li { border-bottom: 1px solid #eee; text-align: left; padding: 8px 10px; }
-
             .carousel-viewport { overflow: visible !important; }
             .carousel-wrapper { transform: none !important; display: flex !important; flex-direction: column; align-items: center; }
             .carousel-slide { width: 100% !important; padding: 15px 0 !important; page-break-inside: avoid; border-bottom: 1px solid #ccc; margin-bottom: 10px; text-align: center; }
             .carousel-slide ul { text-align: left; }
-
             .skill-item {
                 background-color: #fff !important;
                 color: #000 !important;
@@ -443,8 +373,7 @@
             }
             .skills-list { justify-content: center !important; }
             h4.skills-category { text-align: center !important; border-bottom: 1px solid #ccc; color: #000 !important; }
-
-            .buttoninsta, .buttonlinked, .buttonwpp { display: none; }
+            .buttoninsta, .buttonlinked { display: none; }
             .print-contact-info { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #000; padding-bottom: 15px; width: 100%; }
             a { color: #000 !important; text-decoration: underline; }
         }
@@ -457,7 +386,6 @@
             OK
         </button>
     </div>
-
     <div class="menu-container">
         <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
             <span class="material-icons">menu</span>
@@ -474,23 +402,16 @@
             <div class="menu-item" onclick="generatePDF()" style="background-color: #4CAF50;" id="menu-pdf"><span class="material-icons">print</span><span>Salvar em PDF</span></div>
         </div>
     </div>
-
     <main class="main-wrapper">
         <div class="container">
             <div id="content" class="section-content"></div>
         </div>
     </main>
-
     <div id="print-container"></div>
-
     <script>
-        // --- ESTADO DO IDIOMA ---
         let currentLang = localStorage.getItem('siteLang') || 'pt';
-
-        // --- DADOS DO SITE (PT e EN) ---
         const siteData = {
             pt: {
-                // TÍTULOS ESPECÍFICOS POR SEÇÃO (ADICIONADO)
                 titles: {
                     section1: 'Home | Vitor Alves',
                     section2: 'Educação | Vitor Alves',
@@ -548,7 +469,6 @@
                                             • Lei Geral de Proteção de Dados (LGPD)<br>
                                             <li><strong>Idiomas:</strong><br>
                                             • English I (Inglês I voltado para Agronegócio)</li>
-                                            
                                             <li style="text-align: center; border-bottom: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding-top: 20px;">
                                                 <a href="https://drive.google.com/drive/folders/1vidg6QPu4Tyt52F_auglcNksgXDq9a_G?usp=sharing" target="_blank" class="link-certificado" style="display: inline-block; padding: 10px 20px; border: 1px solid #4CAF50; color: #4CAF50; border-radius: 5px;">
                                                     Visualizar Certificados
@@ -648,16 +568,14 @@
                     section4: `
                         <div id="section4">
                             <h2>Contato</h2>
-                            <button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button>
                             <button class="buttonlinked" onclick="window.open('https://www.linkedin.com/in/vitorivoalves/', '_blank')">LinkedIn</button>
-                            <button class="buttonwpp" onclick="window.open('tel:+5565999996298', '_blank')">Telefone</button>
+                            <button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button>
                             <p style="margin-top: 20px;">Músicas para relaxar enquanto navega:</p>
                             <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3OxGCk1MRx6Cp3Pak23oEG?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
                         </div>`
                 }
             },
             en: {
-                // TÍTULOS ESPECÍFICOS POR SEÇÃO (ADICIONADO)
                 titles: {
                     section1: 'Home | Vitor Alves',
                     section2: 'Education | Vitor Alves',
@@ -715,7 +633,6 @@
                                             • LGPD (General Data Protection Law)<br>
                                             <li><strong>Languages:</strong><br>
                                             • English I (Agribusiness focused English)</li>
-                                            
                                             <li style="text-align: center; border-bottom: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding-top: 20px;">
                                                 <a href="https://drive.google.com/drive/folders/1vidg6QPu4Tyt52F_auglcNksgXDq9a_G?usp=sharing" target="_blank" class="link-certificado" style="display: inline-block; padding: 10px 20px; border: 1px solid #4CAF50; color: #4CAF50; border-radius: 5px;">
                                                     View Certificates
@@ -815,9 +732,8 @@
                     section4: `
                         <div id="section4">
                             <h2>Contact</h2>
-                            <button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button>
                             <button class="buttonlinked" onclick="window.open('https://www.linkedin.com/in/vitorivoalves/', '_blank')">LinkedIn</button>
-                            <button class="buttonwpp" onclick="window.open('tel:+5565999996298', '_blank')">Phone / WhatsApp</button>
+                            <button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button>
                             <p style="margin-top: 20px;">Music to relax while browsing:</p>
                             <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3OxGCk1MRx6Cp3Pak23oEG?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
                         </div>`
@@ -828,27 +744,21 @@
         function setLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('siteLang', lang);
-            
             document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-
             const menu = siteData[lang].menu;
             document.querySelector('#menu-home span:nth-child(2)').textContent = menu.home;
             document.querySelector('#menu-edu span:nth-child(2)').textContent = menu.edu;
             document.querySelector('#menu-exp span:nth-child(2)').textContent = menu.exp;
             document.querySelector('#menu-contact span:nth-child(2)').textContent = menu.contact;
             document.querySelector('#menu-pdf span:nth-child(2)').textContent = menu.pdf;
-
             const currentSection = localStorage.getItem('currentSection') || 'section1';
-            
             const content = document.getElementById('content');
             content.classList.remove('is-visible');
             setTimeout(() => {
                 content.innerHTML = siteData[lang].sections[currentSection];
                 content.classList.add('is-visible');
             }, 300);
-
-            // --- TRACKING IDIOMA ---
             gtag('event', 'switch_language', {
                 'language_selected': lang
             });
@@ -863,31 +773,21 @@
             const content = document.getElementById('content');
             const sectionContent = siteData[currentLang].sections[section];
             const isAlreadyVisible = content.classList.contains('is-visible');
-
             localStorage.setItem('currentSection', section);
-            
-            // --- CORREÇÃO DO TÍTULO DA ABA ---
-            // Agora pega o título específico da seção dentro do idioma selecionado
             const newTitle = siteData[currentLang].titles[section];
             document.title = newTitle;
-
-            // --- TRACKING VIRTUAL PAGE VIEW ---
-            // Envia o título correto para o Analytics
             gtag('event', 'page_view', {
                 page_title: newTitle,
-                page_location: location.href.split('#')[0] + '#' + section, 
+                page_location: location.href.split('#')[0] + '#' + section,
                 page_path: '/' + section
             });
-
             if (isAlreadyVisible) {
                 content.classList.remove('is-visible');
             }
-
             setTimeout(() => {
                 content.innerHTML = sectionContent;
                 content.classList.add('is-visible');
             }, isAlreadyVisible ? 400 : 50);
-
             const menuItems = document.getElementById('menuItems');
             if (menuItems && menuItems.classList.contains('show')) {
                 toggleMenu();
@@ -897,30 +797,22 @@
         function generatePDF() {
             const printContainer = document.getElementById('print-container');
             const menuItems = document.getElementById('menuItems');
-            
             if (menuItems.classList.contains('show')) {
                 toggleMenu();
             }
-
-            // --- TRACKING PDF ---
             gtag('event', 'generate_pdf', {
                 'event_category': 'Engagement',
                 'event_label': 'PDF Download'
             });
-
             const contactHeader = `
                 <div class="print-contact-info">
                     <p><strong>Email:</strong> vitorivo2000@gmail.com | <strong>LinkedIn:</strong> linkedin.com/in/vitorivoalves | <strong>Tel:</strong> (65) 99999-6298</p>
                 </div>
             `;
-
             const s1 = siteData[currentLang].sections.section1;
             const s2 = siteData[currentLang].sections.section2;
             const s3 = siteData[currentLang].sections.section3;
-
             printContainer.innerHTML = contactHeader + s1 + s2 + s3;
-
-            // Correção Mobile: Espera 500ms para renderizar antes de imprimir
             setTimeout(() => {
                 window.print();
             }, 500);
@@ -934,40 +826,33 @@
             const nextBtn = document.querySelector('.carousel-btn.next');
             const prevBtn = document.querySelector('.carousel-btn.prev');
             let currentSlide = 0;
-
             if (slides.length <= 1) {
                 if(nextBtn) nextBtn.style.display = 'none';
                 if(prevBtn) prevBtn.style.display = 'none';
             }
-
             const showSlide = (slideIndex) => {
                 wrapper.style.transform = `translateX(-${slideIndex * 100}%)`;
                 currentSlide = slideIndex;
             };
-
             if(nextBtn) nextBtn.addEventListener('click', () => {
                 const nextIndex = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
                 showSlide(nextIndex);
             });
-
             if(prevBtn) prevBtn.addEventListener('click', () => {
                 const prevIndex = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
                 showSlide(prevIndex);
             });
-
             showSlide(0);
         }
 
         function toggleAccordion(element) {
             const content = element.nextElementSibling;
             const isAlreadyOpen = content.style.maxHeight;
-
             document.querySelectorAll('.accordion-content').forEach(item => {
                 if (item !== content) {
                     item.style.maxHeight = null;
                 }
             });
-
             if (isAlreadyOpen) {
                 content.style.maxHeight = null;
             } else {
@@ -991,15 +876,12 @@
         document.addEventListener('DOMContentLoaded', () => {
             const cookieConsent = document.getElementById('cookieConsent');
             const acceptBtn = document.getElementById('acceptCookies');
-
             if(localStorage.getItem('cookiesAccepted') === 'true') {
                 cookieConsent.style.display = 'none';
             }
-
             acceptBtn.addEventListener('click', () => {
                 localStorage.setItem('cookiesAccepted', 'true');
                 cookieConsent.style.display = 'none';
-                
                 gtag('consent', 'update', {
                     'ad_storage': 'granted',
                     'ad_user_data': 'granted',
@@ -1007,7 +889,6 @@
                     'analytics_storage': 'granted'
                 });
             });
-
             document.addEventListener('click', function(event) {
                 const menuItems = document.getElementById('menuItems');
                 const menuIcon = document.getElementById('menuIcon');
