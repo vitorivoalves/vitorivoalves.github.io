@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -26,6 +27,7 @@
         gtag('js', new Date());
         gtag('config', 'G-RB1VHX9E10');
     </script>
+
     <style>
         body {
             background-color: #121212;
@@ -73,7 +75,9 @@
             border: 3px solid #ffffff;
             object-fit: cover;
         }
-        .buttoninsta, .buttonlinked {
+        
+        /* Estilos dos Botões de Contato */
+        .buttonlinked, .buttonlattes, .buttonemail, .buttoncredly {
             padding: 0.75rem;
             border: none;
             border-radius: 0.25rem;
@@ -85,9 +89,15 @@
             text-align: center;
             text-decoration: none;
             display: inline-block;
+            font-family: 'Arial', sans-serif; 
+            font-weight: bold;
         }
-        .buttoninsta { background: linear-gradient(45deg, #f09433, #e1306c, #c13584, #833ab4, #5851db); font-family: 'Arial', sans-serif; font-weight: bold; }
-        .buttonlinked { background: linear-gradient(45deg, #0077b5, #002b4d); font-family: 'Arial', sans-serif; font-weight: bold; }
+        /* Ajuste de cores para maior diferenciação visual */
+        .buttonlinked { background: linear-gradient(45deg, #0077b5, #004471); } /* Azul vibrante LinkedIn */
+        .buttonlattes { background: linear-gradient(45deg, #34495e, #1a252f); } /* Azul escuro/ardósia acadêmico */
+        .buttoncredly { background: linear-gradient(45deg, #F96302, #c74e00); }
+        .buttonemail { background: linear-gradient(45deg, #d44638, #a32b21); }
+
         .menu-container {
             position: fixed;
             top: 10px;
@@ -132,8 +142,7 @@
             box-sizing: border-box;
             padding: 8px;
             color: #fff;
-            cursor: pointer;
-            text-decoration: none;
+            cursor: pointer;            text-decoration: none;
             border-radius: 4px;
         }
         .menu-item:hover {
@@ -151,8 +160,7 @@
         .lang-switch {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 10px;
+            gap: 10px;            margin-bottom: 10px;
             border-bottom: 1px solid #555;
             padding-bottom: 10px;
         }
@@ -236,29 +244,25 @@
         h4.skills-category {
             color: #ffffff;
             border-bottom: 1px solid #555;
-            padding-bottom: 5px;
-            margin-top: 15px;
+            padding-bottom: 5px;            margin-top: 15px;
             margin-bottom: 10px;
             text-align: left;
         }
         .skills-list {
-            display: flex;
-            flex-wrap: wrap;
+            display: flex;            flex-wrap: wrap;
             gap: 8px;
             justify-content: flex-start;
             padding-bottom: 15px;
         }
         .skill-item {
             background-color: #333;
-            color: #ddd;
-            padding: 5px 10px;
+            color: #ddd;            padding: 5px 10px;
             border-radius: 5px;
             font-size: 0.85rem;
         }
         .carousel-container {
             width: 100%;
-            position: relative;
-            padding: 15px 0;
+            position: relative;            padding: 15px 0;
         }
         .carousel-viewport {
             overflow: hidden;
@@ -268,8 +272,7 @@
             transition: transform 0.5s ease-in-out;
         }
         .carousel-slide {
-            min-width: 100%;
-            box-sizing: border-box;
+            min-width: 100%;            box-sizing: border-box;
             padding: 25px 45px;
         }
         .carousel-slide h4 {
@@ -277,20 +280,15 @@
             margin-bottom: 5px;
         }
         .carousel-btn {
-            position: absolute;
-            top: 50%;
+            position: absolute;            top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0,0,0,0.5);
-            color: white;
+            background-color: rgba(0,0,0,0.5);            color: white;
             border: none;
-            border-radius: 50%;
-            width: 30px;
+            border-radius: 50%;            width: 30px;
             height: 30px;
             cursor: pointer;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            z-index: 2;            display: flex;
+            align-items: center;            justify-content: center;
             font-size: 18px;
         }
         .carousel-btn.prev { left: 5px; }
@@ -299,6 +297,8 @@
         #print-container {
             display: none;
         }
+        
+        /* Configuração de Impressão */
         @media print {
             @page {
                 margin: 2cm;
@@ -312,8 +312,8 @@
                 margin: 0;
                 padding: 0;
             }
-            .menu-container, #cookieConsent, .carousel-btn, iframe, .main-wrapper {
-                 display: none !important;
+            .menu-container, #cookieConsent, .carousel-btn, iframe, .main-wrapper { 
+                 display: none !important; 
              }
             #print-container {
                 display: flex !important;
@@ -373,7 +373,10 @@
             }
             .skills-list { justify-content: center !important; }
             h4.skills-category { text-align: center !important; border-bottom: 1px solid #ccc; color: #000 !important; }
-            .buttoninsta, .buttonlinked { display: none; }
+            
+            /* Ocultando todos os botões de contato na impressão */
+            .buttonlinked, .buttonlattes, .buttoncredly, .buttonemail { display: none; }
+            
             .print-contact-info { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #000; padding-bottom: 15px; width: 100%; }
             a { color: #000 !important; text-decoration: underline; }
         }
@@ -386,6 +389,7 @@
             OK
         </button>
     </div>
+    
     <div class="menu-container">
         <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
             <span class="material-icons">menu</span>
@@ -402,14 +406,17 @@
             <div class="menu-item" onclick="generatePDF()" style="background-color: #4CAF50;" id="menu-pdf"><span class="material-icons">print</span><span>Salvar em PDF</span></div>
         </div>
     </div>
+
     <main class="main-wrapper">
         <div class="container">
             <div id="content" class="section-content"></div>
         </div>
     </main>
     <div id="print-container"></div>
+
     <script>
         let currentLang = localStorage.getItem('siteLang') || 'pt';
+        
         const siteData = {
             pt: {
                 titles: {
@@ -510,14 +517,25 @@
                                             <div class="carousel-viewport">
                                                 <div class="carousel-wrapper">
                                                     <div class="carousel-slide">
-                                                        <h4>Assistente de TI</h4>
-                                                        <h5>Período: setembro de 2021 - Presente</h5>
+                                                        <h4>Analista de Infraestrutura de TI</h4>
+                                                        <h5>Período: abril de 2026 - Presente</h5>
                                                         <p class="location">Cuiabá, Mato Grosso, Brasil</p>
                                                         <ul>
                                                             <li><strong>Gestão de Infraestrutura:</strong> Administração de Datacenter Virtualizado (VMware vCenter e ESXi) e Sustentação de Servidores Windows Server.</li>
                                                             <li><strong>Segurança e Redes:</strong> Gerenciamento de Firewall Sophos XGS, Switches Cisco e Controladoras Wireless (WLC), garantindo conectividade e segurança de borda.</li>
                                                             <li><strong>Governança de TI:</strong> Elaboração técnica de Termos de Referência (TR) para licitações e gestão de contratos de TI no Sistema S.</li>
                                                             <li><strong>Projetos:</strong> Acompanhamento técnico de expansões de rede e cabeamento estruturado.</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="carousel-slide">
+                                                        <h4>Assistente de TI</h4>
+                                                        <h5>Período: setembro de 2021 - março de 2026</h5>
+                                                        <p class="location">Cuiabá, Mato Grosso, Brasil</p>
+                                                        <ul>
+                                                            <li>Suporte técnico de Nível 1 e 2 aos usuários (Help Desk e Service Desk).</li>
+                                                            <li>Manutenção preventiva e corretiva de computadores, impressoras e periféricos.</li>
+                                                            <li>Gerenciamento de contas, permissões de usuários e acessos via Active Directory.</li>
+                                                            <li>Instalação, configuração e atualização de softwares corporativos e sistemas operacionais.</li>
                                                         </ul>
                                                     </div>
                                                     <div class="carousel-slide">
@@ -569,9 +587,9 @@
                         <div id="section4">
                             <h2>Contato</h2>
                             <button class="buttonlinked" onclick="window.open('https://www.linkedin.com/in/vitorivoalves/', '_blank')">LinkedIn</button>
-                            <button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button>
-                            <p style="margin-top: 20px;">Músicas para relaxar enquanto navega:</p>
-                            <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3OxGCk1MRx6Cp3Pak23oEG?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
+                            <button class="buttonlattes" onclick="window.open('https://lattes.cnpq.br/4177372591123932', '_blank')">Currículo Lattes</button>
+                            <button class="buttoncredly" onclick="window.open('https://www.credly.com/users/vitor.ivoalves', '_blank')">Perfil Credly</button>
+                            <button class="buttonemail" onclick="window.location.href='mailto:vitorivo2000@gmail.com'">Email</button>
                         </div>`
                 }
             },
@@ -674,14 +692,25 @@
                                             <div class="carousel-viewport">
                                                 <div class="carousel-wrapper">
                                                     <div class="carousel-slide">
-                                                        <h4>IT Assistant</h4>
-                                                        <h5>Period: September 2021 - Present</h5>
+                                                        <h4>IT Infrastructure Analyst</h4>
+                                                        <h5>Period: April 2026 - Present</h5>
                                                         <p class="location">Cuiabá, Mato Grosso, Brazil</p>
                                                         <ul>
                                                             <li><strong>Infrastructure Management:</strong> Administration of Virtualized Datacenter (VMware vCenter and ESXi) and Windows Server support.</li>
                                                             <li><strong>Security & Networks:</strong> Management of Sophos Firewall XGS, Cisco Switches, and Wireless Controllers (WLC), ensuring connectivity and edge security.</li>
                                                             <li><strong>IT Governance:</strong> Technical elaboration of Reference Terms (ToR) for public tenders and IT contract management within the S System.</li>
                                                             <li><strong>Projects:</strong> Technical monitoring of network expansions and structured cabling.</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="carousel-slide">
+                                                        <h4>IT Assistant</h4>
+                                                        <h5>Period: September 2021 - March 2026</h5>
+                                                        <p class="location">Cuiabá, Mato Grosso, Brazil</p>
+                                                        <ul>
+                                                            <li>Level 1 and 2 technical support for users (Help Desk and Service Desk).</li>
+                                                            <li>Preventive and corrective maintenance of computers, printers, and peripherals.</li>
+                                                            <li>User account, permissions, and access management via Active Directory.</li>
+                                                            <li>Installation, configuration, and updating of corporate software and operating systems.</li>
                                                         </ul>
                                                     </div>
                                                     <div class="carousel-slide">
@@ -733,9 +762,9 @@
                         <div id="section4">
                             <h2>Contact</h2>
                             <button class="buttonlinked" onclick="window.open('https://www.linkedin.com/in/vitorivoalves/', '_blank')">LinkedIn</button>
-                            <button class="buttoninsta" onclick="window.open('https://www.instagram.com/vitor.ivoalves/', '_blank')">Instagram</button>
-                            <p style="margin-top: 20px;">Music to relax while browsing:</p>
-                            <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3OxGCk1MRx6Cp3Pak23oEG?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
+                            <button class="buttonlattes" onclick="window.open('https://lattes.cnpq.br/4177372591123932', '_blank')">Lattes CV</button>
+                            <button class="buttoncredly" onclick="window.open('https://www.credly.com/users/vitor.ivoalves', '_blank')">Credly Profile</button>
+                            <button class="buttonemail" onclick="window.location.href='mailto:vitorivo2000@gmail.com'">Email</button>
                         </div>`
                 }
             }
@@ -746,19 +775,23 @@
             localStorage.setItem('siteLang', lang);
             document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            
             const menu = siteData[lang].menu;
             document.querySelector('#menu-home span:nth-child(2)').textContent = menu.home;
             document.querySelector('#menu-edu span:nth-child(2)').textContent = menu.edu;
             document.querySelector('#menu-exp span:nth-child(2)').textContent = menu.exp;
             document.querySelector('#menu-contact span:nth-child(2)').textContent = menu.contact;
             document.querySelector('#menu-pdf span:nth-child(2)').textContent = menu.pdf;
+            
             const currentSection = localStorage.getItem('currentSection') || 'section1';
             const content = document.getElementById('content');
+            
             content.classList.remove('is-visible');
             setTimeout(() => {
                 content.innerHTML = siteData[lang].sections[currentSection];
                 content.classList.add('is-visible');
             }, 300);
+
             gtag('event', 'switch_language', {
                 'language_selected': lang
             });
@@ -773,21 +806,27 @@
             const content = document.getElementById('content');
             const sectionContent = siteData[currentLang].sections[section];
             const isAlreadyVisible = content.classList.contains('is-visible');
+            
             localStorage.setItem('currentSection', section);
+            
             const newTitle = siteData[currentLang].titles[section];
             document.title = newTitle;
+            
             gtag('event', 'page_view', {
                 page_title: newTitle,
                 page_location: location.href.split('#')[0] + '#' + section,
                 page_path: '/' + section
             });
+            
             if (isAlreadyVisible) {
                 content.classList.remove('is-visible');
             }
+            
             setTimeout(() => {
                 content.innerHTML = sectionContent;
                 content.classList.add('is-visible');
             }, isAlreadyVisible ? 400 : 50);
+            
             const menuItems = document.getElementById('menuItems');
             if (menuItems && menuItems.classList.contains('show')) {
                 toggleMenu();
@@ -797,22 +836,28 @@
         function generatePDF() {
             const printContainer = document.getElementById('print-container');
             const menuItems = document.getElementById('menuItems');
+            
             if (menuItems.classList.contains('show')) {
                 toggleMenu();
             }
+            
             gtag('event', 'generate_pdf', {
                 'event_category': 'Engagement',
                 'event_label': 'PDF Download'
             });
+            
             const contactHeader = `
                 <div class="print-contact-info">
                     <p><strong>Email:</strong> vitorivo2000@gmail.com | <strong>LinkedIn:</strong> linkedin.com/in/vitorivoalves | <strong>Tel:</strong> (65) 99999-6298</p>
                 </div>
             `;
+            
             const s1 = siteData[currentLang].sections.section1;
             const s2 = siteData[currentLang].sections.section2;
             const s3 = siteData[currentLang].sections.section3;
+            
             printContainer.innerHTML = contactHeader + s1 + s2 + s3;
+            
             setTimeout(() => {
                 window.print();
             }, 500);
@@ -821,38 +866,46 @@
         function initializeCarousel() {
             const wrapper = document.querySelector('.carousel-wrapper');
             if (!wrapper || wrapper.classList.contains('initialized')) return;
+            
             wrapper.classList.add('initialized');
             const slides = Array.from(wrapper.children);
             const nextBtn = document.querySelector('.carousel-btn.next');
             const prevBtn = document.querySelector('.carousel-btn.prev');
             let currentSlide = 0;
+            
             if (slides.length <= 1) {
                 if(nextBtn) nextBtn.style.display = 'none';
                 if(prevBtn) prevBtn.style.display = 'none';
             }
+            
             const showSlide = (slideIndex) => {
                 wrapper.style.transform = `translateX(-${slideIndex * 100}%)`;
                 currentSlide = slideIndex;
             };
+            
             if(nextBtn) nextBtn.addEventListener('click', () => {
                 const nextIndex = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
                 showSlide(nextIndex);
             });
+            
             if(prevBtn) prevBtn.addEventListener('click', () => {
                 const prevIndex = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
                 showSlide(prevIndex);
             });
+            
             showSlide(0);
         }
 
         function toggleAccordion(element) {
             const content = element.nextElementSibling;
             const isAlreadyOpen = content.style.maxHeight;
+            
             document.querySelectorAll('.accordion-content').forEach(item => {
                 if (item !== content) {
                     item.style.maxHeight = null;
                 }
             });
+            
             if (isAlreadyOpen) {
                 content.style.maxHeight = null;
             } else {
@@ -876,12 +929,15 @@
         document.addEventListener('DOMContentLoaded', () => {
             const cookieConsent = document.getElementById('cookieConsent');
             const acceptBtn = document.getElementById('acceptCookies');
+            
             if(localStorage.getItem('cookiesAccepted') === 'true') {
                 cookieConsent.style.display = 'none';
             }
+            
             acceptBtn.addEventListener('click', () => {
                 localStorage.setItem('cookiesAccepted', 'true');
                 cookieConsent.style.display = 'none';
+                
                 gtag('consent', 'update', {
                     'ad_storage': 'granted',
                     'ad_user_data': 'granted',
@@ -889,6 +945,7 @@
                     'analytics_storage': 'granted'
                 });
             });
+            
             document.addEventListener('click', function(event) {
                 const menuItems = document.getElementById('menuItems');
                 const menuIcon = document.getElementById('menuIcon');
