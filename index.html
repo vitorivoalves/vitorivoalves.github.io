@@ -101,6 +101,7 @@
             <nav id="siteNav" class="site-nav" aria-label="Principal" data-i18n-attr="aria-label:nav.label">
                 <a href="#atuacao" data-i18n="nav.about">Atuação</a>
                 <a href="#experiencia" data-i18n="nav.experience">Experiência</a>
+                <a href="#projetos" data-i18n="nav.projects">Projetos</a>
                 <a href="#formacao" data-i18n="nav.education">Formação</a>
                 <a href="#competencias" data-i18n="nav.skills">Competências</a>
                 <a href="#contato" data-i18n="nav.contact">Contato</a>
@@ -122,6 +123,11 @@
         </div>
     </header>
 
+    <div id="print-header" class="print-header" aria-hidden="true">
+        <p><strong>Vitor Ivo Santiago Alves</strong></p>
+        <p>vitorivo2000@gmail.com &nbsp;|&nbsp; linkedin.com/in/vitorivoalves &nbsp;|&nbsp; vitorivoalves.github.io</p>
+    </div>
+
     <main id="conteudo">
         <!-- Início -->
         <section id="inicio" class="hero" aria-labelledby="hero-title">
@@ -131,7 +137,7 @@
                     <p class="hero-role" data-i18n="hero.role">Infraestrutura de TI e governança</p>
                     <p class="hero-summary" data-i18n="hero.summary">Bacharel em Engenharia da Computação com mais de 5 anos de experiência em ambientes corporativos de alta disponibilidade, hoje analista de infraestrutura no Senar-MT.</p>
                     <div class="actions">
-                        <button type="button" class="btn btn-primary" id="pdfBtn" data-i18n="hero.pdf">Baixar currículo (PDF)</button>
+                        <a class="btn btn-primary" id="pdfBtn" href="curriculo-vitor-alves-pt.pdf" download data-i18n="hero.pdf">Baixar currículo (PDF)</a>
                         <a class="btn" href="#contato" data-i18n="hero.contact">Entrar em contato</a>
                     </div>
                 </div>
@@ -267,6 +273,38 @@
                             </ol>
                         </li>
                     </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projetos -->
+        <section id="projetos" class="section" aria-labelledby="proj-title">
+            <div class="wrap split">
+                <h2 id="proj-title" data-i18n="proj.title">Projetos</h2>
+                <div class="split-body">
+                    <p class="intro" data-i18n="proj.intro">Alguns trabalhos que mostram como junto automação, documentação técnica e governança.</p>
+                    <div class="projects">
+                        <article class="project">
+                            <h3 data-i18n="proj.p1.t">Automação de laboratórios de informática</h3>
+                            <p data-i18n="proj.p1.d">Script em PowerShell que padroniza a configuração de estações Windows 10 Pro dos laboratórios, eliminando o trabalho manual máquina a máquina.</p>
+                            <ul>
+                                <li data-i18n="proj.p1.b1">Instalação silenciosa de softwares (navegadores, leitor de PDF, antivírus, acesso remoto e pacote Office).</li>
+                                <li data-i18n="proj.p1.b2">Restrições de usuário para o perfil de alunos e imposição de papel de parede padrão.</li>
+                                <li data-i18n="proj.p1.b3">Otimizações de desempenho e tarefas agendadas.</li>
+                            </ul>
+                            <ul class="chips"><li class="chip">PowerShell</li><li class="chip">Windows 10 Pro</li><li class="chip" data-i18n="proj.tag.auto">Automação</li></ul>
+                        </article>
+                        <article class="project">
+                            <h3 data-i18n="proj.p2.t">Termo de Referência para outsourcing de impressão</h3>
+                            <p data-i18n="proj.p2.d">Elaboração técnica das especificações para contratação de serviço de impressão com multifuncionais, em licitação na modalidade pregão eletrônico.</p>
+                            <ul>
+                                <li data-i18n="proj.p2.b1">Requisitos técnicos para equipamentos coloridos A4 e A3, com levantamento de modelos compatíveis de diversos fabricantes.</li>
+                                <li data-i18n="proj.p2.b2">Critérios de bilhetagem, liberação segura de impressão e conformidade com a LGPD.</li>
+                                <li data-i18n="proj.p2.b3">Análise técnica de conformidade das propostas recebidas.</li>
+                            </ul>
+                            <ul class="chips"><li class="chip" data-i18n="proj.tag.tr">Termo de Referência</li><li class="chip" data-i18n="proj.tag.lic">Licitações</li><li class="chip">LGPD</li></ul>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
@@ -410,11 +448,6 @@
             <button type="button" class="text-link" id="cookiePrefs" data-i18n="cookie.prefs">Preferências de cookies</button>
         </div>
     </footer>
-
-    <div id="print-header" class="print-header" aria-hidden="true">
-        <p><strong>Vitor Ivo Santiago Alves</strong></p>
-        <p>vitorivo2000@gmail.com &nbsp;|&nbsp; linkedin.com/in/vitorivoalves &nbsp;|&nbsp; vitorivoalves.github.io</p>
-    </div>
 
     <div id="cookieBanner" class="cookie" role="region" aria-label="Aviso de cookies" data-i18n-attr="aria-label:cookie.label" hidden>
         <p data-i18n="cookie.text">Este site usa cookies de análise (Google Analytics) para entender como é visitado. Você pode aceitar ou recusar.</p>
