@@ -1,7 +1,7 @@
 /* Traduções em inglês. O português é o texto que já está no HTML. */
 window.I18N_EN = {
     /* Metadados e acessibilidade */
-    'meta.title': 'Vitor Alves | IT Infrastructure and Governance',
+    'meta.title': 'Vitor Ivo Santiago Alves | IT Infrastructure and Governance',
     'meta.desc': 'Vitor Alves, IT infrastructure analyst at Senar-MT. VMware, Sophos, Cisco, Windows Server and IT governance in the S System.',
     'skip': 'Skip to content',
     'nav.label': 'Main',

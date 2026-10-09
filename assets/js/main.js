@@ -186,6 +186,43 @@
         });
     }
 
+    /* ---------- Vinheta ao escolher uma seção no menu ---------- */
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var vignette = null;
+    var vignetteBusy = false;
+
+    if (nav && !reduceMotion) {
+        vignette = document.createElement('div');
+        vignette.className = 'vignette';
+        vignette.setAttribute('aria-hidden', 'true');
+        vignette.innerHTML = '<svg viewBox="0 0 64 64" focusable="false"><rect class="v-bg" width="64" height="64" rx="14"/><path class="v-mark" d="M16 20l16 28 16-28"/></svg>';
+        document.body.appendChild(vignette);
+
+        nav.addEventListener('click', function (e) {
+            var a = e.target.closest('a[href^="#"]');
+            if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+            var target = document.querySelector(a.getAttribute('href'));
+            if (!target) return;
+            e.preventDefault();
+            if (vignetteBusy) return;
+            vignetteBusy = true;
+            setMenu(false);
+            vignette.classList.add('is-on');
+
+            setTimeout(function () {
+                target.scrollIntoView({ behavior: 'instant', block: 'start' });
+                try { history.pushState(null, '', a.getAttribute('href')); } catch (err) {}
+                target.setAttribute('tabindex', '-1');
+                target.focus({ preventScroll: true });
+                spy();
+                setTimeout(function () {
+                    vignette.classList.remove('is-on');
+                    setTimeout(function () { vignetteBusy = false; }, 260);
+                }, 260);
+            }, 460);
+        });
+    }
+
     /* ---------- Transições de entrada ---------- */
     if (root.classList.contains('js') && 'IntersectionObserver' in window) {
         var targets = document.querySelectorAll('.hero-copy, .hero-side, .split > h2, .split-body > *, .pillar, .project, .company, .cert-group, .skill-group, .contact-list li');

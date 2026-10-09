@@ -1,0 +1,5 @@
+# Todos os rastreadores (Google, Bing e buscadores com IA) podem acessar o site.
+User-agent: *
+Allow: /
+
+Sitemap: https://vitorivoalves.github.io/sitemap.xml

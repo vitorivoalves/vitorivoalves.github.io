@@ -476,8 +476,30 @@ img { max-width: 100%; height: auto; }
     .js .reveal { opacity: 1; transform: none; }
 }
 
+/* ---------- Vinheta de transição (menu superior) ---------- */
+.vignette {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    display: grid;
+    place-items: center;
+    background: var(--bg);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.22s ease, visibility 0s linear 0.22s;
+}
+.vignette.is-on { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity 0.22s ease; }
+.vignette svg { width: 88px; height: 88px; transform: scale(0.82); transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.vignette.is-on svg { transform: scale(1); }
+.vignette .v-bg { fill: #1b59b8; }
+.vignette .v-mark { fill: none; stroke: #fff; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 60; stroke-dashoffset: 60; }
+.vignette.is-on .v-mark { stroke-dashoffset: 0; transition: stroke-dashoffset 0.42s ease 0.08s; }
+@media (prefers-reduced-motion: reduce) { .vignette { display: none; } }
+
 /* ---------- Impressão / PDF ---------- */
 @media print {
+    .vignette { display: none !important; }
     .js .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
     @page { margin: 1.3cm 1.5cm; }
 
