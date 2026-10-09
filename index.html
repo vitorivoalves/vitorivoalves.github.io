@@ -3,962 +3,428 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vitor Ivo Santiago Alves</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        const savedConsent = localStorage.getItem('cookiesAccepted') === 'true' ? 'granted' : 'denied';
-        gtag('consent', 'default', {
-            'ad_storage': savedConsent,
-            'ad_user_data': savedConsent,
-            'ad_personalization': savedConsent,
-            'analytics_storage': savedConsent,
-            'wait_for_update': 500
-        });
+    <title>Vitor Alves | Infraestrutura de TI e Governança</title>
+    <meta name="description" content="Vitor Alves, analista de infraestrutura de TI no Senar-MT. VMware, Sophos, Cisco, Windows Server e governança de TI no Sistema S.">
+    <meta name="author" content="Vitor Ivo Santiago Alves">
+    <link rel="canonical" href="https://vitorivoalves.github.io/">
+    <meta name="theme-color" content="#0a131b" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f3f5f7" media="(prefers-color-scheme: light)">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Vitor Alves">
+    <meta property="og:title" content="Vitor Alves | Infraestrutura de TI e Governança">
+    <meta property="og:description" content="Analista de infraestrutura de TI no Senar-MT. VMware, Sophos, Cisco, Windows Server e governança de TI.">
+    <meta property="og:url" content="https://vitorivoalves.github.io/">
+    <meta property="og:image" content="https://vitorivoalves.github.io/perfil.jpg">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Vitor Alves | Infraestrutura de TI e Governança">
+    <meta name="twitter:description" content="Analista de infraestrutura de TI no Senar-MT. VMware, Sophos, Cisco, Windows Server e governança de TI.">
+    <meta name="twitter:image" content="https://vitorivoalves.github.io/perfil.jpg">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b59b8'/%3E%3Cpath d='M16 20l16 28 16-28' fill='none' stroke='%23fff' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="preload" href="assets/fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Vitor Ivo Santiago Alves",
+        "alternateName": "Vitor Alves",
+        "url": "https://vitorivoalves.github.io/",
+        "image": "https://vitorivoalves.github.io/perfil.jpg",
+        "jobTitle": "Analista de Infraestrutura de TI",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Senar-MT"
+        },
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Universidade de Cuiabá (UNIC)"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Cuiabá",
+            "addressRegion": "MT",
+            "addressCountry": "BR"
+        },
+        "knowsAbout": ["VMware vSphere", "Sophos Firewall", "Cisco", "Windows Server", "Active Directory", "COBIT", "Governança de TI"],
+        "sameAs": [
+            "https://www.linkedin.com/in/vitorivoalves/",
+            "https://lattes.cnpq.br/4177372591123932",
+            "https://www.credly.com/users/vitor.ivoalves"
+        ]
+    }
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RB1VHX9E10"></script>
+
     <script>
+        /* Tema: aplicado antes da primeira pintura para evitar flash. */
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+
+        /* Google Analytics com Consent Mode: tudo negado até o visitante aceitar. */
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
+        (function () {
+            var analytics = 'denied';
+            try {
+                if (localStorage.getItem('cookieConsent') === 'granted' || localStorage.getItem('cookiesAccepted') === 'true') {
+                    analytics = 'granted';
+                }
+            } catch (e) {}
+            gtag('consent', 'default', {
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+                analytics_storage: analytics,
+                wait_for_update: 500
+            });
+        })();
         gtag('js', new Date());
         gtag('config', 'G-RB1VHX9E10');
     </script>
-
-    <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: "Funnel Sans", sans-serif;
-            margin: 0;
-            line-height: 1.6;
-        }
-        .main-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: start;
-            min-height: 100vh;
-            width: 100%;
-        }
-        .container {
-            width: 90%;
-            max-width: 800px;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            align-items: center;
-            text-align: center;
-            padding-top: 60px;
-            padding-bottom: 40px;
-        }
-        .section-content {
-            width: 100%;
-            opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-        }
-        .section-content.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        #section1 p {
-            text-align: justify;
-        }
-        .profile-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 3px solid #ffffff;
-            object-fit: cover;
-        }
-        
-        /* Estilos dos Botões de Contato */
-        .buttonlinked, .buttonlattes, .buttonemail, .buttoncredly {
-            padding: 0.75rem;
-            border: none;
-            border-radius: 0.25rem;
-            color: #fff;
-            cursor: pointer;
-            font-size: 1rem;
-            margin: 0.5rem 0;
-            width: 60%;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-family: 'Arial', sans-serif; 
-            font-weight: bold;
-        }
-        /* Ajuste de cores para maior diferenciação visual */
-        .buttonlinked { background: linear-gradient(45deg, #0077b5, #004471); } /* Azul vibrante LinkedIn */
-        .buttonlattes { background: linear-gradient(45deg, #34495e, #1a252f); } /* Azul escuro/ardósia acadêmico */
-        .buttoncredly { background: linear-gradient(45deg, #F96302, #c74e00); }
-        .buttonemail { background: linear-gradient(45deg, #d44638, #a32b21); }
-
-        .menu-container {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            z-index: 100;
-        }
-        .menu-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 35px;
-            height: 35px;
-            background-color: #444;
-            border-radius: 50%;
-            color: #fff;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        .menu-items {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            background-color: #333;
-            padding: 10px;
-            border-radius: 8px;
-            margin-top: 10px;
-            opacity: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, opacity 0.3s ease;
-            width: 220px;
-        }
-        .menu-items.show {
-            opacity: 1;
-            max-height: 400px;
-        }
-        .menu-item {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            width: 100%;
-            box-sizing: border-box;
-            padding: 8px;
-            color: #fff;
-            cursor: pointer;            text-decoration: none;
-            border-radius: 4px;
-        }
-        .menu-item:hover {
-            background-color: #555;
-        }
-        .menu-item .material-icons {
-            margin-right: 8px;
-            font-size: 16px;
-        }
-        .menu-item span:not(.material-icons) {
-            font-family: "Funnel Sans", sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        .lang-switch {
-            display: flex;
-            justify-content: center;
-            gap: 10px;            margin-bottom: 10px;
-            border-bottom: 1px solid #555;
-            padding-bottom: 10px;
-        }
-        .lang-btn {
-            background: none;
-            border: 1px solid #777;
-            color: #aaa;
-            padding: 4px 8px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        .lang-btn.active {
-            background-color: #4CAF50;
-            color: white;
-            border-color: #4CAF50;
-        }
-        .accordion {
-            width: 100%;
-            margin: 10px 0;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        .accordion-item {
-            border-bottom: 1px solid #444;
-        }
-        .accordion-item:last-of-type {
-            border-bottom: none;
-        }
-        .accordion-header {
-            background-color: #333;
-            color: #fff;
-            cursor: pointer;
-            padding: 15px;
-            text-align: center;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .accordion-header:hover {
-            background-color: #555;
-        }
-        .accordion-content {
-            background-color: #222;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out;
-            text-align: left;
-            padding: 0 15px;
-        }
-        .accordion-content ul {
-            list-style-type: none;
-            padding: 10px 0;
-            margin: 0;
-            color: #aaa;
-        }
-        .accordion-content ul li {
-            border-bottom: 1px solid #444;
-            padding: 12px 0;
-        }
-        .accordion-content ul li:last-child {
-            border-bottom: none;
-        }
-        .link-certificado {
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .link-certificado:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        .location {
-            font-size: 0.85rem;
-            color: #bbbbbb;
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-        .skills-container {
-            padding: 15px;
-        }
-        h4.skills-category {
-            color: #ffffff;
-            border-bottom: 1px solid #555;
-            padding-bottom: 5px;            margin-top: 15px;
-            margin-bottom: 10px;
-            text-align: left;
-        }
-        .skills-list {
-            display: flex;            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: flex-start;
-            padding-bottom: 15px;
-        }
-        .skill-item {
-            background-color: #333;
-            color: #ddd;            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.85rem;
-        }
-        .carousel-container {
-            width: 100%;
-            position: relative;            padding: 15px 0;
-        }
-        .carousel-viewport {
-            overflow: hidden;
-        }
-        .carousel-wrapper {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .carousel-slide {
-            min-width: 100%;            box-sizing: border-box;
-            padding: 25px 45px;
-        }
-        .carousel-slide h4 {
-            margin-top: 0;
-            margin-bottom: 5px;
-        }
-        .carousel-btn {
-            position: absolute;            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0,0,0,0.5);            color: white;
-            border: none;
-            border-radius: 50%;            width: 30px;
-            height: 30px;
-            cursor: pointer;
-            z-index: 2;            display: flex;
-            align-items: center;            justify-content: center;
-            font-size: 18px;
-        }
-        .carousel-btn.prev { left: 5px; }
-        .carousel-btn.next { right: 5px; }
-        .carousel-dots { display: none; }
-        #print-container {
-            display: none;
-        }
-        
-        /* Configuração de Impressão */
-        @media print {
-            @page {
-                margin: 2cm;
-                size: auto;
-            }
-            body {
-                background-color: #fff !important;
-                color: #000 !important;
-                font-family: "Arial", sans-serif !important;
-                -webkit-print-color-adjust: exact;
-                margin: 0;
-                padding: 0;
-            }
-            .menu-container, #cookieConsent, .carousel-btn, iframe, .main-wrapper { 
-                 display: none !important; 
-             }
-            #print-container {
-                display: flex !important;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-                max-width: none;
-                margin: 0 auto;
-                padding: 10px;
-            }
-            #section1, #section2, #section3 {
-                width: 100%;
-                text-align: center;
-                margin-bottom: 25px;
-            }
-            #section1 p { text-align: justify; }
-            h2, h3, h4, strong { color: #000 !important; }
-            p, span, li, .location { color: #333 !important; }
-            .profile-image {
-                border-color: #333 !important;
-                width: 150px;
-                height: 150px;
-                display: block;
-                margin: 0 auto 20px auto;
-            }
-            .accordion-header {
-                background-color: #f0f0f0 !important;
-                color: #000 !important;
-                border: none;
-                border-bottom: 2px solid #ccc;
-                pointer-events: none;
-                text-align: center !important;
-                padding: 10px;
-                margin-top: 15px;
-                font-size: 1.1em;
-            }
-            .accordion-content {
-                max-height: none !important;
-                background-color: #fff !important;
-                overflow: visible !important;
-                padding: 10px 0 !important;
-                border: none !important;
-                text-align: center !important;
-            }
-            .accordion-content ul { display: inline-block; width: 100%; padding: 0; }
-            .accordion-content ul li { border-bottom: 1px solid #eee; text-align: left; padding: 8px 10px; }
-            .carousel-viewport { overflow: visible !important; }
-            .carousel-wrapper { transform: none !important; display: flex !important; flex-direction: column; align-items: center; }
-            .carousel-slide { width: 100% !important; padding: 15px 0 !important; page-break-inside: avoid; border-bottom: 1px solid #ccc; margin-bottom: 10px; text-align: center; }
-            .carousel-slide ul { text-align: left; }
-            .skill-item {
-                background-color: #fff !important;
-                color: #000 !important;
-                border: 1px solid #999;
-                display: inline-block;
-                margin: 2px;
-            }
-            .skills-list { justify-content: center !important; }
-            h4.skills-category { text-align: center !important; border-bottom: 1px solid #ccc; color: #000 !important; }
-            
-            /* Ocultando todos os botões de contato na impressão */
-            .buttonlinked, .buttonlattes, .buttoncredly, .buttonemail { display: none; }
-            
-            .print-contact-info { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #000; padding-bottom: 15px; width: 100%; }
-            a { color: #000 !important; text-decoration: underline; }
-        }
-    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RB1VHX9E10"></script>
 </head>
 <body>
-    <div id="cookieConsent" style="position: fixed; bottom: 0; left: 0; right: 0; background-color: #222; color: #fff; padding: 15px; text-align: center; font-size: 0.9rem; z-index: 1000; display: flex; justify-content: center; align-items: center; gap: 10px;">
-        Este site utiliza cookies / This site uses cookies.
-        <button id="acceptCookies" style="background-color: #4CAF50; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer;">
-            OK
-        </button>
-    </div>
-    
-    <div class="menu-container">
-        <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">
-            <span class="material-icons">menu</span>
-        </div>
-        <div class="menu-items" id="menuItems">
-            <div class="lang-switch">
-                <button class="lang-btn active" id="btn-pt" onclick="setLanguage('pt')">PT</button>
-                <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
-            </div>
-            <div class="menu-item" onclick="showSection('section1')" id="menu-home"><span class="material-icons">home</span><span>Home</span></div>
-            <div class="menu-item" onclick="showSection('section2')" id="menu-edu"><span class="material-icons">menu_book</span><span>Educação</span></div>
-            <div class="menu-item" onclick="showSection('section3')" id="menu-exp"><span class="material-icons">business_center</span><span>Experiência</span></div>
-            <div class="menu-item" onclick="showSection('section4')" id="menu-contact"><span class="material-icons">contacts</span><span>Contato</span></div>
-            <div class="menu-item" onclick="generatePDF()" style="background-color: #4CAF50;" id="menu-pdf"><span class="material-icons">print</span><span>Salvar em PDF</span></div>
-        </div>
-    </div>
+    <a class="skip-link" href="#conteudo" data-i18n="skip">Ir para o conteúdo</a>
 
-    <main class="main-wrapper">
-        <div class="container">
-            <div id="content" class="section-content"></div>
-        </div>
-    </main>
-    <div id="print-container"></div>
+    <header class="site-header">
+        <div class="bar">
+            <a class="brand" href="#inicio">Vitor Alves</a>
 
-    <script>
-        let currentLang = localStorage.getItem('siteLang') || 'pt';
-        
-        const siteData = {
-            pt: {
-                titles: {
-                    section1: 'Home | Vitor Alves',
-                    section2: 'Educação | Vitor Alves',
-                    section3: 'Experiência | Vitor Alves',
-                    section4: 'Contato | Vitor Alves'
-                },
-                menu: {
-                    home: 'Home',
-                    edu: 'Educação',
-                    exp: 'Experiência',
-                    contact: 'Contato',
-                    pdf: 'Salvar em PDF'
-                },
-                sections: {
-                    section1: `
-                        <div id="section1">
-                            <img src="perfil.jpg" alt="Vitor Alves" class="profile-image">
-                            <h3>VITOR ALVES | INFRAESTRUTURA DE TI & GOVERNANÇA</h3>
-                            <p>Bacharel em Engenharia da Computação com 5 anos de experiência em ambientes corporativos de alta disponibilidade.
-                            <br><br>
-                            Atuo como especialista em infraestrutura, com foco na administração de ambientes virtualizados (VMware vCenter/ESXi), segurança de perímetro (Sophos Firewall) e redes corporativas (Cisco).
-                            <br><br>
-                            Combino a capacidade técnica de resolução de problemas (Troubleshooting) com uma visão estratégica de Governança de TI, atuando diretamente na elaboração de Termos de Referência e gestão de contratos técnicos no Sistema S.</p>
-                        </div>`,
-                    section2: `
-                        <div id="section2">
-                            <h2>Educação e Competências</h2>
-                            <div class="accordion">
-                                <div class="accordion-item">
-                                    <div class="accordion-header" onclick="toggleAccordion(this)">Formação Acadêmica</div>
-                                    <div class="accordion-content">
-                                        <ul>
-                                            <li>
-                                                <strong>Bacharelado em Engenharia da Computação</strong><br>
-                                                Universidade de Cuiabá (UNIC) <br>
-                                                <small>Concluído (Dez 2025)</small>
-                                                <br>
-                                                <a href="https://drive.google.com/drive/folders/1hUxhMo7rSoGQco74ftTJXhYr2gKCHrzs?usp=sharing" target="_blank" style="color: #4CAF50; font-size: 0.9em; text-decoration: none; font-weight: bold; margin-top: 5px; display: inline-block;">Ver Diploma</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header" onclick="toggleAccordion(this)">Cursos e Certificados</div>
-                                    <div class="accordion-content">
-                                        <ul>
-                                            <li><strong>Infraestrutura e Segurança:</strong><br>
-                                            • Cisco: Introdução à Cibersegurança<br>
-                                            • Sophos: Curso Prático de Sophos Firewall (XGS)<br>
-                                            • Microsoft: Implantação e Administração Windows Server<br>
-                                            • Microsoft: Configuração e Gerenciamento de Hyper-V</li>
-                                            <li><strong>Gestão e Governança:</strong><br>
-                                            • Trilha de Carreira: Gestão de Projetos (60h) e Modelos de Gestão (60h)<br>
-                                            • COBIT 2019: Princípios e Estrutura<br>
-                                            • Lei Geral de Proteção de Dados (LGPD)<br>
-                                            <li><strong>Idiomas:</strong><br>
-                                            • English I (Inglês I voltado para Agronegócio)</li>
-                                            <li style="text-align: center; border-bottom: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding-top: 20px;">
-                                                <a href="https://drive.google.com/drive/folders/1vidg6QPu4Tyt52F_auglcNksgXDq9a_G?usp=sharing" target="_blank" class="link-certificado" style="display: inline-block; padding: 10px 20px; border: 1px solid #4CAF50; color: #4CAF50; border-radius: 5px;">
-                                                    Visualizar Certificados
-                                                </a>
-                                                <a href="https://www.credly.com/users/vitor.ivoalves" target="_blank" class="link-certificado" style="display: inline-block; padding: 10px 20px; border: 1px solid #F96302; color: #F96302; border-radius: 5px;">
-                                                    Perfil Credly
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header" onclick="toggleAccordion(this)">Principais Competências</div>
-                                    <div class="accordion-content">
-                                        <div class="skills-container">
-                                            <h4 class="skills-category">Redes e Segurança</h4>
-                                            <div class="skills-list"><span class="skill-item">Administração de Redes</span><span class="skill-item">Segurança da Informação</span><span class="skill-item">Firewalls (Sophos)</span><span class="skill-item">VPN</span><span class="skill-item">Voz sobre IP (VoIP)</span><span class="skill-item">DNS</span><span class="skill-item">Cabeamento Estruturado</span><span class="skill-item">Segurança Cibernética</span></div>
-                                            <h4 class="skills-category">Sistemas Operacionais e Servidores</h4>
-                                            <div class="skills-list"><span class="skill-item">Microsoft Windows</span><span class="skill-item">Windows Server</span><span class="skill-item">Linux</span><span class="skill-item">Active Directory</span><span class="skill-item">Administração de Servidores</span><span class="skill-item">Virtualização (VMware)</span></div>
-                                            <h4 class="skills-category">Software e Ferramentas</h4>
-                                            <div class="skills-list"><span class="skill-item">Microsoft Office 365</span><span class="skill-item">Microsoft Excel</span><span class="skill-item">TOTVS</span><span class="skill-item">TeamViewer</span><span class="skill-item">Software</span><span class="skill-item">Instalação de Software</span></div>
-                                            <h4 class="skills-category">Governança e Processos de TI</h4>
-                                            <div class="skills-list"><span class="skill-item">Governança de TI (COBIT)</span><span class="skill-item">Gestão de Incidentes</span><span class="skill-item">Gestão de Infraestrutura de TI</span><span class="skill-item">Operações de TI</span><span class="skill-item">Política de Segurança</span><span class="skill-item">Documentação</span><span class="skill-item">Políticas e Procedimentos</span></div>
-                                            <h4 class="skills-category">Suporte e Hardware</h4>
-                                            <div class="skills-list"><span class="skill-item">Suporte Técnico</span><span class="skill-item">Suporte para Help Desk</span><span class="skill-item">Central de Serviços</span><span class="skill-item">Manutenção de Computadores</span><span class="skill-item">Hardware de Computador</span><span class="skill-item">Suporte de Hardware de TI</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>`,
-                    section3: `
-                        <div id="section3">
-                            <h2>Experiência Profissional</h2>
-                            <div class="accordion">
-                                <div class="accordion-item">
-                                    <div class="accordion-header" id="senar-accordion-header" onclick="toggleAccordion(this)">Senar-MT</div>
-                                    <div class="accordion-content">
-                                        <div class="carousel-container">
-                                            <div class="carousel-viewport">
-                                                <div class="carousel-wrapper">
-                                                    <div class="carousel-slide">
-                                                        <h4>Analista de Infraestrutura de TI</h4>
-                                                        <h5>Período: abril de 2026 - Presente</h5>
-                                                        <p class="location">Cuiabá, Mato Grosso, Brasil</p>
-                                                        <ul>
-                                                            <li><strong>Gestão de Infraestrutura:</strong> Administração de Datacenter Virtualizado (VMware vCenter e ESXi) e Sustentação de Servidores Windows Server.</li>
-                                                            <li><strong>Segurança e Redes:</strong> Gerenciamento de Firewall Sophos XGS, Switches Cisco e Controladoras Wireless (WLC), garantindo conectividade e segurança de borda.</li>
-                                                            <li><strong>Governança de TI:</strong> Elaboração técnica de Termos de Referência (TR) para licitações e gestão de contratos de TI no Sistema S.</li>
-                                                            <li><strong>Projetos:</strong> Acompanhamento técnico de expansões de rede e cabeamento estruturado.</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="carousel-slide">
-                                                        <h4>Assistente de TI</h4>
-                                                        <h5>Período: setembro de 2021 - março de 2026</h5>
-                                                        <p class="location">Cuiabá, Mato Grosso, Brasil</p>
-                                                        <ul>
-                                                            <li>Suporte técnico de Nível 1 e 2 aos usuários (Help Desk e Service Desk).</li>
-                                                            <li>Manutenção preventiva e corretiva de computadores, impressoras e periféricos.</li>
-                                                            <li>Gerenciamento de contas, permissões de usuários e acessos via Active Directory.</li>
-                                                            <li>Instalação, configuração e atualização de softwares corporativos e sistemas operacionais.</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="carousel-slide">
-                                                        <h4>Estagiário de Suporte</h4>
-                                                        <h5>Período: outubro de 2020 - setembro de 2021</h5>
-                                                        <p class="location">Cuiabá, Mato Grosso, Brasil</p>
-                                                        <ul>
-                                                            <li>Auxílio aos usuários na utilização do pacote Office e internet.</li>
-                                                            <li>Montagem de estações de trabalho e apoio em cabeamento.</li>
-                                                            <li>Instalação de programas e solução de problemas de impressão.</li>
-                                                            <li>Triagem dos chamados abertos para a área de TI.</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button class="carousel-btn prev"><</button>
-                                            <button class="carousel-btn next">></button>
-                                            <div class="carousel-dots"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header" onclick="toggleAccordion(this)">Tecnomapas</div>
-                                    <div class="accordion-content">
-                                        <h4>Estagiário de Apoio Técnico</h4>
-                                        <h5>Período: março de 2020 - julho de 2020</h5>
-                                        <p class="location">Cuiabá, Mato Grosso, Brasil</p>
-                                        <ul>
-                                            <li>Acompanhamento de testes de software e programas.</li>
-                                            <li>Suporte supervisionado aos usuários e à área de TI.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header" onclick="toggleAccordion(this)">Carvalima Transportes</div>
-                                    <div class="accordion-content">
-                                        <h4>Aprendiz de Auxiliar Administrativo</h4>
-                                        <h5>Período: janeiro de 2017 - dezembro de 2017</h5>
-                                        <p class="location">Cuiabá, Mato Grosso, Brasil</p>
-                                        <ul>
-                                            <li>Atualização e organização de dados em planilhas.</li>
-                                            <li>Gerência e observação de cotações e negociações de cargas.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>`,
-                    section4: `
-                        <div id="section4">
-                            <h2>Contato</h2>
-                            <button class="buttonlinked" onclick="window.open('https://www.linkedin.com/in/vitorivoalves/', '_blank')">LinkedIn</button>
-                            <button class="buttonlattes" onclick="window.open('https://lattes.cnpq.br/4177372591123932', '_blank')">Currículo Lattes</button>
-                            <button class="buttoncredly" onclick="window.open('https://www.credly.com/users/vitor.ivoalves', '_blank')">Perfil Credly</button>
-                            <button class="buttonemail" onclick="window.location.href='mailto:vitorivo2000@gmail.com'">Email</button>
-                        </div>`
-                }
-            },
-            en: {
-                titles: {
-                    section1: 'Home | Vitor Alves',
-                    section2: 'Education | Vitor Alves',
-                    section3: 'Experience | Vitor Alves',
-                    section4: 'Contact | Vitor Alves'
-                },
-                menu: {
-                    home: 'Home',
-                    edu: 'Education',
-                    exp: 'Experience',
-                    contact: 'Contact',
-                    pdf: 'Save as PDF'
-                },
-                sections: {
-                    section1: `
-                        <div id="section1">
-                            <img src="perfil.jpg" alt="Vitor Alves" class="profile-image">
-                            <h3>VITOR ALVES | IT INFRASTRUCTURE & GOVERNANCE</h3>
-                            <p>Bachelor in Computer Engineering with 5 years of experience in high-availability corporate environments.
-                            <br><br>
-                            I work as an infrastructure specialist, focusing on the administration of virtualized environments (VMware vCenter/ESXi), perimeter security (Sophos Firewall), and corporate networks (Cisco).
-                            <br><br>
-                            I combine technical troubleshooting skills with a strategic view of IT Governance, working directly on drafting Reference Terms (ToR) and managing technical contracts within the S System entities.</p>
-                        </div>`,
-                    section2: `
-                        <div id="section2">
-                            <h2>Education & Skills</h2>
-                            <div class="accordion">
-                                <div class="accordion-item">
-                                    <div class="accordion-header" onclick="toggleAccordion(this)">Academic Background</div>
-                                    <div class="accordion-content">
-                                        <ul>
-                                            <li>
-                                                <strong>Bachelor of Computer Engineering</strong><br>
-                                                University of Cuiabá (UNIC) <br>
-                                                <small>Completed (Dec 2025)</small>
-                                                <br>
-                                                <a href="https://drive.google.com/drive/folders/1hUxhMo7rSoGQco74ftTJXhYr2gKCHrzs?usp=sharing" target="_blank" style="color: #4CAF50; font-size: 0.9em; text-decoration: none; font-weight: bold; margin-top: 5px; display: inline-block;">View Diploma</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header" onclick="toggleAccordion(this)">Courses & Certificates</div>
-                                    <div class="accordion-content">
-                                        <ul>
-                                            <li><strong>Infrastructure & Security:</strong><br>
-                                            • Cisco: Introduction to Cybersecurity<br>
-                                            • Sophos: Sophos Firewall (XGS) Practical Course<br>
-                                            • Microsoft: Windows Server Deployment & Administration<br>
-                                            • Microsoft: Hyper-V Configuration & Management</li>
-                                            <li><strong>Management & Governance:</strong><br>
-                                            • Career Path: Project Management (60h) and Management Models (60h)<br>
-                                            • COBIT 2019: Principles and Structure<br>
-                                            • LGPD (General Data Protection Law)<br>
-                                            <li><strong>Languages:</strong><br>
-                                            • English I (Agribusiness focused English)</li>
-                                            <li style="text-align: center; border-bottom: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding-top: 20px;">
-                                                <a href="https://drive.google.com/drive/folders/1vidg6QPu4Tyt52F_auglcNksgXDq9a_G?usp=sharing" target="_blank" class="link-certificado" style="display: inline-block; padding: 10px 20px; border: 1px solid #4CAF50; color: #4CAF50; border-radius: 5px;">
-                                                    View Certificates
-                                                </a>
-                                                <a href="https://www.credly.com/users/vitor.ivoalves" target="_blank" class="link-certificado" style="display: inline-block; padding: 10px 20px; border: 1px solid #F96302; color: #F96302; border-radius: 5px;">
-                                                    Credly Profile
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header" onclick="toggleAccordion(this)">Key Competencies</div>
-                                    <div class="accordion-content">
-                                        <div class="skills-container">
-                                            <h4 class="skills-category">Networks & Security</h4>
-                                            <div class="skills-list"><span class="skill-item">Network Administration</span><span class="skill-item">Information Security</span><span class="skill-item">Firewalls (Sophos)</span><span class="skill-item">VPN</span><span class="skill-item">VoIP</span><span class="skill-item">DNS</span><span class="skill-item">Structured Cabling</span><span class="skill-item">Cybersecurity</span></div>
-                                            <h4 class="skills-category">Operating Systems & Servers</h4>
-                                            <div class="skills-list"><span class="skill-item">Microsoft Windows</span><span class="skill-item">Windows Server</span><span class="skill-item">Linux</span><span class="skill-item">Active Directory</span><span class="skill-item">Server Administration</span><span class="skill-item">Virtualization (VMware)</span></div>
-                                            <h4 class="skills-category">Software & Tools</h4>
-                                            <div class="skills-list"><span class="skill-item">Microsoft Office 365</span><span class="skill-item">Microsoft Excel</span><span class="skill-item">TOTVS</span><span class="skill-item">TeamViewer</span><span class="skill-item">Software Installation</span></div>
-                                            <h4 class="skills-category">Governance & IT Processes</h4>
-                                            <div class="skills-list"><span class="skill-item">IT Governance (COBIT)</span><span class="skill-item">Incident Management</span><span class="skill-item">IT Infrastructure Management</span><span class="skill-item">IT Operations</span><span class="skill-item">Security Policy</span><span class="skill-item">Documentation</span></div>
-                                            <h4 class="skills-category">Support & Hardware</h4>
-                                            <div class="skills-list"><span class="skill-item">Technical Support</span><span class="skill-item">Help Desk Support</span><span class="skill-item">Service Desk</span><span class="skill-item">PC Maintenance</span><span class="skill-item">Computer Hardware</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>`,
-                    section3: `
-                        <div id="section3">
-                            <h2>Professional Experience</h2>
-                            <div class="accordion">
-                                <div class="accordion-item">
-                                    <div class="accordion-header" id="senar-accordion-header" onclick="toggleAccordion(this)">Senar-MT</div>
-                                    <div class="accordion-content">
-                                        <div class="carousel-container">
-                                            <div class="carousel-viewport">
-                                                <div class="carousel-wrapper">
-                                                    <div class="carousel-slide">
-                                                        <h4>IT Infrastructure Analyst</h4>
-                                                        <h5>Period: April 2026 - Present</h5>
-                                                        <p class="location">Cuiabá, Mato Grosso, Brazil</p>
-                                                        <ul>
-                                                            <li><strong>Infrastructure Management:</strong> Administration of Virtualized Datacenter (VMware vCenter and ESXi) and Windows Server support.</li>
-                                                            <li><strong>Security & Networks:</strong> Management of Sophos Firewall XGS, Cisco Switches, and Wireless Controllers (WLC), ensuring connectivity and edge security.</li>
-                                                            <li><strong>IT Governance:</strong> Technical elaboration of Reference Terms (ToR) for public tenders and IT contract management within the S System.</li>
-                                                            <li><strong>Projects:</strong> Technical monitoring of network expansions and structured cabling.</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="carousel-slide">
-                                                        <h4>IT Assistant</h4>
-                                                        <h5>Period: September 2021 - March 2026</h5>
-                                                        <p class="location">Cuiabá, Mato Grosso, Brazil</p>
-                                                        <ul>
-                                                            <li>Level 1 and 2 technical support for users (Help Desk and Service Desk).</li>
-                                                            <li>Preventive and corrective maintenance of computers, printers, and peripherals.</li>
-                                                            <li>User account, permissions, and access management via Active Directory.</li>
-                                                            <li>Installation, configuration, and updating of corporate software and operating systems.</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="carousel-slide">
-                                                        <h4>IT Support Intern</h4>
-                                                        <h5>Period: October 2020 - September 2021</h5>
-                                                        <p class="location">Cuiabá, Mato Grosso, Brazil</p>
-                                                        <ul>
-                                                            <li>Assisted users with Office package and internet usage.</li>
-                                                            <li>Workstation assembly and cabling support.</li>
-                                                            <li>Software installation and printing troubleshooting.</li>
-                                                            <li>Screening of tickets opened for the IT department.</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button class="carousel-btn prev"><</button>
-                                            <button class="carousel-btn next">></button>
-                                            <div class="carousel-dots"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header" onclick="toggleAccordion(this)">Tecnomapas</div>
-                                    <div class="accordion-content">
-                                        <h4>Technical Support Intern</h4>
-                                        <h5>Period: March 2020 - July 2020</h5>
-                                        <p class="location">Cuiabá, Mato Grosso, Brazil</p>
-                                        <ul>
-                                            <li>Monitoring of software and program tests.</li>
-                                            <li>Supervised support for users and the IT department.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header" onclick="toggleAccordion(this)">Carvalima Transportes</div>
-                                    <div class="accordion-content">
-                                        <h4>Administrative Assistant Apprentice</h4>
-                                        <h5>Period: January 2017 - December 2017</h5>
-                                        <p class="location">Cuiabá, Mato Grosso, Brazil</p>
-                                        <ul>
-                                            <li>Updating and organizing data in spreadsheets.</li>
-                                            <li>Management and observation of freight quotes and negotiations.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>`,
-                    section4: `
-                        <div id="section4">
-                            <h2>Contact</h2>
-                            <button class="buttonlinked" onclick="window.open('https://www.linkedin.com/in/vitorivoalves/', '_blank')">LinkedIn</button>
-                            <button class="buttonlattes" onclick="window.open('https://lattes.cnpq.br/4177372591123932', '_blank')">Lattes CV</button>
-                            <button class="buttoncredly" onclick="window.open('https://www.credly.com/users/vitor.ivoalves', '_blank')">Credly Profile</button>
-                            <button class="buttonemail" onclick="window.location.href='mailto:vitorivo2000@gmail.com'">Email</button>
-                        </div>`
-                }
-            }
-        };
+            <nav id="siteNav" class="site-nav" aria-label="Principal" data-i18n-attr="aria-label:nav.label">
+                <a href="#atuacao" data-i18n="nav.about">Atuação</a>
+                <a href="#experiencia" data-i18n="nav.experience">Experiência</a>
+                <a href="#formacao" data-i18n="nav.education">Formação</a>
+                <a href="#competencias" data-i18n="nav.skills">Competências</a>
+                <a href="#contato" data-i18n="nav.contact">Contato</a>
+            </nav>
 
-        function setLanguage(lang) {
-            currentLang = lang;
-            localStorage.setItem('siteLang', lang);
-            document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
-            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-            
-            const menu = siteData[lang].menu;
-            document.querySelector('#menu-home span:nth-child(2)').textContent = menu.home;
-            document.querySelector('#menu-edu span:nth-child(2)').textContent = menu.edu;
-            document.querySelector('#menu-exp span:nth-child(2)').textContent = menu.exp;
-            document.querySelector('#menu-contact span:nth-child(2)').textContent = menu.contact;
-            document.querySelector('#menu-pdf span:nth-child(2)').textContent = menu.pdf;
-            
-            const currentSection = localStorage.getItem('currentSection') || 'section1';
-            const content = document.getElementById('content');
-            
-            content.classList.remove('is-visible');
-            setTimeout(() => {
-                content.innerHTML = siteData[lang].sections[currentSection];
-                content.classList.add('is-visible');
-            }, 300);
-
-            gtag('event', 'switch_language', {
-                'language_selected': lang
-            });
-        }
-
-        function toggleMenu() {
-            const menuItems = document.getElementById('menuItems');
-            menuItems.classList.toggle('show');
-        }
-
-        function showSection(section) {
-            const content = document.getElementById('content');
-            const sectionContent = siteData[currentLang].sections[section];
-            const isAlreadyVisible = content.classList.contains('is-visible');
-            
-            localStorage.setItem('currentSection', section);
-            
-            const newTitle = siteData[currentLang].titles[section];
-            document.title = newTitle;
-            
-            gtag('event', 'page_view', {
-                page_title: newTitle,
-                page_location: location.href.split('#')[0] + '#' + section,
-                page_path: '/' + section
-            });
-            
-            if (isAlreadyVisible) {
-                content.classList.remove('is-visible');
-            }
-            
-            setTimeout(() => {
-                content.innerHTML = sectionContent;
-                content.classList.add('is-visible');
-            }, isAlreadyVisible ? 400 : 50);
-            
-            const menuItems = document.getElementById('menuItems');
-            if (menuItems && menuItems.classList.contains('show')) {
-                toggleMenu();
-            }
-        }
-
-        function generatePDF() {
-            const printContainer = document.getElementById('print-container');
-            const menuItems = document.getElementById('menuItems');
-            
-            if (menuItems.classList.contains('show')) {
-                toggleMenu();
-            }
-            
-            gtag('event', 'generate_pdf', {
-                'event_category': 'Engagement',
-                'event_label': 'PDF Download'
-            });
-            
-            const contactHeader = `
-                <div class="print-contact-info">
-                    <p><strong>Email:</strong> vitorivo2000@gmail.com | <strong>LinkedIn:</strong> linkedin.com/in/vitorivoalves | <strong>Tel:</strong> (65) 99999-6298</p>
+            <div class="tools">
+                <div class="seg" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang.label">
+                    <button type="button" class="seg-btn" data-lang="pt" aria-pressed="true" lang="pt-BR" title="Português">PT</button>
+                    <button type="button" class="seg-btn" data-lang="en" aria-pressed="false" lang="en" title="English">EN</button>
                 </div>
-            `;
-            
-            const s1 = siteData[currentLang].sections.section1;
-            const s2 = siteData[currentLang].sections.section2;
-            const s3 = siteData[currentLang].sections.section3;
-            
-            printContainer.innerHTML = contactHeader + s1 + s2 + s3;
-            
-            setTimeout(() => {
-                window.print();
-            }, 500);
-        }
+                <button type="button" class="icon-btn" id="themeBtn" aria-label="Alternar tema claro e escuro" data-i18n-attr="aria-label:theme.label">
+                    <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3L17 7M7 17l-1.7 1.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="icon-btn menu-btn" id="menuBtn" aria-expanded="false" aria-controls="siteNav" aria-label="Abrir menu" data-i18n-attr="aria-label:menu.open">
+                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
 
-        function initializeCarousel() {
-            const wrapper = document.querySelector('.carousel-wrapper');
-            if (!wrapper || wrapper.classList.contains('initialized')) return;
-            
-            wrapper.classList.add('initialized');
-            const slides = Array.from(wrapper.children);
-            const nextBtn = document.querySelector('.carousel-btn.next');
-            const prevBtn = document.querySelector('.carousel-btn.prev');
-            let currentSlide = 0;
-            
-            if (slides.length <= 1) {
-                if(nextBtn) nextBtn.style.display = 'none';
-                if(prevBtn) prevBtn.style.display = 'none';
-            }
-            
-            const showSlide = (slideIndex) => {
-                wrapper.style.transform = `translateX(-${slideIndex * 100}%)`;
-                currentSlide = slideIndex;
-            };
-            
-            if(nextBtn) nextBtn.addEventListener('click', () => {
-                const nextIndex = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
-                showSlide(nextIndex);
-            });
-            
-            if(prevBtn) prevBtn.addEventListener('click', () => {
-                const prevIndex = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
-                showSlide(prevIndex);
-            });
-            
-            showSlide(0);
-        }
+    <main id="conteudo">
+        <!-- Início -->
+        <section id="inicio" class="hero" aria-labelledby="hero-title">
+            <div class="wrap hero-grid">
+                <div class="hero-copy">
+                    <h1 id="hero-title">Vitor Alves</h1>
+                    <p class="hero-role" data-i18n="hero.role">Infraestrutura de TI e governança</p>
+                    <p class="hero-summary" data-i18n="hero.summary">Bacharel em Engenharia da Computação com mais de 5 anos de experiência em ambientes corporativos de alta disponibilidade, hoje analista de infraestrutura no Senar-MT.</p>
+                    <div class="actions">
+                        <button type="button" class="btn btn-primary" id="pdfBtn" data-i18n="hero.pdf">Baixar currículo (PDF)</button>
+                        <a class="btn" href="#contato" data-i18n="hero.contact">Entrar em contato</a>
+                    </div>
+                </div>
 
-        function toggleAccordion(element) {
-            const content = element.nextElementSibling;
-            const isAlreadyOpen = content.style.maxHeight;
-            
-            document.querySelectorAll('.accordion-content').forEach(item => {
-                if (item !== content) {
-                    item.style.maxHeight = null;
-                }
-            });
-            
-            if (isAlreadyOpen) {
-                content.style.maxHeight = null;
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-                if (element.id === 'senar-accordion-header') {
-                    setTimeout(() => {
-                        initializeCarousel();
-                    }, 300);
-                }
-            }
-        }
+                <div class="hero-side">
+                    <picture>
+                        <source type="image/webp" srcset="assets/img/perfil-320.webp 320w, assets/img/perfil-640.webp 640w" sizes="(min-width: 900px) 300px, 220px">
+                        <img class="portrait" src="assets/img/perfil-640.jpg" srcset="assets/img/perfil-320.jpg 320w, assets/img/perfil-640.jpg 640w" sizes="(min-width: 900px) 300px, 220px" width="300" height="300" alt="Retrato de Vitor Alves" data-i18n-attr="alt:hero.alt" fetchpriority="high" decoding="async">
+                    </picture>
+                    <dl class="facts">
+                        <div>
+                            <dt data-i18n="facts.now">Atualmente</dt>
+                            <dd data-i18n="facts.now.v">Analista de Infraestrutura de TI, Senar-MT</dd>
+                        </div>
+                        <div>
+                            <dt data-i18n="facts.degree">Formação</dt>
+                            <dd data-i18n="facts.degree.v">Engenharia da Computação, UNIC (2025)</dd>
+                        </div>
+                        <div>
+                            <dt data-i18n="facts.where">Local</dt>
+                            <dd data-i18n="facts.where.v">Cuiabá, Mato Grosso</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </section>
 
-        window.onload = function() {
-            setLanguage(currentLang);
-            const savedSection = localStorage.getItem('currentSection') || 'section1';
-            showSection(savedSection);
-            const menuItems = document.getElementById('menuItems');
-            menuItems.classList.remove('show');
-        };
+        <!-- Atuação -->
+        <section id="atuacao" class="section" aria-labelledby="atuacao-title">
+            <div class="wrap split">
+                <h2 id="atuacao-title" data-i18n="about.title">Como eu atuo</h2>
+                <div class="split-body">
+                    <p class="intro" data-i18n="about.intro">Combino a resolução técnica de problemas com uma visão de governança de TI, do rack ao Termo de Referência.</p>
+                    <div class="pillars">
+                        <article class="pillar">
+                            <h3 data-i18n="about.p1.t">Infraestrutura virtualizada</h3>
+                            <p data-i18n="about.p1.d">Administração do datacenter virtualizado (VMware vCenter e ESXi) e sustentação de servidores Windows Server.</p>
+                        </article>
+                        <article class="pillar">
+                            <h3 data-i18n="about.p2.t">Segurança e redes</h3>
+                            <p data-i18n="about.p2.d">Firewall Sophos XGS, switches Cisco e controladoras wireless (WLC), garantindo conectividade e segurança de borda.</p>
+                        </article>
+                        <article class="pillar">
+                            <h3 data-i18n="about.p3.t">Governança de TI</h3>
+                            <p data-i18n="about.p3.d">Elaboração técnica de Termos de Referência para licitações e gestão de contratos de TI no Sistema S.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const cookieConsent = document.getElementById('cookieConsent');
-            const acceptBtn = document.getElementById('acceptCookies');
-            
-            if(localStorage.getItem('cookiesAccepted') === 'true') {
-                cookieConsent.style.display = 'none';
-            }
-            
-            acceptBtn.addEventListener('click', () => {
-                localStorage.setItem('cookiesAccepted', 'true');
-                cookieConsent.style.display = 'none';
-                
-                gtag('consent', 'update', {
-                    'ad_storage': 'granted',
-                    'ad_user_data': 'granted',
-                    'ad_personalization': 'granted',
-                    'analytics_storage': 'granted'
-                });
-            });
-            
-            document.addEventListener('click', function(event) {
-                const menuItems = document.getElementById('menuItems');
-                const menuIcon = document.getElementById('menuIcon');
-                if (menuItems && menuIcon) {
-                    const isMenuOpen = menuItems.classList.contains('show');
-                    const isClickInsideMenu = menuItems.contains(event.target);
-                    const isClickOnIcon = menuIcon.contains(event.target);
-                    if (isMenuOpen && !isClickInsideMenu && !isClickOnIcon) {
-                        toggleMenu();
-                    }
-                }
-            });
-        });
-    </script>
+        <!-- Experiência -->
+        <section id="experiencia" class="section" aria-labelledby="exp-title">
+            <div class="wrap split">
+                <h2 id="exp-title" data-i18n="exp.title">Experiência profissional</h2>
+                <div class="split-body">
+                    <ol class="timeline">
+                        <li class="company">
+                            <div class="company-head">
+                                <h3>Senar-MT</h3>
+                                <p class="place" data-i18n="exp.place">Cuiabá, Mato Grosso</p>
+                            </div>
+                            <ol class="roles">
+                                <li class="role is-current">
+                                    <span class="node" aria-hidden="true"></span>
+                                    <h4 data-i18n="exp.senar3.t">Analista de Infraestrutura de TI</h4>
+                                    <p class="period"><span data-i18n="exp.senar3.p">abril de 2026 até o momento</span></p>
+                                    <ul>
+                                        <li data-i18n="exp.senar3.b1"><strong>Gestão de infraestrutura:</strong> administração do datacenter virtualizado (VMware vCenter e ESXi) e sustentação de servidores Windows Server.</li>
+                                        <li data-i18n="exp.senar3.b2"><strong>Segurança e redes:</strong> gerenciamento de firewall Sophos XGS, switches Cisco e controladoras wireless (WLC).</li>
+                                        <li data-i18n="exp.senar3.b3"><strong>Governança de TI:</strong> elaboração técnica de Termos de Referência (TR) para licitações e gestão de contratos de TI no Sistema S.</li>
+                                        <li data-i18n="exp.senar3.b4"><strong>Projetos:</strong> acompanhamento técnico de expansões de rede e cabeamento estruturado.</li>
+                                    </ul>
+                                </li>
+                                <li class="role">
+                                    <span class="node" aria-hidden="true"></span>
+                                    <h4 data-i18n="exp.senar2.t">Assistente de TI</h4>
+                                    <p class="period"><span data-i18n="exp.senar2.p">setembro de 2021 a março de 2026</span></p>
+                                    <ul>
+                                        <li data-i18n="exp.senar2.b1">Suporte técnico de nível 1 e 2 aos usuários (help desk e service desk).</li>
+                                        <li data-i18n="exp.senar2.b2">Manutenção preventiva e corretiva de computadores, impressoras e periféricos.</li>
+                                        <li data-i18n="exp.senar2.b3">Gerenciamento de contas, permissões e acessos via Active Directory.</li>
+                                        <li data-i18n="exp.senar2.b4">Instalação, configuração e atualização de softwares corporativos e sistemas operacionais.</li>
+                                    </ul>
+                                </li>
+                                <li class="role">
+                                    <span class="node" aria-hidden="true"></span>
+                                    <h4 data-i18n="exp.senar1.t">Estagiário de Suporte</h4>
+                                    <p class="period"><span data-i18n="exp.senar1.p">outubro de 2020 a setembro de 2021</span></p>
+                                    <ul>
+                                        <li data-i18n="exp.senar1.b1">Auxílio aos usuários na utilização do pacote Office e da internet.</li>
+                                        <li data-i18n="exp.senar1.b2">Montagem de estações de trabalho e apoio em cabeamento.</li>
+                                        <li data-i18n="exp.senar1.b3">Instalação de programas e solução de problemas de impressão.</li>
+                                        <li data-i18n="exp.senar1.b4">Triagem dos chamados abertos para a área de TI.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </li>
+
+                        <li class="company">
+                            <div class="company-head">
+                                <h3>Tecnomapas</h3>
+                                <p class="place" data-i18n="exp.place">Cuiabá, Mato Grosso</p>
+                            </div>
+                            <ol class="roles">
+                                <li class="role">
+                                    <span class="node" aria-hidden="true"></span>
+                                    <h4 data-i18n="exp.tm.t">Estagiário de Apoio Técnico</h4>
+                                    <p class="period"><span data-i18n="exp.tm.p">março a julho de 2020</span></p>
+                                    <ul>
+                                        <li data-i18n="exp.tm.b1">Acompanhamento de testes de software e programas.</li>
+                                        <li data-i18n="exp.tm.b2">Suporte supervisionado aos usuários e à área de TI.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </li>
+
+                        <li class="company">
+                            <div class="company-head">
+                                <h3>Carvalima Transportes</h3>
+                                <p class="place" data-i18n="exp.place">Cuiabá, Mato Grosso</p>
+                            </div>
+                            <ol class="roles">
+                                <li class="role">
+                                    <span class="node" aria-hidden="true"></span>
+                                    <h4 data-i18n="exp.cv.t">Aprendiz de Auxiliar Administrativo</h4>
+                                    <p class="period"><span data-i18n="exp.cv.p">janeiro a dezembro de 2017</span></p>
+                                    <ul>
+                                        <li data-i18n="exp.cv.b1">Atualização e organização de dados em planilhas.</li>
+                                        <li data-i18n="exp.cv.b2">Gerência e acompanhamento de cotações e negociações de cargas.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formação -->
+        <section id="formacao" class="section" aria-labelledby="edu-title">
+            <div class="wrap split">
+                <h2 id="edu-title" data-i18n="edu.title">Formação e certificados</h2>
+                <div class="split-body">
+                    <article class="degree">
+                        <h3 data-i18n="edu.degree.t">Bacharelado em Engenharia da Computação</h3>
+                        <p>Universidade de Cuiabá (UNIC)</p>
+                        <p class="muted" data-i18n="edu.degree.d">Concluído em dezembro de 2025</p>
+                        <a class="text-link" href="https://drive.google.com/drive/folders/1hUxhMo7rSoGQco74ftTJXhYr2gKCHrzs?usp=sharing" target="_blank" rel="noopener" data-i18n="edu.degree.link">Ver diploma</a>
+                    </article>
+
+                    <div class="cert-groups">
+                        <section class="cert-group" aria-labelledby="cg1">
+                            <h3 id="cg1" data-i18n="edu.g1.t">Infraestrutura e segurança</h3>
+                            <ul>
+                                <li data-i18n="edu.g1.i1">Cisco: Introdução à Cibersegurança</li>
+                                <li data-i18n="edu.g1.i2">Sophos: Curso Prático de Sophos Firewall (XGS)</li>
+                                <li data-i18n="edu.g1.i3">Microsoft: Implantação e Administração de Windows Server</li>
+                                <li data-i18n="edu.g1.i4">Microsoft: Configuração e Gerenciamento de Hyper-V</li>
+                            </ul>
+                        </section>
+                        <section class="cert-group" aria-labelledby="cg2">
+                            <h3 id="cg2" data-i18n="edu.g2.t">Gestão e governança</h3>
+                            <ul>
+                                <li data-i18n="edu.g2.i1">Trilha de Carreira: Gestão de Projetos (60h) e Modelos de Gestão (60h)</li>
+                                <li data-i18n="edu.g2.i2">COBIT 2019: Princípios e Estrutura</li>
+                                <li data-i18n="edu.g2.i3">Lei Geral de Proteção de Dados (LGPD)</li>
+                            </ul>
+                        </section>
+                        <section class="cert-group" aria-labelledby="cg3">
+                            <h3 id="cg3" data-i18n="edu.g3.t">Idiomas</h3>
+                            <ul>
+                                <li data-i18n="edu.g3.i1">English I (inglês voltado para o agronegócio)</li>
+                            </ul>
+                        </section>
+                    </div>
+
+                    <p class="link-row">
+                        <a class="btn" href="https://drive.google.com/drive/folders/1vidg6QPu4Tyt52F_auglcNksgXDq9a_G?usp=sharing" target="_blank" rel="noopener" data-i18n="edu.certs">Ver certificados</a>
+                        <a class="btn" href="https://www.credly.com/users/vitor.ivoalves" target="_blank" rel="noopener" data-i18n="edu.credly">Perfil no Credly</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competências -->
+        <section id="competencias" class="section" aria-labelledby="skills-title">
+            <div class="wrap split">
+                <h2 id="skills-title" data-i18n="skills.title">Competências</h2>
+                <div class="split-body">
+                    <p class="muted skills-note" data-i18n="skills.note">As ferramentas que uso no dia a dia aparecem em destaque.</p>
+                    <div class="skill-groups">
+                        <section class="skill-group" aria-labelledby="sk1">
+                            <h3 id="sk1" data-i18n="skills.g1">Redes e segurança</h3>
+                            <ul class="chips">
+                                <li class="chip is-key">Sophos XGS</li>
+                                <li class="chip is-key">Cisco</li>
+                                <li class="chip" data-i18n="skills.net1">Administração de redes</li>
+                                <li class="chip" data-i18n="skills.net2">Segurança da informação</li>
+                                <li class="chip">VPN</li>
+                                <li class="chip" data-i18n="skills.net3">Voz sobre IP (VoIP)</li>
+                                <li class="chip">DNS</li>
+                                <li class="chip" data-i18n="skills.net4">Cabeamento estruturado</li>
+                                <li class="chip" data-i18n="skills.net5">Segurança cibernética</li>
+                            </ul>
+                        </section>
+                        <section class="skill-group" aria-labelledby="sk2">
+                            <h3 id="sk2" data-i18n="skills.g2">Sistemas operacionais e servidores</h3>
+                            <ul class="chips">
+                                <li class="chip is-key">VMware vCenter/ESXi</li>
+                                <li class="chip is-key">Windows Server</li>
+                                <li class="chip is-key">Active Directory</li>
+                                <li class="chip">Microsoft Windows</li>
+                                <li class="chip">Linux</li>
+                                <li class="chip" data-i18n="skills.os1">Administração de servidores</li>
+                            </ul>
+                        </section>
+                        <section class="skill-group" aria-labelledby="sk3">
+                            <h3 id="sk3" data-i18n="skills.g3">Governança e processos de TI</h3>
+                            <ul class="chips">
+                                <li class="chip is-key" data-i18n="skills.gov1">Governança de TI (COBIT)</li>
+                                <li class="chip is-key" data-i18n="skills.gov2">Termos de Referência</li>
+                                <li class="chip" data-i18n="skills.gov3">Gestão de incidentes</li>
+                                <li class="chip" data-i18n="skills.gov4">Gestão de infraestrutura de TI</li>
+                                <li class="chip" data-i18n="skills.gov5">Operações de TI</li>
+                                <li class="chip" data-i18n="skills.gov6">Política de segurança</li>
+                                <li class="chip" data-i18n="skills.gov7">Documentação</li>
+                                <li class="chip" data-i18n="skills.gov8">Políticas e procedimentos</li>
+                            </ul>
+                        </section>
+                        <section class="skill-group" aria-labelledby="sk4">
+                            <h3 id="sk4" data-i18n="skills.g4">Suporte e hardware</h3>
+                            <ul class="chips">
+                                <li class="chip" data-i18n="skills.sup1">Suporte técnico</li>
+                                <li class="chip" data-i18n="skills.sup2">Help desk</li>
+                                <li class="chip" data-i18n="skills.sup3">Central de serviços</li>
+                                <li class="chip" data-i18n="skills.sup4">Manutenção de computadores</li>
+                                <li class="chip" data-i18n="skills.sup5">Hardware de computador</li>
+                            </ul>
+                        </section>
+                        <section class="skill-group" aria-labelledby="sk5">
+                            <h3 id="sk5" data-i18n="skills.g5">Ferramentas</h3>
+                            <ul class="chips">
+                                <li class="chip">Microsoft 365</li>
+                                <li class="chip">Microsoft Excel</li>
+                                <li class="chip">TOTVS</li>
+                                <li class="chip">TeamViewer</li>
+                                <li class="chip" data-i18n="skills.tool1">Instalação de software</li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contato" class="section section-last" aria-labelledby="contact-title">
+            <div class="wrap split">
+                <h2 id="contact-title" data-i18n="contact.title">Contato</h2>
+                <div class="split-body">
+                    <p class="intro" data-i18n="contact.intro">O e-mail é o caminho mais rápido. Meu currículo acadêmico e minhas certificações estão nos perfis abaixo.</p>
+                    <ul class="contact-list">
+                        <li><a class="contact-link" href="mailto:vitorivo2000@gmail.com"><span class="contact-name" data-i18n="contact.email">E-mail</span><span class="contact-detail">vitorivo2000@gmail.com</span></a></li>
+                        <li><a class="contact-link" href="https://www.linkedin.com/in/vitorivoalves/" target="_blank" rel="noopener"><span class="contact-name">LinkedIn</span><span class="contact-detail">linkedin.com/in/vitorivoalves</span></a></li>
+                        <li><a class="contact-link" href="https://lattes.cnpq.br/4177372591123932" target="_blank" rel="noopener"><span class="contact-name" data-i18n="contact.lattes">Currículo Lattes</span><span class="contact-detail">lattes.cnpq.br</span></a></li>
+                        <li><a class="contact-link" href="https://www.credly.com/users/vitor.ivoalves" target="_blank" rel="noopener"><span class="contact-name" data-i18n="contact.credly">Perfil no Credly</span><span class="contact-detail">credly.com/users/vitor.ivoalves</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap footer-row">
+            <p>&copy; <span id="year">2026</span> Vitor Ivo Santiago Alves</p>
+            <button type="button" class="text-link" id="cookiePrefs" data-i18n="cookie.prefs">Preferências de cookies</button>
+        </div>
+    </footer>
+
+    <div id="print-header" class="print-header" aria-hidden="true">
+        <p><strong>Vitor Ivo Santiago Alves</strong></p>
+        <p>vitorivo2000@gmail.com &nbsp;|&nbsp; linkedin.com/in/vitorivoalves &nbsp;|&nbsp; vitorivoalves.github.io</p>
+    </div>
+
+    <div id="cookieBanner" class="cookie" role="region" aria-label="Aviso de cookies" data-i18n-attr="aria-label:cookie.label" hidden>
+        <p data-i18n="cookie.text">Este site usa cookies de análise (Google Analytics) para entender como é visitado. Você pode aceitar ou recusar.</p>
+        <div class="cookie-actions">
+            <button type="button" class="btn" id="cookieDeny" data-i18n="cookie.deny">Recusar</button>
+            <button type="button" class="btn btn-primary" id="cookieAccept" data-i18n="cookie.accept">Aceitar</button>
+        </div>
+    </div>
+
+    <script src="assets/js/i18n-en.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
