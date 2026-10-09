@@ -186,6 +186,22 @@
         });
     }
 
+    /* ---------- Transições de entrada ---------- */
+    if (root.classList.contains('js') && 'IntersectionObserver' in window) {
+        var targets = document.querySelectorAll('.hero-copy, .hero-side, .split > h2, .split-body > *, .pillar, .project, .company, .cert-group, .skill-group, .contact-list li');
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+            });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+        targets.forEach(function (el) {
+            var idx = Array.prototype.indexOf.call(el.parentNode.children, el);
+            el.style.setProperty('--d', Math.min(idx, 4) * 80 + 'ms');
+            el.classList.add('reveal');
+            io.observe(el);
+        });
+    }
+
     /* ---------- Início ---------- */
     var year = document.getElementById('year');
     if (year) year.textContent = new Date().getFullYear();

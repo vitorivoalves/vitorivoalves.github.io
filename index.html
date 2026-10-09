@@ -62,6 +62,8 @@
     <script>
         /* Tema: aplicado antes da primeira pintura para evitar flash. */
         (function () {
+            if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) enableMotion();
+            function enableMotion() { document.documentElement.classList.add('js'); }
             try {
                 var t = localStorage.getItem('theme');
                 if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
