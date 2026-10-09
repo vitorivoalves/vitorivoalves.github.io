@@ -15,6 +15,7 @@ window.I18N_EN = {
     /* Navegação */
     'nav.about': 'About',
     'nav.experience': 'Experience',
+    'nav.projects': 'Projects',
     'nav.education': 'Education',
     'nav.skills': 'Skills',
     'nav.contact': 'Contact',
@@ -70,6 +71,23 @@ window.I18N_EN = {
     'exp.cv.p': 'January to December 2017',
     'exp.cv.b1': 'Updating and organizing data in spreadsheets.',
     'exp.cv.b2': 'Management and monitoring of freight quotes and negotiations.',
+
+    /* Projetos */
+    'proj.title': 'Projects',
+    'proj.intro': 'A few pieces of work that show how I combine automation, technical documentation and governance.',
+    'proj.p1.t': 'Computer lab automation',
+    'proj.p1.d': 'PowerShell script that standardizes the setup of the labs\' Windows 10 Pro workstations, replacing manual machine-by-machine work.',
+    'proj.p1.b1': 'Silent installation of software (browsers, PDF reader, antivirus, remote access and Office suite).',
+    'proj.p1.b2': 'User restrictions for the student profile and enforced default wallpaper.',
+    'proj.p1.b3': 'Performance tuning and scheduled tasks.',
+    'proj.tag.auto': 'Automation',
+    'proj.p2.t': 'Terms of Reference for managed print services',
+    'proj.p2.d': 'Technical drafting of the specifications for contracting a multifunction printer service, in a public electronic auction.',
+    'proj.p2.b1': 'Technical requirements for A4 and A3 color devices, with a survey of compatible models from several manufacturers.',
+    'proj.p2.b2': 'Print accounting, secure print release and LGPD compliance criteria.',
+    'proj.p2.b3': 'Technical compliance review of the bids received.',
+    'proj.tag.tr': 'Terms of Reference',
+    'proj.tag.lic': 'Public procurement',
 
     /* Formação */
     'edu.title': 'Education and certificates',

@@ -61,6 +61,8 @@
             b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
         });
         updateMenuLabel();
+        var pdf = document.getElementById('pdfBtn');
+        if (pdf) pdf.setAttribute('href', en ? 'curriculo-vitor-alves-en.pdf' : 'curriculo-vitor-alves-pt.pdf');
 
         if (fromUser) {
             store('siteLang', lang);
@@ -176,12 +178,11 @@
         if (accept) accept.focus();
     });
 
-    /* ---------- PDF (impressão) ---------- */
+    /* ---------- PDF (download) ---------- */
     var pdfBtn = document.getElementById('pdfBtn');
     if (pdfBtn) {
         pdfBtn.addEventListener('click', function () {
             track('event', 'generate_pdf', { event_category: 'Engagement', event_label: 'PDF Download' });
-            window.print();
         });
     }
 
