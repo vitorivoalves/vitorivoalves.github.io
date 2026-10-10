@@ -278,6 +278,7 @@ img { max-width: 100%; height: auto; }
     color: var(--text);
 }
 .hero-summary { margin-top: 20px; max-width: 56ch; color: var(--muted); font-size: 1.15rem; }
+.hero-summary-2 { margin-top: 14px; font-size: 1.05rem; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 
 .hero-side { display: flex; flex-direction: column; gap: 24px; }
@@ -544,6 +545,7 @@ main { counter-reset: sec; }
     .hero h1 { font-size: 22pt; }
     .hero-role { font-size: 11.5pt; color: #000; margin-top: 4px; }
     .hero-summary { font-size: 9.5pt; color: #222; margin-top: 6px; max-width: none; }
+    .hero-summary-2 { font-size: 9.5pt; margin-top: 4px; }
     .hero-side { display: block; }
     .portrait { width: 90px; border-radius: 6px; border-color: #999; }
     .facts { display: none; }

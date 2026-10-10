@@ -23,6 +23,7 @@ window.I18N_EN = {
     /* Hero */
     'hero.role': 'IT infrastructure and governance',
     'hero.summary': 'Bachelor in Computer Engineering with over 5 years of experience in high-availability corporate environments, now an infrastructure analyst at Senar-MT.',
+    'hero.summary2': 'I work on virtualized environments (VMware vCenter and ESXi), perimeter security (Sophos Firewall) and corporate networks (Cisco). I combine hands-on troubleshooting with a strategic IT governance perspective: I draft Terms of Reference and support public procurement and technical contracts within the S System.',
     'hero.pdf': 'Download résumé (PDF)',
     'hero.contact': 'Get in touch',
     'facts.now': 'Currently',
