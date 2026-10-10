@@ -105,7 +105,8 @@ window.I18N_EN = {
     'edu.g2.i2': 'COBIT 2019: Principles and Structure',
     'edu.g2.i3': 'LGPD (Brazilian General Data Protection Law)',
     'edu.g3.t': 'Languages',
-    'edu.g3.i1': 'English I (agribusiness-focused English)',
+    'edu.g3.i1': '<strong>English:</strong> technical reading and writing with autonomy; intermediate speaking, used in technical meetings with vendors such as Cisco.',
+    'edu.g3.i2': 'English I course (agribusiness-focused English)',
     'edu.certs': 'View certificates',
     'edu.credly': 'Credly profile',
 
