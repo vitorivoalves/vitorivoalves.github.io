@@ -26,12 +26,6 @@ window.I18N_EN = {
     'hero.summary2': 'I work on virtualized environments (VMware vCenter and ESXi), perimeter security (Sophos Firewall) and corporate networks (Cisco). I combine hands-on troubleshooting with a strategic IT governance perspective: I draft Terms of Reference and support public procurement and technical contracts within the S System.',
     'hero.pdf': 'Download résumé (PDF)',
     'hero.contact': 'Get in touch',
-    'facts.now': 'Currently',
-    'facts.now.v': 'IT Infrastructure Analyst, Senar-MT',
-    'facts.degree': 'Education',
-    'facts.degree.v': 'Computer Engineering, UNIC (2025)',
-    'facts.where': 'Location',
-    'facts.where.v': 'Cuiabá, Mato Grosso, Brazil',
 
     /* Atuação */
     'about.title': 'How I work',
