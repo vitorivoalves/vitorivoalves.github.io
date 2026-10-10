@@ -73,8 +73,9 @@
     function initialLang() {
         var saved = store('siteLang');
         if (saved === 'pt' || saved === 'en') return saved;
-        var nav = (navigator.language || 'pt').toLowerCase();
-        return nav.indexOf('pt') === 0 ? 'pt' : (nav.indexOf('en') === 0 ? 'en' : 'pt');
+        /* Padrão sempre em português (idioma do HTML). Não detectamos o idioma do navegador:
+           o robô do Google navega em inglês e acabava indexando a versão EN. */
+        return 'pt';
     }
 
     document.querySelectorAll('.seg-btn').forEach(function (b) {
