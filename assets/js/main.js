@@ -141,18 +141,29 @@
         menuBtn.setAttribute('aria-label', lang === 'en' ? EN[key] : (open ? 'Fechar menu' : 'Abrir menu'));
     }
 
+    var menuTimer = null, menuDone = null;
+    function cancelMenuClose() {
+        if (menuTimer) { clearTimeout(menuTimer); menuTimer = null; }
+        if (menuDone) { nav.removeEventListener('animationend', menuDone); menuDone = null; }
+    }
+
     function setMenu(open, returnFocus) {
         if (!menuBtn || !nav) return;
         var wasOpen = menuBtn.getAttribute('aria-expanded') === 'true';
         menuBtn.setAttribute('aria-expanded', String(open));
+        cancelMenuClose();
         if (open) {
             nav.classList.remove('is-closing');
             nav.classList.add('is-open');
         } else if (wasOpen && !reduceMotion) {
             nav.classList.add('is-closing');
-            var finish = function () { nav.classList.remove('is-open', 'is-closing'); };
-            nav.addEventListener('animationend', finish, { once: true });
-            setTimeout(finish, 260);
+            menuDone = function (e) {
+                if (e && e.target !== nav) return;
+                cancelMenuClose();
+                nav.classList.remove('is-open', 'is-closing');
+            };
+            nav.addEventListener('animationend', menuDone);
+            menuTimer = setTimeout(menuDone, 260);
         } else {
             nav.classList.remove('is-open', 'is-closing');
         }
