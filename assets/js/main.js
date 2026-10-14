@@ -240,6 +240,95 @@
         });
     }
 
+    /* ---------- Foto ampliada (abre a partir da miniatura) ---------- */
+    var portraitBtn = document.getElementById('portraitBtn');
+    if (portraitBtn) {
+        var thumb = portraitBtn.querySelector('img');
+        var box = null, big = null, closeBtn = null, closing = false;
+
+        var text = function (key, pt) { return lang === 'en' && EN[key] ? EN[key] : pt; };
+        var flip = function (from, to) {
+            var s = from.width / to.width;
+            return { transform: 'translate(' + (from.left - to.left) + 'px,' + (from.top - to.top) + 'px) scale(' + s + ')', borderRadius: (16 / s) + 'px' };
+        };
+
+        var openPhoto = function () {
+            if (box) return;
+            var from = thumb.getBoundingClientRect();
+
+            box = document.createElement('div');
+            box.className = 'lightbox';
+            box.setAttribute('role', 'dialog');
+            box.setAttribute('aria-modal', 'true');
+            box.setAttribute('aria-label', text('hero.zoomTitle', 'Foto de Vitor Alves'));
+
+            big = document.createElement('img');
+            big.className = 'lightbox-img';
+            big.alt = thumb.alt;
+            big.src = thumb.currentSrc || thumb.src;
+            var hi = new Image();
+            hi.onload = function () { if (big) big.src = 'perfil.jpg'; };
+            hi.src = 'perfil.jpg';
+
+            var cap = document.createElement('p');
+            cap.className = 'lightbox-cap';
+            cap.textContent = 'Vitor Ivo Santiago Alves';
+
+            closeBtn = document.createElement('button');
+            closeBtn.type = 'button';
+            closeBtn.className = 'lightbox-close';
+            closeBtn.setAttribute('aria-label', text('hero.zoomClose', 'Fechar foto'));
+            closeBtn.innerHTML = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>';
+
+            box.appendChild(big); box.appendChild(cap); box.appendChild(closeBtn);
+
+            var sw = window.innerWidth - root.clientWidth;
+            root.style.overflow = 'hidden';
+            if (sw > 0) document.body.style.paddingRight = sw + 'px';
+
+            document.body.appendChild(box);
+            var to = big.getBoundingClientRect();
+            portraitBtn.style.visibility = 'hidden';
+            requestAnimationFrame(function () { box.classList.add('is-open'); });
+            if (!reduceMotion && big.animate) {
+                var a = flip(from, to);
+                big.animate([a, { transform: 'none', borderRadius: '20px' }], { duration: 480, easing: 'cubic-bezier(0.22, 0.61, 0.36, 1)' });
+            }
+            closeBtn.focus();
+
+            box.addEventListener('click', function (e) { if (e.target !== big) closePhoto(); });
+            track('event', 'open_photo');
+        };
+
+        var closePhoto = function () {
+            if (!box || closing) return;
+            closing = true;
+            var to = big.getBoundingClientRect();
+            var from = thumb.getBoundingClientRect();
+            box.classList.remove('is-open');
+            var done = function () {
+                box.remove(); box = null; big = null; closeBtn = null; closing = false;
+                portraitBtn.style.visibility = '';
+                root.style.overflow = '';
+                document.body.style.paddingRight = '';
+                portraitBtn.focus();
+            };
+            if (!reduceMotion && big.animate) {
+                var anim = big.animate([{ transform: 'none', borderRadius: '20px' }, flip(from, to)], { duration: 380, easing: 'cubic-bezier(0.4, 0, 0.2, 1)', fill: 'forwards' });
+                anim.onfinish = done;
+            } else {
+                done();
+            }
+        };
+
+        portraitBtn.addEventListener('click', openPhoto);
+        document.addEventListener('keydown', function (e) {
+            if (!box) return;
+            if (e.key === 'Escape') { e.preventDefault(); closePhoto(); }
+            else if (e.key === 'Tab') { e.preventDefault(); if (closeBtn) closeBtn.focus(); }
+        });
+    }
+
     /* ---------- Início ---------- */
     var year = document.getElementById('year');
     if (year) year.textContent = new Date().getFullYear();

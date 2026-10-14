@@ -10,6 +10,9 @@ window.I18N_EN = {
     'menu.open': 'Open menu',
     'menu.close': 'Close menu',
     'hero.alt': 'Portrait of Vitor Alves',
+    'hero.zoom': 'Enlarge photo',
+    'hero.zoomTitle': 'Photo of Vitor Alves',
+    'hero.zoomClose': 'Close photo',
     'cookie.label': 'Cookie notice',
 
     /* Navegação */
