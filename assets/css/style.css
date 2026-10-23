@@ -4,15 +4,8 @@
    ========================================================================== */
 
 @font-face {
-    font-family: "DM Sans";
-    src: url("../fonts/dm-sans-latin-wght-normal.woff2") format("woff2");
-    font-weight: 100 1000;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Fraunces";
-    src: url("../fonts/fraunces-latin-wght-normal.woff2") format("woff2");
+    font-family: "Inter";
+    src: url("../fonts/inter-latin-wght-normal.woff2") format("woff2");
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -21,25 +14,25 @@
 /* ---------- Tokens ---------- */
 :root {
     color-scheme: dark;
-    --bg: #0a131b;
-    --bg-alt: #0e1a24;
-    --surface: #112030;
-    --text: #e8eef3;
-    --muted: #9fb0bf;
-    --line: #213445;
-    --accent: #6aa5f5;
-    --btn-bg: #2f6fd6;
-    --btn-bg-hover: #3b7ce6;
-    --btn-ink: #ffffff;
-    --key-bg: rgba(106, 165, 245, 0.14);
-    --key-line: rgba(106, 165, 245, 0.45);
-    --focus: #9cc4ff;
-    --shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset;
+    --bg: #000000;
+    --bg-alt: #0a0a0a;
+    --surface: #111111;
+    --text: #ffffff;
+    --muted: #a3a3a3;
+    --line: #2b2b2b;
+    --accent: #ffffff;
+    --btn-bg: #ffffff;
+    --btn-bg-hover: #e5e5e5;
+    --btn-ink: #000000;
+    --key-bg: rgba(255, 255, 255, 0.10);
+    --key-line: rgba(255, 255, 255, 0.45);
+    --focus: #ffffff;
+    --shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
     --sun: inline;
     --moon: none;
 
-    --font: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --display: "Fraunces", Georgia, "Times New Roman", serif;
+    --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --display: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --header-h: 64px;
     --radius: 20px;
     --wrap: 1080px;
@@ -47,20 +40,20 @@
 
 :root[data-theme="light"] {
     color-scheme: light;
-    --bg: #f3f5f7;
-    --bg-alt: #ffffff;
+    --bg: #ffffff;
+    --bg-alt: #fafafa;
     --surface: #ffffff;
-    --text: #14202b;
-    --muted: #52606d;
-    --line: #d8dfe6;
-    --accent: #1b59b8;
-    --btn-bg: #1b59b8;
-    --btn-bg-hover: #164a9a;
+    --text: #000000;
+    --muted: #525252;
+    --line: #d4d4d4;
+    --accent: #000000;
+    --btn-bg: #000000;
+    --btn-bg-hover: #262626;
     --btn-ink: #ffffff;
-    --key-bg: rgba(27, 89, 184, 0.09);
-    --key-line: rgba(27, 89, 184, 0.4);
-    --focus: #1b59b8;
-    --shadow: 0 1px 2px rgba(20, 32, 43, 0.06);
+    --key-bg: rgba(0, 0, 0, 0.06);
+    --key-line: rgba(0, 0, 0, 0.4);
+    --focus: #000000;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
     --sun: none;
     --moon: inline;
 }
@@ -68,20 +61,20 @@
 @media (prefers-color-scheme: light) {
     :root:not([data-theme="dark"]) {
         color-scheme: light;
-        --bg: #f3f5f7;
-        --bg-alt: #ffffff;
+        --bg: #ffffff;
+        --bg-alt: #fafafa;
         --surface: #ffffff;
-        --text: #14202b;
-        --muted: #52606d;
-        --line: #d8dfe6;
-        --accent: #1b59b8;
-        --btn-bg: #1b59b8;
-        --btn-bg-hover: #164a9a;
+        --text: #000000;
+        --muted: #525252;
+        --line: #d4d4d4;
+        --accent: #000000;
+        --btn-bg: #000000;
+        --btn-bg-hover: #262626;
         --btn-ink: #ffffff;
-        --key-bg: rgba(27, 89, 184, 0.09);
-        --key-line: rgba(27, 89, 184, 0.4);
-        --focus: #1b59b8;
-        --shadow: 0 1px 2px rgba(20, 32, 43, 0.06);
+        --key-bg: rgba(0, 0, 0, 0.06);
+        --key-line: rgba(0, 0, 0, 0.4);
+        --focus: #000000;
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
         --sun: none;
         --moon: inline;
     }
@@ -109,7 +102,7 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; line-height: 1.15; margin: 0; letter-spacing: -0.015em; text-wrap: balance; }
+h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; line-height: 1.12; margin: 0; letter-spacing: -0.03em; text-wrap: balance; }
 p { margin: 0; text-wrap: pretty; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
 a { color: var(--accent); }
@@ -569,8 +562,8 @@ main, .site-nav, .site-footer { transition: opacity 0.18s ease; }
 .vignette.is-on { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity 0.22s ease; }
 .vignette svg { width: 88px; height: 88px; transform: scale(0.82); transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1); }
 .vignette.is-on svg { transform: scale(1); }
-.vignette .v-bg { fill: #1b59b8; }
-.vignette .v-mark { fill: none; stroke: #fff; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 60; stroke-dashoffset: 60; }
+.vignette .v-bg { fill: var(--text); }
+.vignette .v-mark { fill: none; stroke: var(--bg); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 60; stroke-dashoffset: 60; }
 .vignette.is-on .v-mark { stroke-dashoffset: 0; transition: stroke-dashoffset 0.42s ease 0.08s; }
 @media (prefers-reduced-motion: reduce) { .vignette { display: none; } }
 
