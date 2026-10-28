@@ -619,7 +619,6 @@ main, .site-nav, .site-footer { transition: opacity 0.18s ease; }
 /* ---------- Impressão / PDF ---------- */
 @media print {
     .vignette { display: none !important; }
-    .section .split > h2::before { display: none; }
     .degree { background: #fff; border-color: #999; }
     .js .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
     @page { margin: 1.3cm 1.5cm; }
@@ -629,28 +628,30 @@ main, .site-nav, .site-footer { transition: opacity 0.18s ease; }
         --line: #bbb; --accent: #000; --key-bg: #eee; --key-line: #777; --shadow: none;
     }
     body { background: #fff; color: #000; font-size: 9.5pt; line-height: 1.4; }
-    a { color: #000; text-decoration: none; }
+    a { color: #000; text-decoration: underline; text-decoration-thickness: 0.5pt; text-underline-offset: 1.5pt; }
 
-    .site-header, .skip-link, .cookie, .site-footer, .actions, .link-row, .pillars,
-    .degree .text-link, .skills-note, .contact-list, #contato, #atuacao .intro { display: none !important; }
+    .site-header, .skip-link, .cookie, .site-footer, .actions, .pillars, .skills-note, .contact-list, #contato, #atuacao .intro { display: none !important; }
 
-    .print-header { display: block; text-align: center; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 2px solid #000; font-size: 9pt; }
-    .print-header p:first-child { font-size: 14pt; }
+    .print-header { display: block; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1.5pt solid #000; }
+    .print-header .ph-name { font-size: 9pt; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 3px; }
+    .print-header .ph-links { display: flex; flex-wrap: wrap; gap: 2px 14px; margin: 0; font-size: 8.8pt; }
+    .print-header .ph-links a { font-weight: 600; }
 
     .hero { padding: 0 0 8px; }
     .hero-grid { grid-template-columns: 96px 1fr; gap: 18px; align-items: start; }
-    .hero h1 { font-size: 22pt; }
+    .hero h1 { font-size: 26pt; letter-spacing: -0.035em; }
     .hero-role { font-size: 11.5pt; color: #000; margin-top: 4px; }
     .hero-summary { font-size: 9.5pt; color: #222; margin-top: 6px; max-width: none; }
     .hero-summary-2 { font-size: 9.5pt; margin-top: 4px; }
     .hero-side { display: block; --pw: 90px; }
     .portrait-btn::after, .lightbox { display: none !important; }
-    .portrait { border-radius: 6px; border-color: #999; }
+    .portrait { border-radius: 12px; border-color: #999; }
 
     .section, #atuacao { padding: 10px 0 0; border-top: 1px solid #999; background: #fff !important; }
     #atuacao { display: none; }
     .split { display: block; }
-    .split > h2 { position: static; font-size: 11.5pt; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; break-after: avoid; page-break-after: avoid; }
+    .split > h2 { position: static; display: flex; align-items: baseline; gap: 8px; font-size: 13pt; letter-spacing: -0.02em; margin-bottom: 6px; break-after: avoid; page-break-after: avoid; }
+    .section .split > h2::before { display: inline; margin: 0; font-size: 7.5pt; letter-spacing: 0.2em; color: #555; }
     .intro { font-size: 9.5pt; }
 
     .company, .role, .project, .degree, .cert-group, .skill-group { break-inside: avoid; page-break-inside: avoid; }
@@ -667,11 +668,14 @@ main, .site-nav, .site-footer { transition: opacity 0.18s ease; }
     #projetos { break-before: page; page-break-before: always; border-top: 0; padding-top: 0; }
     #projetos .intro { display: none; }
     .projects { grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 0; }
-    .project { padding: 8px 10px; gap: 6px; border-color: #999; box-shadow: none; }
+    .project { padding: 8px 10px; gap: 6px; border-color: #999; border-radius: 12px; box-shadow: none; }
     .project h3 { font-size: 10.5pt; }
     .project > p, .project ul:not(.chips) li { font-size: 8.8pt; color: #222; }
 
-    .degree { padding: 6px 10px; border-color: #999; }
+    .degree { padding: 6px 10px; border-color: #999; border-radius: 12px; }
+    .degree .text-link { display: inline; font-size: 8.8pt; font-weight: 600; }
+    .link-row { display: flex; gap: 14px; margin: 8px 0 0; }
+    .link-row .btn { padding: 0; min-height: 0; border: 0; background: none; color: #000; font-size: 8.8pt; font-weight: 600; text-decoration: underline; }
     .degree h3 { font-size: 10.5pt; margin-bottom: 2px; }
     .cert-groups { gap: 12px; margin-top: 8px; grid-template-columns: repeat(3, 1fr); }
     .cert-group li { padding: 4px 0; font-size: 8.8pt; }
